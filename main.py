@@ -248,30 +248,16 @@ class MainWindow(QMainWindow):
         business data.  Each entry is converted into a ``Business``
         instance and stored on the ``_businesses`` list.
         """
-        # Example dataset; extend or replace with real data
-        self._businesses = [
-            Business(
-                name="Sunshine Café",
-                category="Food",
-                rating=4.5,
-                reviews=["Great coffee and friendly service!"],
-                deals=["10% off breakfast before 9 AM"],
-            ),
-            Business(
-                name="Village Bookshop",
-                category="Retail",
-                rating=4.8,
-                reviews=["Wide selection of books and cozy atmosphere."],
-                deals=["Buy 2 get 1 free on used books"],
-            ),
-            Business(
-                name="Paws & Claws Grooming",
-                category="Services",
-                rating=4.2,
-                reviews=["My dog loves coming here!"],
-                deals=["20% off for new customers"],
-            ),
-        ]
+        with open('data.json', 'r') as file:
+            data = json.load(file)
+        for biz in data:
+            self._businesses.append(Business(
+                name = biz["name"],
+                category = biz["category"],
+                rating = biz["rating"],
+                reviews = biz["reviews"],
+                deals = biz["deals"]
+            ))
 
     def _populate_business_list(self, businesses: List[Business] | None = None) -> None:
         """Populate the list widget with business entries."""
@@ -303,9 +289,7 @@ class MainWindow(QMainWindow):
     def _show_business_detail(self, item: QListWidgetItem) -> None:
         """Show a pop‑up window with details for the selected business."""
         biz: Business = item.data(Qt.UserRole)
-        # detail_win = BusinessDetailWindow(biz)
-        # # Use ``show`` instead of exec() to avoid blocking; see note below.
-        # detail_win.show()
+
         self.pages.setCurrentIndex(4)
         page = self.pages.currentWidget()
 
