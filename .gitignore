@@ -1,0 +1,4 @@
+# Ignores
+
+.venv
+.DS_Store

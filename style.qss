@@ -1,0 +1,85 @@
+/*
+   Dark theme stylesheet inspired by the Dracula color palette.
+
+   This QSS file defines colors and styles for widgets used
+   throughout the Byte‑Sized Business Boost application.  Feel
+   free to tweak the values to customize the look to your liking.
+ */
+
+/* Base widget */
+QWidget {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Navigation buttons */
+#navButton {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    border-radius: 4px;
+}
+#navButton:hover {
+    background-color: #44475a;
+}
+#navButton:pressed {
+    background-color: #6272a4;
+}
+
+/* Titles */
+#titleLabel {
+    font-size: 32px;
+    color: #ff79c6;
+    padding: 20px;
+}
+#subtitleLabel {
+    font-size: 16px;
+    color: #bd93f9;
+    padding-bottom: 20px;
+}
+#sectionLabel {
+    font-size: 20px;
+    color: #50fa7b;
+    padding: 12px 0;
+}
+
+/* List and list items */
+QListWidget {
+    background-color: #282a36;
+    border: 1px solid #44475a;
+    border-radius: 4px;
+}
+QListWidget::item {
+    padding: 8px 12px;
+}
+QListWidget::item:selected {
+    background-color: #44475a;
+}
+
+/* Search bar */
+QLineEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QLineEdit:focus {
+    border-color: #bd93f9;
+}
+
+/* Text edits */
+QTextEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QTextEdit:read-only {
+    background-color: #383a59;
+}
