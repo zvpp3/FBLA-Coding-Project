@@ -2,36 +2,76 @@
   {
     "name": "Sunshine Café",
     "category": "Food",
-    "rating": 4.5,
-    "reviews": ["Great coffee and friendly service!"],
+    "reviews": [
+      {
+        "user": "G. Washington",
+        "text": "Great coffee and friendly service!",
+        "rating": 5
+      },
+      {
+        "user": "Stella L.",
+        "text": "Horrible! The coffee was too hot, I'm planning on suing.",
+        "rating": 1
+      }
+    ],
     "deals": ["10% off breakfast before 9 AM"]
   },
   {
     "name": "Village Bookshop",
     "category": "Retail",
-    "rating": 4.8,
-    "reviews": ["Wide selection of books and cozy atmosphere."],
+    "reviews": [
+      {
+        "user": "P. Griffin",
+        "text": "Wide selection of books and cozy atmosphere.",
+        "rating": 4
+      }
+    ],
     "deals": ["Buy 2 get 1 free on used books"]
   },
   {
     "name": "Paws & Claws Grooming",
     "category": "Services",
-    "rating": 4.2,
-    "reviews": ["My dog loves coming here!"],
+    "reviews": [
+      {
+        "user": "John W.",
+        "text": "My dog loves coming here!",
+        "rating": 5
+      },
+      {
+        "user": "Walter H.W.",
+        "text": "Meh",
+        "rating": 3
+      }
+    ],
     "deals": ["20% off for new customers"]
   },
   {
     "name": "Bob's Burgers",
     "category": "Food",
-    "rating": 5.0,
-    "reviews": ["Good burgers"],
+    "reviews": [
+      {
+        "user": "E. Pressley",
+        "text": "Good burgers.",
+        "rating": 5
+      }
+    ],
     "deals": ["Sell your soul for the premium patty!"]
   },
   {
     "name": "Krusty Krab",
     "category": "Food",
-    "rating": 5.1,
-    "reviews": ["Great service, great fry cook!"],
+    "reviews": [
+      {
+        "user": "S. Bob",
+        "text": "Great service, great fry cook!",
+        "rating": 5
+      },
+      {
+        "user": "Plank T.",
+        "text": "They wouldn't give me the formula",
+        "rating": 1
+      }
+    ],
     "deals": ["Bring your own crab, make your own patty!!"]
   }
 ]

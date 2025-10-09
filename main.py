@@ -1,11 +1,11 @@
 """
-Byte‑Sized Business Boost – FBLA Coding & Programming template
+Byte-Sized Business Boost - FBLA Coding & Programming template
 ================================================================
 
 This module provides a starting point for the FBLA Coding & Programming
-event.  The 2025‑2026 topic challenges competitors to build a tool that
+event.  The 2025-2026 topic challenges competitors to build a tool that
 helps users discover and support local businesses.  This initial
-implementation uses PySide6 to build a modern, dark‑themed desktop
+implementation uses PySide6 to build a modern, dark-themed desktop
 application similar to the "PyDracula" example.  The design includes a
 navigation sidebar, a set of stacked pages, and simple business data
 models.  Teams can extend this template by adding features such as
@@ -41,8 +41,6 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-
-@dataclass
 class Business:
     """Simple data class representing a local business.
 
@@ -53,12 +51,16 @@ class Business:
         reviews: List of text comments left by users.
         deals: Optional list of promotional messages or coupons.
     """
-
-    name: str
-    category: str
-    rating: float = 0.0
-    reviews: List[str] = field(default_factory=list)
-    deals: List[str] = field(default_factory=list)
+    def __init__(self, name, category, reviews, deals):
+        self.name = name
+        self.category = category
+        self.reviews = reviews
+        self.deals = deals
+        self.rating = 0.0
+        for review in reviews:
+            self.rating += review["rating"]
+        if self.reviews:
+            self.rating /= len(self.reviews)
 
 
 class BusinessDetailWindow(QWidget):
@@ -165,7 +167,7 @@ class MainWindow(QMainWindow):
         page = QWidget()
         layout = QVBoxLayout(page)
         layout.setAlignment(Qt.AlignCenter)
-        title = QLabel("Byte‑Sized Business Boost")
+        title = QLabel("Byte-Sized Business Boost")
         title.setObjectName("titleLabel")
         subtitle = QLabel("Discover and support your local businesses!")
         subtitle.setObjectName("subtitleLabel")
@@ -233,6 +235,12 @@ class MainWindow(QMainWindow):
         text.setObjectName("sectionDescription")
         layout.addWidget(text)
         layout.addStretch()
+
+        # Reviews
+        reviews_label = QLabel("Reviews")
+        layout.addWidget(reviews_label)
+        self.review_list_widget = QListWidget()
+        layout.addWidget(self.review_list_widget)
         return page
     
 
@@ -240,21 +248,13 @@ class MainWindow(QMainWindow):
     #  Data loading and filtering
     # ------------------------------------------------------------------
     def _load_business_data(self) -> None:
-        """Load initial business data.
-
-        For this prototype the data is hard-coded.  In a production
-        solution you might read from a JSON file or database.  See the
-        ``data.json`` file or implement an API integration to fetch real
-        business data.  Each entry is converted into a ``Business``
-        instance and stored on the ``_businesses`` list.
-        """
+        # Open JSON
         with open('data.json', 'r') as file:
             data = json.load(file)
         for biz in data:
             self._businesses.append(Business(
                 name = biz["name"],
                 category = biz["category"],
-                rating = biz["rating"],
                 reviews = biz["reviews"],
                 deals = biz["deals"]
             ))
@@ -269,6 +269,14 @@ class MainWindow(QMainWindow):
             # Store the underlying Business object for later retrieval
             item.setData(Qt.UserRole, biz)
             self.list_widget.addItem(item)
+
+    def _populate_business_reviews(self, biz):
+        # Populate the reviews list widget with the business's reviews
+        self.review_list_widget.clear()
+        for review in biz.reviews:
+            item_text = f"{review['user']} (⭐ {review['rating']}) - {review['text']}"
+            item = QListWidgetItem(item_text)
+            self.review_list_widget.addItem(item)
 
     def _filter_business_list(self, text: str) -> None:
         """Filter the business list based on a search query."""
@@ -297,7 +305,8 @@ class MainWindow(QMainWindow):
         desc_label = page.findChild(QLabel, "sectionDescription")
 
         title_label.setText(biz.name)
-        desc_label.setText(biz.reviews[0])
+
+        self._populate_business_reviews(biz)
 
 
 def main() -> None:
