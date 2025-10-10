@@ -1,5 +1,5 @@
 """
-Byte-Sized Business Boost - FBLA Coding & Programming template
+LocalLink - FBLA Coding & Programming template
 ================================================================
 
 This module provides a starting point for the FBLA Coding & Programming
@@ -92,7 +92,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self) -> None:
         super().__init__()
-        self.setWindowTitle("Byte‑Sized Business Boost")
+        self.setWindowTitle("LocalLink")
         self.resize(1000, 600)
         self._businesses: List[Business] = []
 
@@ -167,7 +167,7 @@ class MainWindow(QMainWindow):
         page = QWidget()
         layout = QVBoxLayout(page)
         layout.setAlignment(Qt.AlignCenter)
-        title = QLabel("Byte-Sized Business Boost")
+        title = QLabel("LocalLink - A local business supporting app")
         title.setObjectName("titleLabel")
         subtitle = QLabel("Discover and support your local businesses!")
         subtitle.setObjectName("subtitleLabel")
