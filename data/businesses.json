@@ -12,6 +12,11 @@
         "user": "Stella L.",
         "text": "Horrible! The coffee was too hot, I'm planning on suing.",
         "rating": 1
+      },
+      {
+        "user": "Alexander H.",
+        "text": "Pretty good",
+        "rating": 4
       }
     ],
     "deals": ["10% off breakfast before 9 AM"]
