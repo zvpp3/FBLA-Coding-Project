@@ -1,12 +1,14 @@
 import json
+from typing import List
 
 class Business:
-    def __init__(self, name, category, reviews, deals) -> None:
+    def __init__(self, name, category, reviews, deals, favorited) -> None:
         self.name = name
         self.category = category
         self.reviews = reviews
         self.deals = deals
         self.rating = 0.0
+        self.favorited = favorited
         self.calculate_average_rating()
 
     def calculate_average_rating(self) -> float:
@@ -23,7 +25,15 @@ class DataHandler:
         self.businesses = []
         self._load_business_data()
 
-    def _load_business_data(self) -> None:
+    def _get_favorite_business_names(self):
+        # Open JSON
+        with open('data/user_data.json', 'r') as file:
+            favorites = json.load(file)
+        return favorites
+
+    def _load_business_data(self) -> List[str]:
+        # Get favorites
+        favorites = self._get_favorite_business_names()
         # Open JSON
         with open('data/businesses.json', 'r') as file:
             data = json.load(file)
@@ -32,7 +42,8 @@ class DataHandler:
                 name = biz["name"],
                 category = biz["category"],
                 reviews = biz["reviews"],
-                deals = biz["deals"]
+                deals = biz["deals"],
+                favorited = True if biz["name"] in favorites else False
             ))
     
     def filter_business_list(self, text: str) -> None:
@@ -46,3 +57,5 @@ class DataHandler:
         ]
         return filtered
     
+    # def toggle_favorite_business(name: str):
+    #     pass
