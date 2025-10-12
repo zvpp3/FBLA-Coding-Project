@@ -90,9 +90,7 @@ class MainWindow(QMainWindow):
         if index == 4:
             self.close()
 
-    def open_business_page(self, item: QListWidgetItem) -> None:
-        biz: Business = item.data(Qt.UserRole)
-        
-        self.business_page.display_business(biz)
+    def open_business_page(self, biz: Business) -> None:
 
+        self.business_page.display_business(biz)
         self.pages.setCurrentIndex(4)
