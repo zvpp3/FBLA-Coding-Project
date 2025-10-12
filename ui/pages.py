@@ -125,6 +125,7 @@ class BusinessPage(QWidget):
 
         # Text
         self.name_label = QLabel("Business")
+        self.name_label.setObjectName("sectionLabel")
         self.layout.addWidget(self.name_label)
 
         self.description = QLabel("Description")
