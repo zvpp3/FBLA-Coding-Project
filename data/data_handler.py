@@ -28,8 +28,8 @@ class DataHandler:
     def _get_favorite_business_names(self):
         # Open JSON
         with open('data/user_data.json', 'r') as file:
-            favorites = json.load(file)
-        return favorites
+            user_data = json.load(file)
+        return user_data["favorites"]
 
     def _load_business_data(self) -> List[str]:
         # Get favorites
@@ -43,10 +43,10 @@ class DataHandler:
                 category = biz["category"],
                 reviews = biz["reviews"],
                 deals = biz["deals"],
-                favorited = True if biz["name"] in favorites else False
+                favorited = biz["name"] in favorites
             ))
     
-    def filter_business_list(self, text: str) -> None:
+    def filter_business_list(self, text: str):
         query = text.lower().strip()
         if not query:
             return self.businesses
@@ -57,5 +57,32 @@ class DataHandler:
         ]
         return filtered
     
-    # def toggle_favorite_business(name: str):
-    #     pass
+    def get_favorite_businesses(self):
+        filtered = [
+            biz
+            for biz in self.businesses
+            if biz.favorited
+        ]
+        return filtered
+    
+    def add_business_to_favorites(self, biz: Business):
+        biz.favorited = True
+        with open("data/user_data.json", "r") as file:
+            data = json.load(file)
+        data["favorites"].append(biz.name)
+        with open("data/user_data.json", "w") as file:
+            json.dump(data, file, indent=4)
+
+    def remove_business_from_favorites(self, biz: Business):
+        biz.favorited = False
+        with open("data/user_data.json", "r") as file:
+            data = json.load(file)
+        data["favorites"].remove(biz.name)
+        with open("data/user_data.json", "w") as file:
+            json.dump(data, file, indent=4)
+    
+    def toggle_favorite_business(self, biz: Business):
+        if biz.favorited:
+            self.remove_business_from_favorites(biz)
+        else:
+            self.add_business_to_favorites(biz)

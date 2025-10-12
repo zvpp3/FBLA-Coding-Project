@@ -12,10 +12,27 @@ from PySide6.QtWidgets import (
 
 from data.data_handler import Business
 
+class FavoriteButton(QPushButton):
+    click_signal = Signal()
+    def __init__(self, biz: Business):
+        super().__init__()
+
+        self.business = biz
+        if biz:
+            self.update()
+        self.clicked.connect(self.on_click)
+
+    def on_click(self):
+        self.click_signal.emit()
+        self.update()
+
+    def update(self):
+        self.setText("★" if self.business.favorited else "☆")
+
 class ListedBusiness(QPushButton):
 
-    main_button = Signal(Business)
-    favorites_button = Signal(Business)
+    main_button_clicked = Signal(Business)
+    favorite_button_clicked = Signal(Business)
 
     def __init__(self, biz: Business):
         super().__init__()
@@ -30,13 +47,14 @@ class ListedBusiness(QPushButton):
 
         self.layout.addStretch()
 
-        self.favorite_button = QPushButton("☆")
+        self.favorite_button = FavoriteButton(biz)
         self.layout.addWidget(self.favorite_button)
         self.favorite_button.setVisible(False)
         
         # Store the underlying Business object for later retrieval
         self.business = biz
-        self.clicked.connect(lambda: self.main_button.emit(self.business))
+        self.clicked.connect(lambda: self.main_button_clicked.emit(self.business))
+        self.favorite_button.click_signal.connect(lambda: self.favorite_button_clicked.emit(self.business))
         
     def enterEvent(self, event):
         self.favorite_button.setVisible(True)
@@ -45,5 +63,3 @@ class ListedBusiness(QPushButton):
     def leaveEvent(self, event):
         self.favorite_button.setVisible(False)
         super().leaveEvent(event)
-
-    

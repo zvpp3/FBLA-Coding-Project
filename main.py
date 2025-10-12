@@ -2,13 +2,8 @@
 
 from __future__ import annotations
 
-import json
-import os
 import sys
-from dataclasses import dataclass, field
-from typing import List
 
-from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication,
 )
