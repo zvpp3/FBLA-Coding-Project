@@ -13,11 +13,14 @@ from PySide6.QtWidgets import (
     QStackedWidget,
     QVBoxLayout,
     QWidget,
+    QScrollArea,
+    QSizePolicy,
 )
 
 from typing import List
 
 from data.data_handler import Business
+from ui.business_ui import ListedBusiness, FavoriteButton
 
 class HomePage(QWidget):
     def __init__(self) -> None:
@@ -39,7 +42,8 @@ class HomePage(QWidget):
 
 class SearchPage(QWidget):
     # Signal
-    show_business_details = Signal(QListWidgetItem)
+    show_business_details = Signal(Business)
+    favorite_business = Signal(Business)
     search_bar_updated = Signal(str)
 
     def __init__(self) -> None:
@@ -57,22 +61,39 @@ class SearchPage(QWidget):
         self.search_bar.textChanged.connect(self.search_bar_updated.emit)
         self.layout.addWidget(self.search_bar)
 
-        # List View
-        self.list_widget = QListWidget()
-        self.list_widget.itemClicked.connect(self.show_business_details)
-        self.layout.addWidget(self.list_widget)
+        # Business List
+        # This is being switched to a scroll box. If there are performance issues, consider using QListView
+
+        self.business_list = QScrollArea()
+        self.layout.addWidget(self.business_list)
+
+        business_container = QWidget()
+        self.business_container_layout = QVBoxLayout()
+        business_container.setLayout(self.business_container_layout)
+        self.business_list.setWidgetResizable(True)
+
+        self.business_list.setWidget(business_container)
+        
     
     def populate_business_list(self, businesses: List[Business] = None) -> None:
-        self.list_widget.clear()
+        while self.business_container_layout.count():
+            item = self.business_container_layout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.setParent(None)
         for biz in businesses:
-            item_text = f"{biz.name} ({biz.category}) - ⭐ {biz.rating:.1f}"
-            item = QListWidgetItem(item_text)
-            # Store the underlying Business object for later retrieval
-            item.setData(Qt.UserRole, biz)
-            self.list_widget.addItem(item)
+            item = ListedBusiness(biz)
+            self.business_container_layout.addWidget(item)
+            item.main_button_clicked.connect(self.show_business_details.emit)
+            item.favorite_button_clicked.connect(self.favorite_business.emit)
+        self.business_container_layout.addStretch()
 
 
 class FavoritesPage(QWidget):
+
+    show_business_details = Signal(Business)
+    favorite_business = Signal(Business)
+
     def __init__(self) -> None:
         super().__init__()
         
@@ -88,7 +109,28 @@ class FavoritesPage(QWidget):
         info.setWordWrap(True)
         self.layout.addWidget(info)
 
-        self.layout.addStretch()
+        self.business_list = QScrollArea()
+        self.layout.addWidget(self.business_list)
+
+        business_container = QWidget()
+        self.business_container_layout = QVBoxLayout()
+        business_container.setLayout(self.business_container_layout)
+        self.business_list.setWidgetResizable(True)
+
+        self.business_list.setWidget(business_container)
+
+    def populate_business_list(self, businesses: List[Business] = None) -> None:
+        while self.business_container_layout.count():
+            item = self.business_container_layout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.setParent(None)
+        for biz in businesses:
+            item = ListedBusiness(biz)
+            self.business_container_layout.addWidget(item)
+            item.main_button_clicked.connect(self.show_business_details.emit)
+            item.favorite_button_clicked.connect(self.favorite_business.emit)
+        self.business_container_layout.addStretch()
 
 
 class AboutPage(QWidget):
@@ -114,20 +156,35 @@ class AboutPage(QWidget):
         self.layout.addWidget(text)
         self.layout.addStretch()
 
-    
+
 class BusinessPage(QWidget):
     def __init__(self) -> None:
         super().__init__()
+
+        # Business
+        self.business = None
         
         # Layout
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        # Text
+        # Title/Favorite Container
+        title_container = QWidget()
+        title_container_layout = QHBoxLayout()
+        title_container.setLayout(title_container_layout)
+        self.layout.addWidget(title_container)
+
+        # Title
         self.name_label = QLabel("Business")
         self.name_label.setObjectName("sectionLabel")
-        self.layout.addWidget(self.name_label)
+        title_container_layout.addWidget(self.name_label)
 
+        title_container_layout.addStretch()
+        # Favorite Button
+        self.favorite_button = FavoriteButton(self.business)
+        title_container_layout.addWidget(self.favorite_button)
+
+        # Description
         self.description = QLabel("Description")
         self.description.setWordWrap(True)
         self.description.setObjectName("sectionDescription")
@@ -141,7 +198,10 @@ class BusinessPage(QWidget):
         self.review_list_widget = QListWidget()
         self.layout.addWidget(self.review_list_widget)
 
-    def display_business(self, biz: Business):
+    def set_business(self, biz: Business):
+        self.business = biz
+        self.favorite_button.business = biz
+        self.favorite_button.update()
         self.name_label.setText(biz.name)
         #self.description.setText() Implement later
         self.populate_business_reviews(biz)

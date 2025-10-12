@@ -63,6 +63,12 @@ class MainWindow(QMainWindow):
 
         self.search_page.show_business_details.connect(self.open_business_page)
         self.search_page.search_bar_updated.connect(lambda text: self.search_page.populate_business_list(self.data.filter_business_list(text)))
+        self.search_page.favorite_business.connect(data_handler.toggle_favorite_business)
+
+        self.favorites_page.show_business_details.connect(self.open_business_page)
+        self.favorites_page.favorite_business.connect(data_handler.toggle_favorite_business)
+
+        self.business_page.favorite_button.click_signal.connect(lambda: self.data.toggle_favorite_business(self.business_page.favorite_button.business))
 
         root_layout.addWidget(self.sidebar)
         root_layout.addWidget(self.pages)
@@ -86,13 +92,14 @@ class MainWindow(QMainWindow):
         if index == 1:
             self.search_page.populate_business_list(self.data.filter_business_list(""))
 
+        if index == 2:
+            self.favorites_page.populate_business_list(self.data.get_favorite_businesses())
+
         # Exit button
         if index == 4:
             self.close()
 
-    def open_business_page(self, item: QListWidgetItem) -> None:
-        biz: Business = item.data(Qt.UserRole)
-        
-        self.business_page.display_business(biz)
+    def open_business_page(self, biz: Business) -> None:
 
+        self.business_page.set_business(biz)
         self.pages.setCurrentIndex(4)
