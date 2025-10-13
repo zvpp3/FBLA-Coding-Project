@@ -37,6 +37,10 @@ QWidget {
     padding: 8px 12px;
     text-align: center;
     border-radius: 4px;
+    font-size: 16px
+}
+#favButtonSmall:pressed {
+    font-size: 20px;
 }
 
 #favButtonLarge {
