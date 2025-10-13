@@ -32,7 +32,7 @@ class HomePage(QWidget):
         self.layout.setAlignment(Qt.AlignCenter)
 
         # Text
-        title = QLabel("Byte-Sized Business Boost")
+        title = QLabel("LocalLink")
         title.setObjectName("titleLabel")
         subtitle = QLabel("Discover and support your local businesses!")
         subtitle.setObjectName("subtitleLabel")

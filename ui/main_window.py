@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
     def __init__(self, data_handler: DataHandler) -> None:
         super().__init__()
 
-        self.setWindowTitle("Byte-Sized Business Boost")
+        self.setWindowTitle("LocalLink - A local business supporting app")
         self.resize(1000, 600)
 
         self.data = data_handler
