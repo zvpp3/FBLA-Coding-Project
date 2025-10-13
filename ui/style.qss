@@ -30,6 +30,28 @@ QWidget {
     background-color: #6272a4;
 }
 
+#favButtonSmall {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+#favButtonLarge {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 28px;
+}
+#favButtonLarge:pressed {
+    font-size: 32px;
+}
+
 /* Titles */
 #titleLabel {
     font-size: 32px;

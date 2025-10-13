@@ -181,7 +181,7 @@ class BusinessPage(QWidget):
 
         title_container_layout.addStretch()
         # Favorite Button
-        self.favorite_button = FavoriteButton(self.business)
+        self.favorite_button = FavoriteButton(self.business, "large")
         title_container_layout.addWidget(self.favorite_button)
 
         # Description

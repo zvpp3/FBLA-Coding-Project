@@ -14,13 +14,16 @@ from data.data_handler import Business
 
 class FavoriteButton(QPushButton):
     click_signal = Signal()
-    def __init__(self, biz: Business):
+    def __init__(self, biz: Business, size: str):
         super().__init__()
-
         self.business = biz
         if biz:
             self.update()
         self.clicked.connect(self.on_click)
+        if size == "small":
+            self.setObjectName("favButtonSmall")
+        else:
+            self.setObjectName("favButtonLarge")
 
     def on_click(self):
         self.click_signal.emit()
@@ -28,6 +31,14 @@ class FavoriteButton(QPushButton):
 
     def update(self):
         self.setText("★" if self.business.favorited else "☆")
+
+    def enterEvent(self, event):
+        self.setText("★")
+        super().enterEvent(event)
+    
+    def leaveEvent(self, event):
+        self.update()
+        super().leaveEvent(event)
 
 class ListedBusiness(QPushButton):
 
@@ -47,7 +58,7 @@ class ListedBusiness(QPushButton):
 
         self.layout.addStretch()
 
-        self.favorite_button = FavoriteButton(biz)
+        self.favorite_button = FavoriteButton(biz, "small")
         self.layout.addWidget(self.favorite_button)
         self.favorite_button.setVisible(False)
         
