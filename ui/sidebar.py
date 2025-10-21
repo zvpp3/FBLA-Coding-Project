@@ -15,37 +15,25 @@ class Sidebar(QWidget):
 
     def __init__(self) -> None:
         super().__init__()
-
         # Layout
         self.setFixedWidth(220)
         layout = QVBoxLayout(self)
         layout.setSpacing(8)
         layout.setContentsMargins(12, 24, 12, 24)
 
-        # Navigation buttons
-        self.btn_home = QPushButton("Home")
-        self.btn_home.setObjectName("navButton")
-        self.btn_home.clicked.connect(lambda: self.button_selected.emit(0))
-
-        self.btn_biz = QPushButton("Businesses")
-        self.btn_biz.setObjectName("navButton")
-        self.btn_biz.clicked.connect(lambda: self.button_selected.emit(1))
-
-        self.btn_fav = QPushButton("Favorites")
-        self.btn_fav.setObjectName("navButton")
-        self.btn_fav.clicked.connect(lambda: self.button_selected.emit(2))
-
-        self.btn_about = QPushButton("About")
-        self.btn_about.setObjectName("navButton")
-        self.btn_about.clicked.connect(lambda: self.button_selected.emit(3))
-
-        self.btn_exit = QPushButton("Exit")
-        self.btn_exit.setObjectName("navButton")
-        self.btn_exit.clicked.connect(lambda: self.button_selected.emit(4))
-
-        # Add buttons to sidebar
-        for btn in [self.btn_home, self.btn_biz, self.btn_fav, self.btn_about, self.btn_exit]:
+        # helper to create nav buttons
+        def make_button(text: str, idx: int):
+            btn = QPushButton(text)
+            btn.setObjectName("navButton")
             btn.setMinimumHeight(36)
+            btn.clicked.connect(lambda _, i=idx: self.button_selected.emit(i))
             layout.addWidget(btn)
+            return btn
+
+        self.btn_home = make_button("Home", 0)
+        self.btn_biz = make_button("Businesses", 1)
+        self.btn_fav = make_button("Favorites", 2)
+        self.btn_about = make_button("About", 3)
+        self.btn_exit = make_button("Exit", 4)
 
         layout.addStretch()

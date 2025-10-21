@@ -1,7 +1,9 @@
 [
   {
+    "id": "sunshine-cafe",
     "name": "Sunshine Cafe",
     "category": "Food",
+    "description": "A cozy place for breakfast and brunch. This cafe will bring you all of the sunshine you need in a day.",
     "reviews": [
       {
         "user": "G. Washington",
@@ -22,6 +24,7 @@
     "deals": ["10% off breakfast before 9 AM"]
   },
   {
+    "id": "village-bookshop",
     "name": "Village Bookshop",
     "category": "Retail",
     "reviews": [
@@ -34,6 +37,7 @@
     "deals": ["Buy 2 get 1 free on used books"]
   },
   {
+    "id": "paws-claws-grooming",
     "name": "Paws & Claws Grooming",
     "category": "Services",
     "reviews": [
@@ -51,6 +55,7 @@
     "deals": ["20% off for new customers"]
   },
   {
+    "id": "bobs-burgers",
     "name": "Bob's Burgers",
     "category": "Food",
     "reviews": [
@@ -63,6 +68,7 @@
     "deals": ["Sell your soul for the premium patty!"]
   },
   {
+    "id": "krusty-krab",
     "name": "Krusty Krab",
     "category": "Food",
     "reviews": [
