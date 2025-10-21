@@ -17,9 +17,9 @@ from PySide6.QtWidgets import (
     QSizePolicy,
 )
 
-from typing import List
+from typing import List, Optional
 
-from data.data_handler import Business
+from data.data_handler import BusinessRecord
 from ui.business_ui import ListedBusiness, FavoriteButton
 
 class HomePage(QWidget):
@@ -40,10 +40,25 @@ class HomePage(QWidget):
         self.layout.addWidget(subtitle)
 
 
+def populate_business_list(container_layout, businesses: Optional[List[BusinessRecord]]) -> None:
+    # utility used by SearchPage and FavoritesPage
+    while container_layout.count():
+        it = container_layout.takeAt(0)
+        w = it.widget()
+        if w:
+            w.setParent(None)
+    if not businesses:
+        return
+    for biz in businesses:
+        item = ListedBusiness(biz)
+        container_layout.addWidget(item)
+        # caller will wire signals
+    container_layout.addStretch()
+
 class SearchPage(QWidget):
-    # Signal
-    show_business_details = Signal(Business)
-    favorite_business = Signal(Business)
+    # Signals
+    show_business_details = Signal(BusinessRecord)
+    favorite_business = Signal(BusinessRecord)
     search_bar_updated = Signal(str)
 
     def __init__(self) -> None:
@@ -64,73 +79,47 @@ class SearchPage(QWidget):
         # Business List
         # This is being switched to a scroll box. If there are performance issues, consider using QListView
 
-        self.business_list = QScrollArea()
-        self.layout.addWidget(self.business_list)
+        self.business_list = QScrollArea(); self.layout.addWidget(self.business_list)
+        business_container = QWidget(); self.business_container_layout = QVBoxLayout(); business_container.setLayout(self.business_container_layout)
+        self.business_list.setWidgetResizable(True); self.business_list.setWidget(business_container)
 
-        business_container = QWidget()
-        self.business_container_layout = QVBoxLayout()
-        business_container.setLayout(self.business_container_layout)
-        self.business_list.setWidgetResizable(True)
-
-        self.business_list.setWidget(business_container)
-        
-    
-    def populate_business_list(self, businesses: List[Business] = None) -> None:
-        while self.business_container_layout.count():
-            item = self.business_container_layout.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.setParent(None)
-        for biz in businesses:
-            item = ListedBusiness(biz)
-            self.business_container_layout.addWidget(item)
-            item.main_button_clicked.connect(self.show_business_details.emit)
-            item.favorite_button_clicked.connect(self.favorite_business.emit)
-        self.business_container_layout.addStretch()
+    def populate_business_list(self, businesses: Optional[List[BusinessRecord]]) -> None:
+        populate_business_list(self.business_container_layout, businesses)
+        # wire signals for the new items
+        for i in range(self.business_container_layout.count()):
+            it = self.business_container_layout.itemAt(i)
+            if not it:
+                continue
+            w = it.widget()
+            if isinstance(w, ListedBusiness):
+                w.main_button_clicked.connect(self.show_business_details.emit)
+                w.favorite_button_clicked.connect(self.favorite_business.emit)
 
 
 class FavoritesPage(QWidget):
 
-    show_business_details = Signal(Business)
-    favorite_business = Signal(Business)
+    show_business_details = Signal(BusinessRecord)
+    favorite_business = Signal(BusinessRecord)
 
     def __init__(self) -> None:
         super().__init__()
-        
-        # Layout
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
+        self.layout = QVBoxLayout(); self.setLayout(self.layout)
+        label = QLabel("Favorites"); label.setObjectName("sectionLabel"); self.layout.addWidget(label)
+        info = QLabel("Your saved businesses will appear here."); info.setWordWrap(True); self.layout.addWidget(info)
+        self.business_list = QScrollArea(); self.layout.addWidget(self.business_list)
+        business_container = QWidget(); self.business_container_layout = QVBoxLayout(); business_container.setLayout(self.business_container_layout)
+        self.business_list.setWidgetResizable(True); self.business_list.setWidget(business_container)
 
-        # Placeholder Text
-        label = QLabel("Favorites")
-        label.setObjectName("sectionLabel")
-        self.layout.addWidget(label)
-        info = QLabel("Your saved businesses will appear here.")
-        info.setWordWrap(True)
-        self.layout.addWidget(info)
-
-        self.business_list = QScrollArea()
-        self.layout.addWidget(self.business_list)
-
-        business_container = QWidget()
-        self.business_container_layout = QVBoxLayout()
-        business_container.setLayout(self.business_container_layout)
-        self.business_list.setWidgetResizable(True)
-
-        self.business_list.setWidget(business_container)
-
-    def populate_business_list(self, businesses: List[Business] = None) -> None:
-        while self.business_container_layout.count():
-            item = self.business_container_layout.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.setParent(None)
-        for biz in businesses:
-            item = ListedBusiness(biz)
-            self.business_container_layout.addWidget(item)
-            item.main_button_clicked.connect(self.show_business_details.emit)
-            item.favorite_button_clicked.connect(self.favorite_business.emit)
-        self.business_container_layout.addStretch()
+    def populate_business_list(self, businesses: Optional[List[BusinessRecord]]) -> None:
+        populate_business_list(self.business_container_layout, businesses)
+        for i in range(self.business_container_layout.count()):
+            it = self.business_container_layout.itemAt(i)
+            if not it:
+                continue
+            w = it.widget()
+            if isinstance(w, ListedBusiness):
+                w.main_button_clicked.connect(self.show_business_details.emit)
+                w.favorite_button_clicked.connect(self.favorite_business.emit)
 
 
 class AboutPage(QWidget):
@@ -198,12 +187,11 @@ class BusinessPage(QWidget):
         self.review_list_widget = QListWidget()
         self.layout.addWidget(self.review_list_widget)
 
-    def set_business(self, biz: Business):
+    def set_business(self, biz: BusinessRecord):
         self.business = biz
-        self.favorite_button.business = biz
-        self.favorite_button.update()
+        self.favorite_button.set_business(biz)
+        # the caller (main window) should set the visual star state after this
         self.name_label.setText(biz.name)
-        #self.description.setText() Implement later
         self.populate_business_reviews(biz)
 
     def populate_business_reviews(self, biz):
