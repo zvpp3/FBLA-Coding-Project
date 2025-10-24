@@ -48,13 +48,33 @@ class HomePage(Page):
         self.setLayout(self.layout)
         self.layout.setAlignment(Qt.AlignCenter)
 
-        # Text
+        # Title
         title = QLabel("LocalLink - An app to support local businesses")
         title.setObjectName("titleLabel")
+        self.layout.addWidget(title)
+        self.layout.addStretch()
+
+        # Subtitle
         subtitle = QLabel("Discover and support your local businesses!")
         subtitle.setObjectName("subtitleLabel")
-        self.layout.addWidget(title)
         self.layout.addWidget(subtitle)
+
+        # About Text
+        text = QLabel(
+            "This application was developed by a high school team for the FBLA "
+            "Coding & Programming event.\n\n"
+            "Built with Python and PySide6, it demonstrates how modern design and "
+            "clean code can be combined to create a useful tool for supporting "
+            "local businesses."
+        )
+        text.setWordWrap(True)
+        self.layout.addWidget(text)
+        self.layout.addStretch()
+
+        # Credits Text
+        credits = QLabel("Developed by Ever Otto, Avery Roelofsen, Guru Madana")
+        credits.setWordWrap(True)
+        self.layout.addWidget(credits)
 
 
 class SearchPage(Page):
@@ -122,30 +142,6 @@ class FavoritesPage(Page):
         self.business_list.populate("", True)
 
 
-class AboutPage(Page):
-    def __init__(self, data: DataHandler) -> None:
-        super().__init__(data)
-        
-        # Layout
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
-
-        # Text
-        label = QLabel("About")
-        label.setObjectName("sectionLabel")
-        self.layout.addWidget(label)
-        text = QLabel(
-            "This application was developed by a high school team for the FBLA "
-            "Coding & Programming event.\n\n"
-            "Built with Python and PySide6, it demonstrates how modern design and "
-            "clean code can be combined to create a useful tool for supporting "
-            "local businesses."
-        )
-        text.setWordWrap(True)
-        self.layout.addWidget(text)
-        self.layout.addStretch()
-
-
 class BusinessPage(Page):
     def __init__(self, data: DataHandler) -> None:
         super().__init__(data)
@@ -192,6 +188,7 @@ class BusinessPage(Page):
         self.name_label.setText(biz.name)
         self.populate_business_reviews(biz)
         self.favorite_button.set_business(biz)
+        self.description.setText(biz.description)
 
     def populate_business_reviews(self, biz: Business):
         # Populate the reviews list widget with the business's reviews
