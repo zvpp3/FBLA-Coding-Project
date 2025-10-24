@@ -14,6 +14,7 @@ class Business:
     id: str
     name: str
     category: str
+    description: str
     reviews: List[dict]
     deals: List[str]
 
@@ -42,6 +43,7 @@ class DataHandler:
             self.businesses.append(Business(biz.get("id", ""),
                                             biz.get("name", ""),
                                             biz.get("category", ""),
+                                            biz.get("description", ""),
                                             biz.get("reviews", []),
                                             biz.get("deals", [])))
 

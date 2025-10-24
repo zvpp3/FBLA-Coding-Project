@@ -21,7 +21,6 @@ from ui.pages import (
     HomePage,
     SearchPage,
     FavoritesPage,
-    AboutPage,
     BusinessPage,
     Page,
 )
@@ -51,13 +50,11 @@ class MainWindow(QMainWindow):
         self.home_page = HomePage(self.data)
         self.search_page = SearchPage(self.data)
         self.favorites_page = FavoritesPage(self.data)
-        self.about_page = AboutPage(self.data)
         self.business_page = BusinessPage(self.data)
 
         self.pages.addWidget(self.home_page)
         self.pages.addWidget(self.search_page)
         self.pages.addWidget(self.favorites_page)
-        self.pages.addWidget(self.about_page)
         self.pages.addWidget(self.business_page)
 
         # Wire signals
@@ -79,7 +76,7 @@ class MainWindow(QMainWindow):
     #  Event handlers
     def sidebar_button_selected(self, index: int):
         # Switch page if button is home, businesses, favorites, or about
-        if index >= 0 and index <= 3:
+        if index >= 0 and index <= 2:
             self.pages.setCurrentIndex(index)
 
             current = self.pages.currentWidget()
@@ -87,9 +84,9 @@ class MainWindow(QMainWindow):
                 current.page_shown()
 
         # Exit button
-        if index == 4:
+        if index == 3:
             self.close()
 
     def open_business_page(self, biz: Business) -> None:
         self.business_page.set_business(biz)
-        self.pages.setCurrentIndex(4)
+        self.pages.setCurrentIndex(3)
