@@ -107,10 +107,10 @@ class SearchPage(Page):
         if item:
             item.main_button_signal.connect(self.show_business_details.emit)
 
-    def _search_bar_updated(self, text: str):
+    def _search_bar_updated(self, text: str) -> None:
         self.business_list.populate(text)
     
-    def page_shown(self):
+    def page_shown(self) -> None:
         super().page_shown()
         self.business_list.populate()
 
@@ -158,6 +158,7 @@ class BusinessPage(Page):
         title_container_layout = QHBoxLayout()
         title_container.setLayout(title_container_layout)
         self.layout.addWidget(title_container)
+        title_container_layout.setContentsMargins(0, 0, 0, 0)
 
         # Title
         self.name_label = QLabel("Business")
@@ -183,14 +184,14 @@ class BusinessPage(Page):
         self.review_list_widget = QListWidget()
         self.layout.addWidget(self.review_list_widget)
 
-    def set_business(self, biz: Business):
+    def set_business(self, biz: Business) -> None:
         self.business = biz
         self.name_label.setText(biz.name)
         self.populate_business_reviews(biz)
         self.favorite_button.set_business(biz)
         self.description.setText(biz.description)
 
-    def populate_business_reviews(self, biz: Business):
+    def populate_business_reviews(self, biz: Business) -> None:
         # Populate the reviews list widget with the business's reviews
         self.review_list_widget.clear()
         for review in biz.reviews:

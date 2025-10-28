@@ -19,7 +19,7 @@ class FavoriteButton(QPushButton):
     """ A simple button that communicates with the data handler to add and remove favorite businesses """
     click_signal = Signal()
 
-    def __init__(self, data: DataHandler, biz: Business, size: str = "small"):
+    def __init__(self, data: DataHandler, biz: Business, size: str = "small") -> None:
         super().__init__()
         self.data = data
         self.business = biz

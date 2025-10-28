@@ -30,7 +30,7 @@ from data.data_handler import (
 )
 
 class MainWindow(QMainWindow):
-    def __init__(self, data: DataHandler) -> None:
+    def __init__(self, data: DataHandler, apply_style: bool = True) -> None:
         super().__init__()
         self.setWindowTitle("LocalLink")
         self.resize(1000, 600)
@@ -68,13 +68,14 @@ class MainWindow(QMainWindow):
         self.sidebar.button_selected.connect(self.sidebar_button_selected)
 
         # Load stylesheet
-        qss_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "style.qss")
-        if os.path.exists(qss_path):
-            with open(qss_path, "r", encoding="utf8") as file:
-                self.setStyleSheet(file.read())
+        if apply_style:
+            qss_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "style.qss")
+            if os.path.exists(qss_path):
+                with open(qss_path, "r", encoding="utf8") as file:
+                    self.setStyleSheet(file.read())
 
     #  Event handlers
-    def sidebar_button_selected(self, index: int):
+    def sidebar_button_selected(self, index: int) -> None:
         # Switch page if button is home, businesses, favorites, or about
         if index >= 0 and index <= 2:
             self.pages.setCurrentIndex(index)
