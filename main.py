@@ -1,10 +1,3 @@
-"""Refactored LocalLink main module.
-
-This version organizes the app into clearer functions/classes, uses a
-dataclass for business records, human-readable names, and keeps the
-existing behavior (search, details, reviews, favorites persistence).
-"""
-
 from __future__ import annotations
 
 import json
@@ -35,7 +28,7 @@ DATA_FILE = "data/businesses.json"
 def main() -> None:
     data_handler = DataHandler()
     app = QApplication(sys.argv)
-    window = MainWindow(data_handler)
+    window = MainWindow(data_handler, True)
     window.show()
     sys.exit(app.exec())
 

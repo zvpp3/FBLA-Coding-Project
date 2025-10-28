@@ -22,7 +22,7 @@ class Sidebar(QWidget):
         layout.setContentsMargins(12, 24, 12, 24)
 
         # helper to create nav buttons
-        def make_button(text: str, idx: int):
+        def make_button(text: str, idx: int) -> QPushButton:
             btn = QPushButton(text)
             btn.setObjectName("navButton")
             btn.setMinimumHeight(36)

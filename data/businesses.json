@@ -27,6 +27,7 @@
     "id": "village-bookshop",
     "name": "Village Bookshop",
     "category": "Retail",
+    "description": "A charming independent bookstore offering a curated selection of books, cozy reading nooks, and regular author events.",
     "reviews": [
       {
         "user": "P. Griffin",
@@ -40,6 +41,7 @@
     "id": "paws-claws-grooming",
     "name": "Paws & Claws Grooming",
     "category": "Services",
+    "description": "Professional pet grooming services for dogs and cats, including baths, haircuts, nail trimming, and more.",
     "reviews": [
       {
         "user": "John W.",
@@ -58,6 +60,7 @@
     "id": "bobs-burgers",
     "name": "Bob's Burgers",
     "category": "Food",
+    "description": "Home of the best burgers in town, made with fresh ingredients and a side of quirky humor.",
     "reviews": [
       {
         "user": "E. Pressley",
@@ -71,6 +74,7 @@
     "id": "krusty-krab",
     "name": "Krusty Krab",
     "category": "Food",
+    "description": "Famous for its delicious Krabby Patties and nautical-themed dining experience.",
     "reviews": [
       {
         "user": "S. Bob",
