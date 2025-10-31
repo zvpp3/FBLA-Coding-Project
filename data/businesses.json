@@ -7,21 +7,38 @@
     "reviews": [
       {
         "user": "G. Washington",
-        "text": "Great coffee and friendly service!",
-        "rating": 5
+        "rating": 5,
+        "text": "Great coffee and friendly service!"
       },
       {
         "user": "Stella L.",
-        "text": "Horrible! The coffee was too hot, I'm planning on suing.",
-        "rating": 1
+        "rating": 1,
+        "text": "Horrible! The coffee was too hot, I'm planning on suing."
       },
       {
         "user": "Alexander H.",
-        "text": "Pretty good",
-        "rating": 4
+        "rating": 4,
+        "text": "Pretty good"
+      },
+      {
+        "user": "anonymous",
+        "rating": 5,
+        "text": "hi I am super mysterious haha"
+      },
+      {
+        "user": "Lincoln A.",
+        "rating": 5,
+        "text": "Nice"
+      },
+      {
+        "user": "BadReviewer2015",
+        "rating": 1,
+        "text": "muahaha bad review"
       }
     ],
-    "deals": ["10% off breakfast before 9 AM"]
+    "deals": [
+      "10% off breakfast before 9 AM"
+    ]
   },
   {
     "id": "village-bookshop",
@@ -31,11 +48,18 @@
     "reviews": [
       {
         "user": "P. Griffin",
-        "text": "Wide selection of books and cozy atmosphere.",
-        "rating": 4
+        "rating": 5,
+        "text": "Wide selection of books and cozy atmosphere."
+      },
+      {
+        "user": "Jimmy D.",
+        "rating": 4,
+        "text": "Last to step out of the bookstore wins $10,000,000!!"
       }
     ],
-    "deals": ["Buy 2 get 1 free on used books"]
+    "deals": [
+      "Buy 2 get 1 free on used books"
+    ]
   },
   {
     "id": "paws-claws-grooming",
@@ -45,16 +69,28 @@
     "reviews": [
       {
         "user": "John W.",
-        "text": "My dog loves coming here!",
-        "rating": 5
+        "rating": 5,
+        "text": "My dog loves coming here!"
       },
       {
         "user": "Walter H.W.",
-        "text": "Meh",
-        "rating": 3
+        "rating": 3,
+        "text": "Meh"
+      },
+      {
+        "user": "Brian G.",
+        "rating": 5,
+        "text": "Man I love this place"
+      },
+      {
+        "user": "Kevin G.",
+        "rating": 3,
+        "text": "I'm a Dog!!!!"
       }
     ],
-    "deals": ["20% off for new customers"]
+    "deals": [
+      "20% off for new customers"
+    ]
   },
   {
     "id": "bobs-burgers",
@@ -64,11 +100,18 @@
     "reviews": [
       {
         "user": "E. Pressley",
-        "text": "Good burgers.",
-        "rating": 5
+        "rating": 5,
+        "text": "Good burgers."
+      },
+      {
+        "user": "John D.",
+        "rating": 5,
+        "text": "This place was freaking great! Definitely coming back."
       }
     ],
-    "deals": ["Sell your soul for the premium patty!"]
+    "deals": [
+      "Sell your soul for the premium patty!"
+    ]
   },
   {
     "id": "krusty-krab",
@@ -78,15 +121,59 @@
     "reviews": [
       {
         "user": "S. Bob",
-        "text": "Great service, great fry cook!",
-        "rating": 5
+        "rating": 5,
+        "text": "Great service, great fry cook!"
       },
       {
         "user": "Plank T.",
-        "text": "They wouldn't give me the formula",
-        "rating": 1
+        "rating": 1,
+        "text": "They wouldn't give me the formula"
+      },
+      {
+        "user": "Patrick S.",
+        "rating": 5,
+        "text": "Amazing!\nGreat!\nCool!"
       }
     ],
-    "deals": ["Bring your own crab, make your own patty!!"]
+    "deals": [
+      "Bring your own crab, make your own patty!!"
+    ]
+  },
+  {
+    "id": "burg-fil-o",
+    "name": "Burg-fil-o",
+    "category": "Food",
+    "description": "Only open on Sundays!",
+    "reviews": [
+      {
+        "user": "Dave B.",
+        "rating": 1,
+        "text": "If I had one word to describe it - HORRIBLE.\nService was non existent, food quality was garbage equivalent - soggy and wet patty and fries.\nOne burger was literally missing the patty, how is that even possible?!\nSave yourself some time and go anywhere else, as I would prefer to eat dog food next time rather than eat food from this place. Absolutely gross"
+      },
+      {
+        "user": "T. Scott",
+        "rating": 1,
+        "text": "By far the worst restaurant in the USA. ABSOLUTELY TERRIBLE SERVICE. It's such bad service that it's laughable. It starts from the top from the manager. She doesn't fit the mold of a manager. Cold shoulder, doesn't care, no empathy.\nLet's talk about the food now. There's always something wrong with the order. Whether it's something missing or something is burnt or cold. Comes back to the service and management and training. If that ever happened anywhere else, you'd get free entre cards or something.\nIn summary, this place falls behind any other restaurant."
+      },
+      {
+        "user": "Kevin G.",
+        "rating": 1,
+        "text": "Horrible location, food wrong. Plan to wait and fight getting into the parking lot. Doesn't seem to stop anyone from coming even with all the poor reviews. I will not be back."
+      },
+      {
+        "user": "Ice S.",
+        "rating": 2,
+        "text": "Food is always fine, but the wait times are unbelievable. In no world should it take 25 minutes to get through a drive thru. It's astounding how slow things move."
+      }
+    ],
+    "deals": []
+  },
+  {
+    "id": "mysterious-shop",
+    "name": "Mysterious Shop",
+    "category": "?",
+    "description": "Not even we know what we sell here",
+    "reviews": [],
+    "deals": "[redacted]"
   }
 ]
