@@ -23,6 +23,7 @@ from ui.pages import (
     FavoritesPage,
     BusinessPage,
     Page,
+    ReviewPage,
 )
 from data.data_handler import (
     DataHandler,
@@ -51,15 +52,19 @@ class MainWindow(QMainWindow):
         self.search_page = SearchPage(self.data)
         self.favorites_page = FavoritesPage(self.data)
         self.business_page = BusinessPage(self.data)
+        self.review_page = ReviewPage(self.data)
 
         self.pages.addWidget(self.home_page)
         self.pages.addWidget(self.search_page)
         self.pages.addWidget(self.favorites_page)
         self.pages.addWidget(self.business_page)
+        self.pages.addWidget(self.review_page)
 
         # Wire signals
         self.search_page.show_business_details.connect(self.open_business_page)
         self.favorites_page.show_business_details.connect(self.open_business_page)
+        self.business_page.leave_review_clicked.connect(lambda biz: self.open_review_page(biz))
+        self.review_page.review_submitted_signal.connect(lambda: self.open_business_page(self.business_page.business))
 
         root_layout.addWidget(self.sidebar)
         root_layout.addWidget(self.pages)
@@ -91,3 +96,7 @@ class MainWindow(QMainWindow):
     def open_business_page(self, biz: Business) -> None:
         self.business_page.set_business(biz)
         self.pages.setCurrentIndex(3)
+    
+    def open_review_page(self, biz: Business) -> None:
+        self.review_page.set_business(biz)
+        self.pages.setCurrentIndex(4)

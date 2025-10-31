@@ -16,6 +16,7 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QSizePolicy,
     QLayout,
+    QTextEdit,
 )
 
 from dataclasses import dataclass
@@ -29,6 +30,7 @@ from ui.business_ui import (
     ListedBusiness,
     FavoriteButton,
     BusinessList,
+    ReviewList,
 )
 
 class Page(QWidget):
@@ -143,6 +145,9 @@ class FavoritesPage(Page):
 
 
 class BusinessPage(Page):
+
+    leave_review_clicked = Signal(Business)
+
     def __init__(self, data: DataHandler) -> None:
         super().__init__(data)
 
@@ -153,11 +158,22 @@ class BusinessPage(Page):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
+        # Central Widget
+        self.central_widget = QWidget()
+        self.central_widget_layout = QVBoxLayout(self.central_widget)
+
+        # Scroll Box
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidget(self.central_widget)
+        self.scroll_area.setWidgetResizable(True)
+        self.layout.addWidget(self.scroll_area)
+        self.scroll_area.setContentsMargins(0, 0, 0, 0)
+
         # Title/Favorite Container
         title_container = QWidget()
         title_container_layout = QHBoxLayout()
         title_container.setLayout(title_container_layout)
-        self.layout.addWidget(title_container)
+        self.central_widget_layout.addWidget(title_container)
         title_container_layout.setContentsMargins(0, 0, 0, 0)
 
         # Title
@@ -166,6 +182,7 @@ class BusinessPage(Page):
         title_container_layout.addWidget(self.name_label)
 
         title_container_layout.addStretch()
+
         # Favorite Button
         self.favorite_button = FavoriteButton(self.data, self.business, "large")
         title_container_layout.addWidget(self.favorite_button)
@@ -174,27 +191,122 @@ class BusinessPage(Page):
         self.description = QLabel("Description")
         self.description.setWordWrap(True)
         self.description.setObjectName("sectionDescription")
-        self.layout.addWidget(self.description)
+        self.central_widget_layout.addWidget(self.description)
 
-        self.layout.addStretch()
+        # Leave a Review
+        leave_review_button = QPushButton("Leave a Review")
+        leave_review_button.setStyleSheet("""
+            QPushButton {
+                color: #0077cc;
+                background: transparent;
+                border: none;
+                text-decoration: none;
+            }
+            QPushButton:hover {
+                text-decoration: underline;
+            }
+        """)
+        self.central_widget_layout.addWidget(leave_review_button)
+        leave_review_button.setCursor(Qt.PointingHandCursor)
+        leave_review_button.clicked.connect(lambda: self.leave_review_clicked.emit(self.business))
+
+        # Restrict size policy
+        leave_review_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        leave_review_button.setFixedWidth(100)
+        leave_review_button.adjustSize()
 
         # Reviews
         reviews_label = QLabel("Reviews")
-        self.layout.addWidget(reviews_label)
-        self.review_list_widget = QListWidget()
-        self.layout.addWidget(self.review_list_widget)
+        self.central_widget_layout.addWidget(reviews_label)
+        self.review_list = ReviewList(self.business)
+        self.central_widget_layout.addWidget(self.review_list)
 
     def set_business(self, biz: Business) -> None:
         self.business = biz
         self.name_label.setText(biz.name)
-        self.populate_business_reviews(biz)
+        self.review_list.business = biz
+        self.review_list.populate()
         self.favorite_button.set_business(biz)
         self.description.setText(biz.description)
 
-    def populate_business_reviews(self, biz: Business) -> None:
-        # Populate the reviews list widget with the business's reviews
-        self.review_list_widget.clear()
-        for review in biz.reviews:
-            item_text = f"{review['user']} (⭐ {review['rating']}) - {review['text']}"
-            item = QListWidgetItem(item_text)
-            self.review_list_widget.addItem(item)
+class ReviewPage(Page):
+
+    review_submitted_signal = Signal()
+
+    def __init__(self, data: DataHandler) -> None:
+        super().__init__(data)
+
+        # Data
+        self.business: Business = None
+        self.rating = 0
+        
+        # Layout
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+
+        # Title
+        self.name_label = QLabel(f"Leaving a review on ")
+        self.name_label.setObjectName("sectionLabel")
+        self.layout.addWidget(self.name_label)
+
+        # Stars Picker
+        stars_container = QWidget()
+        stars_layout = QHBoxLayout(stars_container)
+        self.star_buttons: List[QPushButton] = []
+        for i in range(1, 6):
+            btn = QPushButton("☆")
+            btn.setObjectName("starButton")
+            btn.setFixedSize(40, 40)
+            btn.setStyleSheet("font-size: 24px; color: #ffaa00; background: transparent; border: none;")
+            btn.setCursor(Qt.PointingHandCursor)
+            btn.clicked.connect(lambda _, rating=i: self._star_clicked(rating))
+            stars_layout.addWidget(btn)
+            self.star_buttons.append(btn)
+            btn.setAutoFillBackground(False)
+        for btn in self.star_buttons:
+            stars_layout.addWidget(btn)
+        stars_layout.addStretch()
+        self.layout.addWidget(stars_container)
+
+        # User Line Edit
+        self.line_edit = QLineEdit()
+        self.line_edit.setPlaceholderText("Username")
+        self.layout.addWidget(self.line_edit)
+        self.line_edit.textChanged.connect(self.update_submit_button_enabled)
+
+        # Text Edit
+        self.review_text_edit = QTextEdit()
+        self.review_text_edit.setPlaceholderText("Tell us your experience...")
+        self.layout.addWidget(self.review_text_edit)
+        self.review_text_edit.textChanged.connect(self.update_submit_button_enabled)
+
+        # Submit Button
+        self.submit_button = QPushButton("Submit")
+        self.submit_button.setObjectName("primaryButton")
+        self.layout.addWidget(self.submit_button)
+        self.submit_button.setFixedWidth(100)
+        self.submit_button.clicked.connect(self.submit_review)
+
+    def set_business(self, biz: Business):
+        self.review_text_edit.clear()
+        self.business = biz
+        self.name_label.setText(f"Leaving a review on {biz.name}")
+        self._star_clicked(0)
+        self.line_edit.clear()
+
+    def _star_clicked(self, rating: int) -> None:
+        self.rating = rating
+        for i, btn in enumerate(self.star_buttons, start=1):
+            if i <= rating:
+                btn.setText("★")
+            else:
+                btn.setText("☆")
+        self.update_submit_button_enabled()
+
+    def update_submit_button_enabled(self) -> None:
+        self.submit_button.setEnabled(self.rating >= 1 and self.rating <= 5 and len(self.review_text_edit.toPlainText().strip()) > 0 and len(self.line_edit.text().strip()) > 0)
+
+    def submit_review(self) -> None:
+        if self.rating >= 1 and self.rating <= 5 and len(self.review_text_edit.toPlainText().strip()) > 0 and len(self.line_edit.text().strip()) > 0:
+            self.data.add_review(self.business, self.line_edit.text().strip(), self.rating, self.review_text_edit.toPlainText().strip())
+            self.review_submitted_signal.emit()

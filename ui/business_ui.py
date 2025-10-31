@@ -11,6 +11,7 @@ from PySide6.QtWidgets import (
 from data.data_handler import (
     Business,
     DataHandler,
+    Review,
 )
 
 from typing import Optional
@@ -111,8 +112,9 @@ class BusinessList(QScrollArea):
                 widget.setParent(None)
     
     def _add_business_to_list(self, biz: Business) -> None:
-        item = ListedBusiness(biz)
+        item = ListedBusiness(self.data, biz)
         self.business_container_layout.addWidget(item)
+        self.business_added_signal.emit(item)
 
     def populate(self, query: str = "", onlyFavs: bool = False) -> None:
         self._clear_list()
@@ -121,14 +123,74 @@ class BusinessList(QScrollArea):
             filtered_list = self.data.search(query)
         elif onlyFavs:
             filtered_list = self.data.favorite_businesses()
-            # for biz in filtered_list:
-            #     print(biz.name)
         else:
             filtered_list = self.data.list_businesses()
 
         for biz in filtered_list:
-            item = ListedBusiness(self.data, biz)
-            self.business_container_layout.addWidget(item)
-            self.business_added_signal.emit(item)
+            self._add_business_to_list(biz)
 
         self.business_container_layout.addStretch()
+
+
+class ReviewItem(QWidget):
+    """ The type of element to go inside ReviewLists (see below) """
+
+    def __init__(self, review: Review) -> None:
+        super().__init__()
+        self.review = review
+        layout = QVBoxLayout(self)
+
+        user_label = QLabel(f"{review.user}")
+        layout.addWidget(user_label)
+
+        rating_date_container = QWidget()
+        rating_date_layout = QHBoxLayout()
+        rating_date_container.setLayout(rating_date_layout)
+
+        rating_label = QLabel(f"{'★' * review.rating + '☆' * (5 - review.rating)}")
+        rating_label.setStyleSheet("color: #f1c40f;")
+        rating_date_layout.addWidget(rating_label)
+        date_label = QLabel("Jan 1, 2025") # Date placeholder
+        rating_date_layout.addWidget(date_label)
+
+        #layout.addWidget(rating_date_container)
+        layout.addWidget(rating_label)
+
+        review_text = QLabel(review.text)
+        review_text.setWordWrap(True)
+        layout.addWidget(review_text)
+
+class ReviewList(QWidget):
+    """ A way to list reviews, such as in the business page
+    If this causes performance issues this can be changed to a QListView or similar"""
+
+    def __init__(self, biz: Business) -> None:
+        super().__init__()
+
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+
+        # Data
+        self.business = biz
+
+    def _clear_list(self) -> None:
+        while self.layout.count():
+            item = self.layout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.setParent(None)
+    
+    def _add_review_to_list(self, review: Review) -> None:
+        item = ReviewItem(review)
+        self.layout.addWidget(item)
+
+    def populate(self) -> None:
+        self._clear_list()
+
+        reviews = self.business.reviews
+
+        for review in reviews:
+            self._add_review_to_list(review)
+
+        self.layout.addStretch()
+    
