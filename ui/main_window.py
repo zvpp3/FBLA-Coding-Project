@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QStackedWidget,
     QVBoxLayout,
     QWidget,
+    QScrollArea,
 )
 
 from ui.sidebar import Sidebar
@@ -66,8 +67,14 @@ class MainWindow(QMainWindow):
         self.business_page.leave_review_clicked.connect(lambda biz: self.open_review_page(biz))
         self.review_page.review_submitted_signal.connect(lambda: self.open_business_page(self.business_page.business))
 
+        # Scroll Area
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidget(self.pages)
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setContentsMargins(0, 0, 0, 0)
+
         root_layout.addWidget(self.sidebar)
-        root_layout.addWidget(self.pages)
+        root_layout.addWidget(self.scroll_area)
 
         # Sidebar behavior
         self.sidebar.button_selected.connect(self.sidebar_button_selected)
@@ -81,7 +88,7 @@ class MainWindow(QMainWindow):
 
     #  Event handlers
     def sidebar_button_selected(self, index: int) -> None:
-        # Switch page if button is home, businesses, favorites, or about
+        # Switch page if button is home, search, or favorites
         if index >= 0 and index <= 2:
             self.pages.setCurrentIndex(index)
 

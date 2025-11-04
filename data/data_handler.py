@@ -113,19 +113,34 @@ class DataHandler:
     def list_businesses(self) -> List[Business]:
         return self.businesses
 
-    def search(self, query: str) -> List[Business]:
+    def filter_businesses(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], only_favs: bool) -> List[Business]:
+
+        filtered: List[Business] = self.list_businesses().copy()
 
         # Lower case and strip query
         query_clean = (query or "").lower().strip()
 
-        if not query_clean:
-            return self.businesses
-        
-        filtered = []
-        for biz in self.businesses:
-            # Query in name or category
-            if query_clean in biz.name.lower() or query_clean in biz.category.lower():
-                filtered.append(biz)
+        # Filter by query
+        if query_clean:
+            filtered = [biz for biz in filtered
+                        if query_clean in biz.name.lower() or query_clean in biz.category.lower()]
+
+        # Filter by category keys
+        if filter_keys:
+            filtered = [biz for biz in filtered if biz.category in filter_keys]
+
+        # Filter by favorites only
+        if only_favs:
+            filtered = [biz for biz in filtered if self.is_favorite(biz)]
+
+        # Sort
+        if sort_key == "ratings":
+            filtered.sort(key=lambda biz: biz.rating, reverse=reverse_sort)
+        elif sort_key == "name":
+            filtered.sort(key=lambda biz: biz.name.lower(), reverse=reverse_sort)
+        elif sort_key == "reviews":
+            filtered.sort(key=lambda biz: len(biz.reviews), reverse=reverse_sort)
+
         return filtered
 
     def favorite_ids(self) -> set[str]:
@@ -155,3 +170,17 @@ class DataHandler:
         review = Review(user, rating, text)
         biz.reviews.append(review)
         self.save_businesses()
+
+    def categories(self) -> List[str]:
+        items = []
+        for biz in self.businesses:
+            if biz.category not in items:
+                items.append(biz.category)
+        return items
+    
+    def get_number_of_businesses_by_category(self, category: str) -> int:
+        count = 0
+        for biz in self.businesses:
+            if biz.category == category:
+                count += 1
+        return count
