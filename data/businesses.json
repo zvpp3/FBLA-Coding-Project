@@ -34,6 +34,11 @@
         "user": "BadReviewer2015",
         "rating": 1,
         "text": "muahaha bad review"
+      },
+      {
+        "user": "John S.",
+        "rating": 5,
+        "text": "Great!"
       }
     ],
     "deals": [
@@ -173,7 +178,18 @@
     "name": "Mysterious Shop",
     "category": "?",
     "description": "Not even we know what we sell here",
-    "reviews": [],
+    "reviews": [
+      {
+        "user": "tdpfshfprhpnmgsdhpm gs",
+        "rating": 5,
+        "text": "NOOOOOOOOOO"
+      },
+      {
+        "user": "Bad",
+        "rating": 1,
+        "text": "Horrible experience"
+      }
+    ],
     "deals": "[redacted]"
   }
 ]

@@ -31,6 +31,7 @@ from ui.business_ui import (
     FavoriteButton,
     BusinessList,
     ReviewList,
+    SearchAndSort,
 )
 
 class Page(QWidget):
@@ -92,29 +93,33 @@ class SearchPage(Page):
         self.layout.setContentsMargins(16, 16, 16, 16)
         self.layout.setSpacing(8)
 
-        # Search Bar
-        self.search_bar = QLineEdit()
-        self.search_bar.setPlaceholderText("Search businesses by name or category...")
-        self.search_bar.textChanged.connect(self._search_bar_updated)
-        self.layout.addWidget(self.search_bar)
+        # Search and Sort
+        self.search_and_sort: SearchAndSort = SearchAndSort(self.data)
+        self.search_and_sort.search_bar.textChanged.connect(self._sort_changed)
+        self.layout.addWidget(self.search_and_sort)
+        self.search_and_sort.sort_changed_signal.connect(self._sort_changed)
 
         # Business List
         self.business_list = BusinessList(self.data)
         self.layout.addWidget(self.business_list)
         self.business_list.business_added_signal.connect(self._business_added_to_list)
 
-        self.business_list.populate()
+        self._sort_changed()
     
     def _business_added_to_list(self, item: ListedBusiness) -> None:
         if item:
             item.main_button_signal.connect(self.show_business_details.emit)
 
-    def _search_bar_updated(self, text: str) -> None:
-        self.business_list.populate(text)
+    def _sort_changed(self) -> None:
+        query = self.search_and_sort.search_bar.text()
+        sort_key = self.search_and_sort.sort_key
+        reverse_sort = self.search_and_sort.reverse_sort
+        filter_keys = self.search_and_sort.filter_keys
+        self.business_list.populate(query, sort_key, reverse_sort, filter_keys, False)
     
     def page_shown(self) -> None:
         super().page_shown()
-        self.business_list.populate()
+        self._sort_changed()
 
 
 class FavoritesPage(Page):
@@ -132,16 +137,16 @@ class FavoritesPage(Page):
         self.layout.addWidget(self.business_list)
         self.business_list.business_added_signal.connect(self._business_added_to_list)
 
-        self.business_list.populate("", True)
+        self.business_list.populate("", "name", False, [], True)
     
     def _business_added_to_list(self, item: ListedBusiness) -> None:
         if item:
             item.main_button_signal.connect(self.show_business_details.emit)
-            item.favorite_button.click_signal.connect(lambda: self.business_list.populate("", True))
+            item.favorite_button.click_signal.connect(lambda: self.business_list.populate("", "name", False, [], True))
     
     def page_shown(self):
         super().page_shown()
-        self.business_list.populate("", True)
+        self.business_list.populate("", "name", False, [], True)
 
 
 class BusinessPage(Page):
@@ -158,22 +163,11 @@ class BusinessPage(Page):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        # Central Widget
-        self.central_widget = QWidget()
-        self.central_widget_layout = QVBoxLayout(self.central_widget)
-
-        # Scroll Box
-        self.scroll_area = QScrollArea()
-        self.scroll_area.setWidget(self.central_widget)
-        self.scroll_area.setWidgetResizable(True)
-        self.layout.addWidget(self.scroll_area)
-        self.scroll_area.setContentsMargins(0, 0, 0, 0)
-
         # Title/Favorite Container
         title_container = QWidget()
         title_container_layout = QHBoxLayout()
         title_container.setLayout(title_container_layout)
-        self.central_widget_layout.addWidget(title_container)
+        self.layout.addWidget(title_container)
         title_container_layout.setContentsMargins(0, 0, 0, 0)
 
         # Title
@@ -191,7 +185,7 @@ class BusinessPage(Page):
         self.description = QLabel("Description")
         self.description.setWordWrap(True)
         self.description.setObjectName("sectionDescription")
-        self.central_widget_layout.addWidget(self.description)
+        self.layout.addWidget(self.description)
 
         # Leave a Review
         leave_review_button = QPushButton("Leave a Review")
@@ -206,7 +200,7 @@ class BusinessPage(Page):
                 text-decoration: underline;
             }
         """)
-        self.central_widget_layout.addWidget(leave_review_button)
+        self.layout.addWidget(leave_review_button)
         leave_review_button.setCursor(Qt.PointingHandCursor)
         leave_review_button.clicked.connect(lambda: self.leave_review_clicked.emit(self.business))
 
@@ -216,10 +210,10 @@ class BusinessPage(Page):
         leave_review_button.adjustSize()
 
         # Reviews
-        reviews_label = QLabel("Reviews")
-        self.central_widget_layout.addWidget(reviews_label)
+        self.reviews_label = QLabel("Reviews")
+        self.layout.addWidget(self.reviews_label)
         self.review_list = ReviewList(self.business)
-        self.central_widget_layout.addWidget(self.review_list)
+        self.layout.addWidget(self.review_list)
 
     def set_business(self, biz: Business) -> None:
         self.business = biz
@@ -228,6 +222,7 @@ class BusinessPage(Page):
         self.review_list.populate()
         self.favorite_button.set_business(biz)
         self.description.setText(biz.description)
+        self.reviews_label.setText(f"Reviews ({len(self.business.reviews)})")
 
 class ReviewPage(Page):
 

@@ -1,4 +1,4 @@
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import Qt, Signal, QPoint
 from PySide6.QtWidgets import (
     QPushButton,
     QHBoxLayout,
@@ -6,6 +6,9 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QWidget,
     QVBoxLayout,
+    QLineEdit,
+    QCheckBox,
+    QFrame,
 )
 
 from data.data_handler import (
@@ -14,7 +17,7 @@ from data.data_handler import (
     Review,
 )
 
-from typing import Optional
+from typing import Optional, List
 
 class FavoriteButton(QPushButton):
     """ A simple button that communicates with the data handler to add and remove favorite businesses """
@@ -116,17 +119,12 @@ class BusinessList(QScrollArea):
         self.business_container_layout.addWidget(item)
         self.business_added_signal.emit(item)
 
-    def populate(self, query: str = "", onlyFavs: bool = False) -> None:
+    def populate(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], onlyFavs: bool) -> None:
         self._clear_list()
 
-        if query:
-            filtered_list = self.data.search(query)
-        elif onlyFavs:
-            filtered_list = self.data.favorite_businesses()
-        else:
-            filtered_list = self.data.list_businesses()
+        filtered = self.data.filter_businesses(query, sort_key, reverse_sort, filter_keys, onlyFavs)
 
-        for biz in filtered_list:
+        for biz in filtered:
             self._add_business_to_list(biz)
 
         self.business_container_layout.addStretch()
@@ -193,4 +191,167 @@ class ReviewList(QWidget):
             self._add_review_to_list(review)
 
         self.layout.addStretch()
+
+class BusinessSortMenu(QFrame):
     
+    property_changed_signal = Signal()
+
+    def __init__(self, data: DataHandler, sort_key: str, reverse_sort: bool, filter_keys: List[str]) -> None:
+        super().__init__()
+        self.setWindowFlags(Qt.Popup)
+
+        # Data
+        self.data = data
+        self.sort_key = sort_key
+        self.reverse_sort = reverse_sort
+        self.filter_keys = filter_keys
+
+        # Layout
+        layout: QVBoxLayout = QVBoxLayout()
+        self.setLayout(layout)
+        self.layout: QVBoxLayout = layout
+
+        # Sort Title
+        sort_text = QLabel("Sort by:")
+        layout.addWidget(sort_text)
+
+        # Rating Criterion
+        self.ratings_button = QPushButton("Ratings")
+        self.layout.addWidget(self.ratings_button)
+        self.ratings_button.clicked.connect(self.ratings_button_pushed)
+
+        # Name Criterion
+        self.name_button = QPushButton("Name")
+        self.layout.addWidget(self.name_button)
+        self.name_button.clicked.connect(self.name_button_pushed)
+
+        # Reviews Criterion
+        self.reviews_button = QPushButton("Reviews")
+        self.layout.addWidget(self.reviews_button)
+        self.reviews_button.clicked.connect(self.reviews_button_pushed)
+
+        # Filter Title
+        filter_text = QLabel("Filter by:")
+        layout.addWidget(filter_text)
+
+        # Category Criterion
+        for category in data.categories():
+            category_container = QWidget()
+            category_layout = QHBoxLayout()
+            category_container.setLayout(category_layout)
+            layout.addWidget(category_container)
+
+            check_box = QCheckBox()
+            category_layout.addWidget(check_box)
+
+            # Category and number of businesses w/ that category
+            text = QLabel(f"{category} ({data.get_number_of_businesses_by_category(category)})")
+            category_layout.addWidget(text)
+
+        self.resolve_button_text()
+
+    def resolve_button_text(self):
+
+        self.ratings_button.setText("Ratings")
+        self.name_button.setText("Name")
+        self.reviews_button.setText("Reviews")
+
+        selected_button: QPushButton = None
+        if self.sort_key == "ratings":
+            selected_button = self.ratings_button
+        elif self.sort_key == "name":
+            selected_button = self.name_button
+        elif self.sort_key == "reviews":
+            selected_button = self.reviews_button
+
+        selected_button.setText(self.sort_key_and_order_to_string(self.sort_key, self.reverse_sort))
+
+
+    def sort_key_and_order_to_string(self, key: str, reverse: bool):
+        text = ""
+        if key == "ratings":
+            text += "Ratings | "
+            text += "High → Low" if reverse else "Low → High"
+        elif key == "name":
+            text += "Name | "
+            text += "Z → A" if reverse else "A → Z"
+        elif key == "reviews":
+            text += "Reviews | "
+            text += "High → Low" if reverse else "Low → High"
+        return text
+    
+    def ratings_button_pushed(self):
+        if self.sort_key == "ratings":
+            self.reverse_sort = not self.reverse_sort
+        else:
+            self.sort_key = "ratings"
+            self.reverse_sort = True
+        self.resolve_button_text()
+        self.property_changed_signal.emit()
+
+    def name_button_pushed(self):
+        if self.sort_key == "name":
+            self.reverse_sort = not self.reverse_sort
+        else:
+            self.sort_key = "name"
+            self.reverse_sort = False
+        self.resolve_button_text()
+        self.property_changed_signal.emit()
+
+    def reviews_button_pushed(self):
+        if self.sort_key == "reviews":
+            self.reverse_sort = not self.reverse_sort
+        else:
+            self.sort_key = "reviews"
+            self.reverse_sort = True
+        self.resolve_button_text()
+        self.property_changed_signal.emit()
+
+
+class SearchAndSort(QWidget):
+
+    sort_changed_signal = Signal()
+
+    def __init__(self, data: DataHandler) -> None:
+        super().__init__()
+
+        # Data
+        self.data = data
+        self.sort_key = "ratings"
+        self.reverse_sort = True
+        self.filter_keys = []
+
+        # Layout
+        self.layout: QHBoxLayout = QHBoxLayout()
+        self.setLayout(self.layout)
+        self.layout.setContentsMargins(0, 0, 0, 0)
+
+        # Search Bar
+        self.search_bar = QLineEdit()
+        self.search_bar.setPlaceholderText("Search businesses by name or category...")
+        self.layout.addWidget(self.search_bar)
+
+        # Sort Button
+        self.sort_button = QPushButton("↑↓")
+        self.sort_button.clicked.connect(self.show_sort_menu)
+        self.layout.addWidget(self.sort_button)
+
+        # Menu
+        self.menu = None
+    
+    def show_sort_menu(self) -> None:
+        self.menu = BusinessSortMenu(self.data, self.sort_key, self.reverse_sort, self.filter_keys)
+        self.menu.property_changed_signal.connect(self._sort_changed)
+        pos = self.sort_button.mapToGlobal(QPoint(0, self.sort_button.height()))
+        self.menu.move(pos)
+        self.menu.show()
+
+    def _sort_changed(self) -> None:
+        if not self.menu:
+            return
+
+        self.sort_key = self.menu.sort_key
+        self.reverse_sort = self.menu.reverse_sort
+        self.filter_keys = self.menu.filter_keys
+
+        self.sort_changed_signal.emit()
