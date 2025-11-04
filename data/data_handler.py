@@ -113,32 +113,26 @@ class DataHandler:
     def list_businesses(self) -> List[Business]:
         return self.businesses
 
-    def filter_businesses(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], onlyFavs: bool) -> List[Business]:
-        
+    def filter_businesses(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], only_favs: bool) -> List[Business]:
+
         filtered: List[Business] = self.list_businesses().copy()
 
         # Lower case and strip query
         query_clean = (query or "").lower().strip()
 
         # Filter by query
-        if query_clean != "":
-            for biz in self.businesses:
-                if query_clean in biz.name.lower() or query_clean in biz.category.lower():
-                    filtered.append(biz)
+        if query_clean:
+            filtered = [biz for biz in filtered
+                        if query_clean in biz.name.lower() or query_clean in biz.category.lower()]
 
-        # Filter by filter keys
-        if len(filter_keys) > 0:
-            for biz in filtered:
-                if biz.category not in filter_keys:
-                    filtered.remove(biz)
+        # Filter by category keys
+        if filter_keys:
+            filtered = [biz for biz in filtered if biz.category in filter_keys]
 
-        # Filter by favorite
-        if onlyFavs:
-            for biz in filtered:
-                if not self.is_favorite(biz):
-                    filtered.remove(biz)
-                    print("Removing " + biz.name)
-            
+        # Filter by favorites only
+        if only_favs:
+            filtered = [biz for biz in filtered if self.is_favorite(biz)]
+
         # Sort
         if sort_key == "ratings":
             filtered.sort(key=lambda biz: biz.rating, reverse=reverse_sort)
@@ -156,7 +150,6 @@ class DataHandler:
         return [biz for biz in self.businesses if biz.id in self._favorites]
 
     def is_favorite(self, biz: Business) -> bool:
-        print(self._favorites)
         return biz.id in self._favorites
 
     def add_favorite(self, biz: Business) -> None:
