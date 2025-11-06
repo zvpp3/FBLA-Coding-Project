@@ -22,6 +22,7 @@ class Business:
     name: str
     category: str
     description: str
+    banner: str
     reviews: List[Review]
     deals: List[str]
 
@@ -56,6 +57,7 @@ class DataHandler:
                                             biz.get("name", ""),
                                             biz.get("category", ""),
                                             biz.get("description", ""),
+                                            biz.get("banner", ""),
                                             review_list,
                                             biz.get("deals", [])))
     
@@ -79,6 +81,7 @@ class DataHandler:
                     "name": biz.name,
                     "category": biz.category,
                     "description": biz.description,
+                    "banner": biz.banner,
                     "reviews": reviews_data,
                     "deals": biz.deals
                 })

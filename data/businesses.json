@@ -4,6 +4,7 @@
     "name": "Sunshine Cafe",
     "category": "Food",
     "description": "A cozy place for breakfast and brunch. This cafe will bring you all of the sunshine you need in a day.",
+    "banner": "assets/sunshine-cafe.jpg",
     "reviews": [
       {
         "user": "G. Washington",
@@ -50,6 +51,7 @@
     "name": "Village Bookshop",
     "category": "Retail",
     "description": "A charming independent bookstore offering a curated selection of books, cozy reading nooks, and regular author events.",
+    "banner": "assets/bookstore.jpg",
     "reviews": [
       {
         "user": "P. Griffin",
@@ -71,6 +73,7 @@
     "name": "Paws & Claws Grooming",
     "category": "Services",
     "description": "Professional pet grooming services for dogs and cats, including baths, haircuts, nail trimming, and more.",
+    "banner": "assets/paws-and-claws.jpg",
     "reviews": [
       {
         "user": "John W.",
@@ -102,6 +105,7 @@
     "name": "Bob's Burgers",
     "category": "Food",
     "description": "Home of the best burgers in town, made with fresh ingredients and a side of quirky humor.",
+    "banner": "assets/bobs-burgers.jpg",
     "reviews": [
       {
         "user": "E. Pressley",
@@ -123,6 +127,7 @@
     "name": "Krusty Krab",
     "category": "Food",
     "description": "Famous for its delicious Krabby Patties and nautical-themed dining experience.",
+    "banner": "assets/krusty-krab.png",
     "reviews": [
       {
         "user": "S. Bob",
@@ -149,6 +154,7 @@
     "name": "Burg-fil-o",
     "category": "Food",
     "description": "Only open on Sundays!",
+    "banner": "assets/burgfilo.jpg",
     "reviews": [
       {
         "user": "Dave B.",
@@ -178,18 +184,8 @@
     "name": "Mysterious Shop",
     "category": "?",
     "description": "Not even we know what we sell here",
-    "reviews": [
-      {
-        "user": "tdpfshfprhpnmgsdhpm gs",
-        "rating": 5,
-        "text": "NOOOOOOOOOO"
-      },
-      {
-        "user": "Bad",
-        "rating": 1,
-        "text": "Horrible experience"
-      }
-    ],
+    "banner": "assets/mystery.jpg",
+    "reviews": [],
     "deals": "[redacted]"
   }
 ]

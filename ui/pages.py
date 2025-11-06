@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
     QLayout,
     QTextEdit,
 )
+from PySide6.QtGui import QPixmap
 
 from dataclasses import dataclass
 from typing import List, Optional
@@ -163,6 +164,15 @@ class BusinessPage(Page):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
+        # Banner
+        self.banner = QLabel()
+        pixmap = QPixmap("path/to/banner.jpg")
+        self.banner.setPixmap(pixmap)
+        self.banner.setScaledContents(True)
+        self.banner.setFixedHeight(200)
+  
+        self.layout.addWidget(self.banner)
+
         # Title/Favorite Container
         title_container = QWidget()
         title_container_layout = QHBoxLayout()
@@ -223,6 +233,15 @@ class BusinessPage(Page):
         self.favorite_button.set_business(biz)
         self.description.setText(biz.description)
         self.reviews_label.setText(f"Reviews ({len(self.business.reviews)})")
+        pixmap = QPixmap(biz.banner)
+        target_width = self.banner.width()  # Assuming banner is your QLabel
+        scaled_pixmap = pixmap.scaledToWidth(target_width, Qt.SmoothTransformation)
+        target_height = 200  # Desired banner height
+        y_offset = max(0, (scaled_pixmap.height() - target_height) // 2)
+        cropped_pixmap = scaled_pixmap.copy(0, y_offset, target_width, target_height)
+
+
+        self.banner.setPixmap(cropped_pixmap)
 
 class ReviewPage(Page):
 

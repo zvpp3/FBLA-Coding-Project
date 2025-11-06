@@ -215,20 +215,15 @@ class BusinessSortMenu(QFrame):
         sort_text = QLabel("Sort by:")
         layout.addWidget(sort_text)
 
-        # Rating Criterion
-        self.ratings_button = QPushButton("Ratings")
-        self.layout.addWidget(self.ratings_button)
-        self.ratings_button.clicked.connect(self.ratings_button_pushed)
+        self.sort_buttons = {
+            "ratings": QPushButton("Ratings"),
+            "name": QPushButton("Name"),
+            "reviews": QPushButton("Reviews")
+        }
 
-        # Name Criterion
-        self.name_button = QPushButton("Name")
-        self.layout.addWidget(self.name_button)
-        self.name_button.clicked.connect(self.name_button_pushed)
-
-        # Reviews Criterion
-        self.reviews_button = QPushButton("Reviews")
-        self.layout.addWidget(self.reviews_button)
-        self.reviews_button.clicked.connect(self.reviews_button_pushed)
+        for key, btn in self.sort_buttons.items():
+            layout.addWidget(btn)
+            btn.clicked.connect(lambda _, k=key: self.sort_button_pushed(k))
 
         # Filter Title
         filter_text = QLabel("Filter by:")
@@ -243,29 +238,28 @@ class BusinessSortMenu(QFrame):
 
             check_box = QCheckBox()
             category_layout.addWidget(check_box)
+            #check_box.clicked.connect(lambda: )
 
             # Category and number of businesses w/ that category
             text = QLabel(f"{category} ({data.get_number_of_businesses_by_category(category)})")
             category_layout.addWidget(text)
 
-        self.resolve_button_text()
+        self.update_sort_button_texts()
 
-    def resolve_button_text(self):
+    def sort_button_label(self, key: str) -> str:
+        if self.sort_key != key:
+            return key.capitalize()
+        arrow = "↓" if self.reverse_sort else "↑"
+        label_map = {
+            "ratings": "Ratings",
+            "name": "Name",
+            "reviews": "Reviews"
+        }
+        return f"{label_map[key]} {arrow}"
 
-        self.ratings_button.setText("Ratings")
-        self.name_button.setText("Name")
-        self.reviews_button.setText("Reviews")
-
-        selected_button: QPushButton = None
-        if self.sort_key == "ratings":
-            selected_button = self.ratings_button
-        elif self.sort_key == "name":
-            selected_button = self.name_button
-        elif self.sort_key == "reviews":
-            selected_button = self.reviews_button
-
-        selected_button.setText(self.sort_key_and_order_to_string(self.sort_key, self.reverse_sort))
-
+    def update_sort_button_texts(self):
+        for key, btn in self.sort_buttons.items():
+            btn.setText(self.sort_button_label(key))
 
     def sort_key_and_order_to_string(self, key: str, reverse: bool):
         text = ""
@@ -280,31 +274,22 @@ class BusinessSortMenu(QFrame):
             text += "High → Low" if reverse else "Low → High"
         return text
     
-    def ratings_button_pushed(self):
-        if self.sort_key == "ratings":
+    def sort_button_pushed(self, key: str):
+        if self.sort_key == key:
             self.reverse_sort = not self.reverse_sort
         else:
-            self.sort_key = "ratings"
-            self.reverse_sort = True
-        self.resolve_button_text()
+            self.sort_key = key
+            # Default direction: descending for numeric sorts, ascending for name
+            self.reverse_sort = key != "name"
+
+        self.update_sort_button_texts()
         self.property_changed_signal.emit()
 
-    def name_button_pushed(self):
-        if self.sort_key == "name":
-            self.reverse_sort = not self.reverse_sort
+    def check_box_clicked(self, filter_key: str, state: bool):
+        if state:
+            self.filter_keys.remove(filter_key)
         else:
-            self.sort_key = "name"
-            self.reverse_sort = False
-        self.resolve_button_text()
-        self.property_changed_signal.emit()
-
-    def reviews_button_pushed(self):
-        if self.sort_key == "reviews":
-            self.reverse_sort = not self.reverse_sort
-        else:
-            self.sort_key = "reviews"
-            self.reverse_sort = True
-        self.resolve_button_text()
+            self.filter_keys.append(filter_key)
         self.property_changed_signal.emit()
 
 
