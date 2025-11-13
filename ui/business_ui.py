@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
     QLineEdit,
     QCheckBox,
     QFrame,
+    QSizePolicy,
 )
 
 from data.data_handler import (
@@ -66,11 +67,72 @@ class ListedBusiness(QPushButton):
     def __init__(self, data: DataHandler, biz: Business):
         super().__init__()
         self.business = biz
-        self.setFixedHeight(60)
+        self.setFixedHeight(100)
         layout = QHBoxLayout(self)
-        item_text = f"{biz.name} ({biz.category}) - ⭐ {biz.rating:.1f}"
-        label = QLabel(item_text)
-        layout.addWidget(label)
+
+        # Info Container
+        info_container = QWidget()
+        info_container.setContentsMargins(0,0,0,0)
+        info_layout = QVBoxLayout()
+        info_layout.setContentsMargins(0,0,0,0)
+        info_container.setLayout(info_layout)
+        layout.addWidget(info_container)
+
+        # Title Container
+        title_container = QWidget()
+        title_container.setContentsMargins(0,0,0,0)
+        title_layout = QHBoxLayout()
+        title_layout.setContentsMargins(0,0,0,0)
+        title_container.setLayout(title_layout)
+        title_layout.setAlignment(Qt.AlignLeft)
+        info_layout.addWidget(title_container, 0, Qt.AlignLeft)
+        
+        # Name
+        item_text = QLabel(f"{biz.name}")
+        title_layout.addWidget(item_text)
+        item_text.setStyleSheet("font-size: 18px; font-weight: bold;")
+
+        # Deals
+        if len(biz.deals):
+            deals_label = QLabel(f"Deals: {len(biz.deals)}")
+            title_layout.addWidget(deals_label)
+            deals_label.setStyleSheet("""
+                QLabel {
+                    background-color: rgba(255, 131, 65, 0.5);
+                    padding: 0px 8px;
+                    font-size: 12px;
+                }
+            """)
+
+        # Rating Container
+        rating_container = QWidget()
+        rating_container.setContentsMargins(0,0,0,0)
+        rating_layout = QHBoxLayout()
+        rating_layout.setContentsMargins(0,0,0,0)
+        rating_container.setLayout(rating_layout)
+        rating_layout.setAlignment(Qt.AlignLeft)
+        info_layout.addWidget(rating_container, 0, Qt.AlignLeft)
+
+        # Rating Text
+        rounded_rating = round(biz.rating)
+        rating_text = QLabel(f"{'★' * rounded_rating + '☆' * (5 - rounded_rating)}")
+        rating_text.setStyleSheet("color: #f1c40f;")
+        rating_layout.addWidget(rating_text)
+
+        # Rating Number
+        rating_number = QLabel(f"{round(biz.rating, 1)}")
+        rating_layout.addWidget(rating_number)
+
+        # Num Reviews
+        num_reviews = QLabel(f"({len(biz.reviews)} {'review' if len(biz.reviews) == 1 else 'reviews'})")
+        num_reviews.setStyleSheet("color: #aaaaaa;")
+        rating_layout.addWidget(num_reviews)
+
+        # Category
+        category_text = QLabel(f"{biz.category}")
+        category_text.setStyleSheet("color: #aaaaaa;")
+        info_layout.addWidget(category_text)
+        
         layout.addStretch()
         self.favorite_button = FavoriteButton(data, biz, "small")
         layout.addWidget(self.favorite_button)
@@ -86,7 +148,7 @@ class ListedBusiness(QPushButton):
         super().leaveEvent(event)
 
 
-class BusinessList(QScrollArea):
+class BusinessList(QWidget):
     """ A way to list businesses, such as in search results or the favorites page 
     If this causes performance issues this can be changed to a QListView or similar"""
 
@@ -96,27 +158,22 @@ class BusinessList(QScrollArea):
     def __init__(self, data: DataHandler) -> None:
         super().__init__()
 
-        # Business Container
-        business_container = QWidget()
-        self.business_container_layout = QVBoxLayout()
-        business_container.setLayout(self.business_container_layout)
-
-        # Set Properties
-        self.setWidgetResizable(True); self.setWidget(business_container)
+        self.layout: QVBoxLayout = QVBoxLayout(self)
+        self.layout.setContentsMargins(0, 0, 0, 0)
 
         # Data
         self.data = data
 
     def _clear_list(self) -> None:
-        while self.business_container_layout.count():
-            item = self.business_container_layout.takeAt(0)
+        while self.layout.count():
+            item = self.layout.takeAt(0)
             widget = item.widget()
             if widget:
                 widget.setParent(None)
     
     def _add_business_to_list(self, biz: Business) -> None:
         item = ListedBusiness(self.data, biz)
-        self.business_container_layout.addWidget(item)
+        self.layout.addWidget(item)
         self.business_added_signal.emit(item)
 
     def populate(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], onlyFavs: bool) -> None:
@@ -127,7 +184,7 @@ class BusinessList(QScrollArea):
         for biz in filtered:
             self._add_business_to_list(biz)
 
-        self.business_container_layout.addStretch()
+        self.layout.addStretch()
 
 
 class ReviewItem(QWidget):
@@ -218,7 +275,8 @@ class BusinessSortMenu(QFrame):
         self.sort_buttons = {
             "ratings": QPushButton("Ratings"),
             "name": QPushButton("Name"),
-            "reviews": QPushButton("Reviews")
+            "reviews": QPushButton("Reviews"),
+            "deals": QPushButton("Deals"),
         }
 
         for key, btn in self.sort_buttons.items():
@@ -253,7 +311,8 @@ class BusinessSortMenu(QFrame):
         label_map = {
             "ratings": "Ratings",
             "name": "Name",
-            "reviews": "Reviews"
+            "reviews": "Reviews",
+            "deals": "Deals",
         }
         return f"{label_map[key]} {arrow}"
 

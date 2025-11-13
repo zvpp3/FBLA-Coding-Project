@@ -143,6 +143,8 @@ class DataHandler:
             filtered.sort(key=lambda biz: biz.name.lower(), reverse=reverse_sort)
         elif sort_key == "reviews":
             filtered.sort(key=lambda biz: len(biz.reviews), reverse=reverse_sort)
+        elif sort_key == "deals":
+            filtered.sort(key=lambda biz: len(biz.deals), reverse=reverse_sort)
 
         return filtered
 
