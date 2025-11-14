@@ -50,13 +50,12 @@ class HomePage(Page):
         # Layout
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        self.layout.setAlignment(Qt.AlignCenter)
+        #self.layout.setAlignment(Qt.AlignCenter)
 
         # Title
-        title = QLabel("LocalLink - An app to support local businesses")
+        title = QLabel("LocalLink")
         title.setObjectName("titleLabel")
         self.layout.addWidget(title)
-        self.layout.addStretch()
 
         # Subtitle
         subtitle = QLabel("Discover and support your local businesses!")
@@ -161,12 +160,12 @@ class BusinessPage(Page):
         self.business = None
         
         # Layout
-        self.layout = QVBoxLayout()
+        self.layout: QVBoxLayout = QVBoxLayout()
         self.setLayout(self.layout)
 
         # Banner
         self.banner = QLabel()
-        pixmap = QPixmap("path/to/banner.jpg")
+        pixmap = QPixmap("")
         self.banner.setPixmap(pixmap)
         self.banner.setScaledContents(True)
         self.banner.setFixedHeight(200)
@@ -191,11 +190,48 @@ class BusinessPage(Page):
         self.favorite_button = FavoriteButton(self.data, self.business, "large")
         title_container_layout.addWidget(self.favorite_button)
 
+        # Deals Banner
+        self.deals_banner = QWidget()
+        self.deals_layout = QVBoxLayout(self.deals_banner)
+        self.deals_banner.setStyleSheet("""
+                QWidget {
+                    background-color: rgba(255, 131, 65, 0.5);
+                }
+            """)
+        self.layout.addWidget(self.deals_banner)
+        deals_title = QLabel("Deals")
+        deals_title.setStyleSheet("""
+                QLabel {
+                    background-color: transparent;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            """)
+        self.deals_layout.addWidget(deals_title)
+        self.deals_text = QLabel()
+        self.deals_text.setStyleSheet("""
+                QLabel {
+                    background-color: transparent;
+                }
+            """)
+        self.deals_layout.addWidget(self.deals_text)
+
         # Description
         self.description = QLabel("Description")
         self.description.setWordWrap(True)
         self.description.setObjectName("sectionDescription")
         self.layout.addWidget(self.description)
+
+        self.layout.addSpacing(16)
+
+        # Reviews
+        self.reviews_label = QLabel("Reviews")
+        self.layout.addWidget(self.reviews_label)
+        self.reviews_label.setStyleSheet("""
+                                         QLabel {
+                                            font-size: 20;
+                                            font-weight: bold;
+                                         }""")
 
         # Leave a Review
         leave_review_button = QPushButton("Leave a Review")
@@ -213,15 +249,11 @@ class BusinessPage(Page):
         self.layout.addWidget(leave_review_button)
         leave_review_button.setCursor(Qt.PointingHandCursor)
         leave_review_button.clicked.connect(lambda: self.leave_review_clicked.emit(self.business))
-
-        # Restrict size policy
         leave_review_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         leave_review_button.setFixedWidth(100)
         leave_review_button.adjustSize()
 
-        # Reviews
-        self.reviews_label = QLabel("Reviews")
-        self.layout.addWidget(self.reviews_label)
+        # Review List
         self.review_list = ReviewList(self.business)
         self.layout.addWidget(self.review_list)
 
@@ -239,9 +271,19 @@ class BusinessPage(Page):
         target_height = 200  # Desired banner height
         y_offset = max(0, (scaled_pixmap.height() - target_height) // 2)
         cropped_pixmap = scaled_pixmap.copy(0, y_offset, target_width, target_height)
-
-
         self.banner.setPixmap(cropped_pixmap)
+        if len(biz.deals) > 0:
+            self.deals_banner.setVisible(True)
+            deals_string = ""
+            for deal in biz.deals:
+                if deals_string == "":
+                    deals_string = deal
+                else:
+                    deals_string = deals_string + "\n" + deal
+            self.deals_text.setText(deals_string)
+        else:
+            self.deals_banner.setVisible(False)
+
 
 class ReviewPage(Page):
 

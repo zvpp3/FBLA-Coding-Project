@@ -52,17 +52,14 @@ QWidget {
 #titleLabel {
     font-size: 32px;
     color: #ff79c6;
-    padding: 20px;
 }
 #subtitleLabel {
     font-size: 16px;
     color: #bd93f9;
-    padding-bottom: 20px;
 }
 #sectionLabel {
     font-size: 20px;
     color: #50fa7b;
-    padding: 12px 0;
 }
 
 /* List and list items */
