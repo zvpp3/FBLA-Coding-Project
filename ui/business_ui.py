@@ -194,9 +194,16 @@ class ReviewItem(QWidget):
         super().__init__()
         self.review = review
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, 10, 0, 10)
 
         user_label = QLabel(f"{review.user}")
         layout.addWidget(user_label)
+        user_label.setStyleSheet("""
+                                QLabel {
+                                font-size: 20;
+                                font-weight: bold
+                                }
+                                 """)
 
         rating_date_container = QWidget()
         rating_date_layout = QHBoxLayout()
@@ -224,6 +231,7 @@ class ReviewList(QWidget):
 
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
+        self.layout.setContentsMargins(0,0,0,0)
 
         # Data
         self.business = biz

@@ -96,6 +96,8 @@ class MainWindow(QMainWindow):
             if isinstance(current, Page):
                 current.page_shown()
 
+        self.scroll_area.verticalScrollBar().setValue(0)
+
         # Exit button
         if index == 3:
             self.close()
