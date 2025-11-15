@@ -42,7 +42,7 @@ class Page(QWidget):
         super().__init__()
         self.data = data
     
-    def page_shown(self) -> None:
+    def page_shown(self, data = None) -> None:
         pass
 
 class HomePage(Page):
@@ -121,7 +121,7 @@ class SearchPage(Page):
         filter_keys = self.search_and_sort.filter_keys
         self.business_list.populate(query, sort_key, reverse_sort, filter_keys, False)
     
-    def page_shown(self) -> None:
+    def page_shown(self, data = None) -> None:
         super().page_shown()
         self._sort_changed()
 
@@ -148,7 +148,7 @@ class FavoritesPage(Page):
             item.main_button_signal.connect(self.show_business_details.emit)
             item.favorite_button.click_signal.connect(lambda: self.business_list.populate("", "name", False, [], True))
     
-    def page_shown(self):
+    def page_shown(self, data = None):
         super().page_shown()
         self.business_list.populate("", "name", False, [], True)
 
@@ -244,7 +244,10 @@ class BusinessPage(Page):
         self.review_list = ReviewList(self.business)
         self.layout.addWidget(self.review_list)
 
-    def set_business(self, biz: Business) -> None:
+    def page_shown(self, data = None) -> None:
+        if not data:
+            return
+        biz: Business = data
         self.business = biz
         self.name_label.setText(biz.name)
         self.review_list.business = biz
@@ -327,7 +330,10 @@ class ReviewPage(Page):
         self.submit_button.setFixedWidth(100)
         self.submit_button.clicked.connect(self.submit_review)
 
-    def set_business(self, biz: Business):
+    def page_shown(self, data = None):
+        if not data:
+            return
+        biz: Business = data
         self.review_text_edit.clear()
         self.business = biz
         self.name_label.setText(f"Leaving a review on {biz.name}")

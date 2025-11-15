@@ -277,7 +277,7 @@ class BusinessSortMenu(QFrame):
         self.data = data
         self.sort_key = sort_key
         self.reverse_sort = reverse_sort
-        self.filter_keys = filter_keys
+        self.filter_keys = set(filter_keys)
 
         # Layout
         layout: QVBoxLayout = QVBoxLayout()
@@ -303,20 +303,22 @@ class BusinessSortMenu(QFrame):
         filter_text = QLabel("Filter by:")
         layout.addWidget(filter_text)
 
+        self.checkboxes = {}
+
         # Category Criterion
         for category in data.categories():
-            category_container = QWidget()
-            category_layout = QHBoxLayout()
-            category_container.setLayout(category_layout)
-            layout.addWidget(category_container)
+            container = QWidget()
+            h_layout = QHBoxLayout(container)
+            layout.addWidget(container)
 
             check_box = QCheckBox()
-            category_layout.addWidget(check_box)
-            #check_box.clicked.connect(lambda: )
+            check_box.setChecked(category in self.filter_keys)
+            self.checkboxes[category] = check_box
+            check_box.stateChanged.connect(lambda state, cat=category: self.checkbox_toggled(cat, state))
+            h_layout.addWidget(check_box)
 
-            # Category and number of businesses w/ that category
-            text = QLabel(f"{category} ({data.get_number_of_businesses_by_category(category)})")
-            category_layout.addWidget(text)
+            label = QLabel(f"{category} ({data.get_number_of_businesses_by_category(category)})")
+            h_layout.addWidget(label)
 
         self.update_sort_button_texts()
 
@@ -360,11 +362,11 @@ class BusinessSortMenu(QFrame):
         self.update_sort_button_texts()
         self.property_changed_signal.emit()
 
-    def check_box_clicked(self, filter_key: str, state: bool):
+    def checkbox_toggled(self, category: str, state: int):
         if state:
-            self.filter_keys.remove(filter_key)
+            self.filter_keys.add(category)
         else:
-            self.filter_keys.append(filter_key)
+            self.filter_keys.discard(category)
         self.property_changed_signal.emit()
 
 
