@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
         self.pages[page].setVisible(True)
         self.scroll_area.verticalScrollBar().setValue(0)
 
-        self._set_page(name)   
+        self._set_page(page)   
 
     def _set_page(self, page: str, data = None):
         for other_page in self.pages.values():
