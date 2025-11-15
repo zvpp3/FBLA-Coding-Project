@@ -30,7 +30,7 @@ from data.data_handler import (
     DataHandler,
     Business,
 )
-from typing import List, Dict
+from typing import Dict
 
 class MainWindow(QMainWindow):
     def __init__(self, data: DataHandler, apply_style: bool = True) -> None:
@@ -58,6 +58,9 @@ class MainWindow(QMainWindow):
         }
 
         # Wire signals
+        self.pages["search"].show_business_details.connect(lambda biz: self._set_page("business", biz))
+        self.pages["favorites"].show_business_details.connect(lambda biz: self._set_page("business", biz))
+        self.pages["business"].leave_review_clicked.connect(lambda biz: self._set_page("review", biz))
         self.pages["search"].show_business_details.connect(lambda biz: self._set_page("business", biz))
         self.pages["favorites"].show_business_details.connect(lambda biz: self._set_page("business", biz))
         self.pages["business"].leave_review_clicked.connect(lambda biz: self._set_page("business", biz))
@@ -104,8 +107,18 @@ class MainWindow(QMainWindow):
         self._set_page(name)   
 
     def _set_page(self, page: str, data = None):
+        self.pages[page].page_shown(data)
+        for other_page in self.pages.values():
+            other_page.setVisible(False)
+        self.pages[page].setVisible(True)
+        self.scroll_area.verticalScrollBar().setValue(0)
+
+        self._set_page(name)   
+
+    def _set_page(self, page: str, data = None):
         for other_page in self.pages.values():
             other_page.setVisible(False)
         self.pages[page].setVisible(True)
         self.pages[page].page_shown(data)
         self.scroll_area.verticalScrollBar().setValue(0)
+

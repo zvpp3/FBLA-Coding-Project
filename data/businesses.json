@@ -3,7 +3,7 @@
     "id": "sunshine-cafe",
     "name": "Sunshine Cafe",
     "category": "Food",
-    "description": "A cozy place for breakfast and brunch. This cafe will bring you all of the sunshine you need in a day.",
+    "description": "A cozy neighborhood spot where mornings begin with warmth and comfort. Sunshine Cafe specializes in breakfast and brunch classics, from fluffy pancakes and golden waffles to hearty omelets and freshly baked pastries. The inviting atmosphere, paired with friendly service and rich, aromatic coffee, makes it a favorite gathering place for families, friends, and solo visitors alike. With cheerful decor and a menu that balances indulgence with healthy options, it's the kind of cafe that brightens your day before you even take your first sip. Early risers enjoy special deals, and children are always welcome, making it a true community hub.",
     "banner": "assets/sunshine-cafe.jpg",
     "reviews": [
       {
@@ -32,14 +32,14 @@
         "text": "Nice"
       },
       {
-        "user": "BadReviewer2015",
-        "rating": 1,
-        "text": "muahaha bad review"
-      },
-      {
         "user": "John S.",
         "rating": 5,
         "text": "Great!"
+      },
+      {
+        "user": "Hello",
+        "rating": 5,
+        "text": "Testing to make sure this feature still works"
       }
     ],
     "deals": [
@@ -51,7 +51,7 @@
     "id": "village-bookshop",
     "name": "Village Bookshop",
     "category": "Retail",
-    "description": "A charming independent bookstore offering a curated selection of books, cozy reading nooks, and regular author events.",
+    "description": "A charming independent bookstore that feels like stepping into a literary sanctuary. Village Bookshop offers a carefully curated selection of titles across genres, from timeless classics to contemporary bestsellers, as well as hidden gems from local authors. Cozy reading nooks invite visitors to linger, while regular author events, book signings, and community gatherings foster a vibrant cultural scene. The shop's warm, inviting atmosphere makes it more than just a place to buy books—it's a destination for inspiration, reflection, and connection. Whether you're a casual reader or a lifelong bibliophile, you'll find something to spark your imagination here.",
     "banner": "assets/bookstore.jpg",
     "reviews": [
       {
@@ -71,7 +71,7 @@
     "id": "paws-claws-grooming",
     "name": "Paws & Claws Grooming",
     "category": "Services",
-    "description": "Professional pet grooming services for dogs and cats, including baths, haircuts, nail trimming, and more.",
+    "description": "A trusted grooming salon dedicated to keeping pets looking and feeling their best. Paws & Claws Grooming provides professional services for dogs and cats, including baths, stylish haircuts, nail trimming, and specialized care for different breeds. The staff is known for their gentle touch and genuine love of animals, ensuring that every furry client feels safe and pampered. With a clean, welcoming environment and attention to detail, pets leave not only looking sharp but also wagging their tails in delight. It's the go-to spot for pet owners who want both quality grooming and compassionate care.",
     "banner": "assets/paws-and-claws.jpg",
     "reviews": [
       {
@@ -101,7 +101,7 @@
     "id": "bobs-burgers",
     "name": "Bob's Burgers",
     "category": "Food",
-    "description": "Home of the best burgers in town, made with fresh ingredients and a side of quirky humor.",
+    "description": "Home of the best burgers in town, Bob's Burgers combines fresh, locally sourced ingredients with a quirky sense of humor that keeps customers smiling. The menu features inventive burger creations alongside classic favorites, all served with crispy fries and house-made sauces. The restaurant's playful atmosphere, complete with witty specials and a welcoming staff, makes dining here an experience as much as a meal. Whether you're grabbing a quick bite or settling in for a fun evening with friends, Bob's Burgers delivers flavor, personality, and a touch of eccentric charm.",
     "banner": "assets/bobs-burgers.jpg",
     "reviews": [
       {
@@ -118,7 +118,7 @@
     "id": "krusty-krab",
     "name": "Krusty Krab",
     "category": "Food",
-    "description": "Famous for its delicious Krabby Patties and nautical-themed dining experience.",
+    "description": "A legendary eatery famous for its world-renowned Krabby Patties and nautical-themed dining experience. The Krusty Krab is more than just a restaurant—it's a cultural icon, beloved for its quirky décor, enthusiastic staff, and unforgettable menu. Guests enjoy hearty portions, a lively atmosphere, and the unmistakable taste of its signature patty, prepared with care by the fry cook who has become a local hero. Whether you're a longtime fan or a curious newcomer, the Krusty Krab offers a whimsical escape into a world of good food and seaside fun.",
     "banner": "assets/krusty-krab.png",
     "reviews": [
       {
@@ -145,7 +145,7 @@
     "id": "burg-fil-o",
     "name": "Burg-fil-o",
     "category": "Food",
-    "description": "Only open on Sundays!",
+    "description": "A curious establishment known for its unusual operating hours—open only on Sundays. Burg-fil-o has earned a reputation for its unconventional approach, offering a menu of burgers and fries that draws both loyal fans and skeptical newcomers. While experiences vary, the restaurant's quirky identity and unpredictable charm make it a talking point among locals. Patrons who visit on its single day of operation find themselves part of an odd tradition, where the wait times and service quirks are as much a part of the story as the food itself. It's a place that thrives on its eccentricity, for better or worse.",
     "banner": "assets/burgfilo.jpg",
     "reviews": [
       {
@@ -174,8 +174,8 @@
   {
     "id": "mysterious-shop",
     "name": "Mysterious Shop",
-    "category": "?",
-    "description": "Not even we know what we sell here",
+    "category": "Services",
+    "description": "A truly enigmatic business that defies easy description. The Mysterious Shop is shrouded in intrigue, with shelves that seem to change from one visit to the next. Some say it sells trinkets, others swear they've seen rare artifacts or peculiar gadgets, but no one can quite pin down its inventory. The atmosphere is whimsical and slightly surreal, inviting customers to step into the unknown and embrace curiosity. Whether you leave with a treasure, a puzzle, or simply a story to tell, the Mysterious Shop promises an experience unlike any other—a place where mystery itself is the product.",
     "banner": "assets/mystery.jpg",
     "reviews": [],
     "deals": []

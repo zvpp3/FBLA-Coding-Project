@@ -29,10 +29,10 @@ QWidget {
     padding: 8px 12px;
     text-align: center;
     border-radius: 4px;
-    font-size: 16px
+    font-size: 20px
 }
 #favButtonSmall:pressed {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #favButtonLarge {
@@ -51,6 +51,7 @@ QWidget {
 /* Titles */
 #titleLabel {
     font-size: 32px;
+    font-weight: bold;
     color: #ff79c6;
 }
 #subtitleLabel {
@@ -98,4 +99,43 @@ QTextEdit {
 }
 QTextEdit:read-only {
     background-color: #383a59;
+}
+
+/* Scroll Area */
+QScrollBar:vertical {
+    border: transparent;
+    background: #1a1c22;;
+    width: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #666666;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #444444;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: transparent;
+    background: #1a1c22;
+    height: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #666666;
+    min-width: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #444444;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
 }

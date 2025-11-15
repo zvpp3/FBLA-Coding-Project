@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (
     QFrame,
     QSizePolicy,
 )
-
+from PySide6.QtGui import QPixmap
 from data.data_handler import (
     Business,
     DataHandler,
@@ -42,7 +42,7 @@ class FavoriteButton(QPushButton):
         if self.business and self.data:
             if self.data.is_favorite(self.business):
                 self.setText("★")
-                self.setStyleSheet("color: #f1c40f;")
+                self.setStyleSheet("color: #49B3FF;")
                 return
         self.setText("☆")
         self.setStyleSheet("color: #ffffff;")
@@ -58,6 +58,42 @@ class FavoriteButton(QPushButton):
     def leaveEvent(self, event):
         self._refresh()
         super().leaveEvent(event)
+
+
+class BusinessReviewInfo(QWidget):
+    def __init__(self, biz: Business, size: int):
+        super().__init__()
+
+        self.setContentsMargins(0,0,0,0)
+        self.layout = QHBoxLayout()
+        self.layout.setContentsMargins(0,0,0,0)
+        self.setLayout(self.layout)
+        self.layout.setAlignment(Qt.AlignLeft)
+
+        # Rating Text
+        self.rating_text = QLabel()
+        self.rating_text.setStyleSheet(f"color: #f1c40f; font-size: {size}px")
+        self.layout.addWidget(self.rating_text)
+
+        # Rating Number
+        self.rating_number = QLabel()
+        self.layout.addWidget(self.rating_number)
+        self.rating_number.setStyleSheet(f"font-size: {size}px;")
+
+        # Num Reviews
+        self.num_reviews = QLabel()
+        self.num_reviews.setStyleSheet(f"color: #aaaaaa; font-size: {size}px")
+        self.layout.addWidget(self.num_reviews)
+
+        self.set_business(biz)
+
+    def set_business(self, biz: Business):
+        if not biz:
+            return
+        rounded_rating = round(biz.rating)
+        self.rating_text.setText(f"{'★' * rounded_rating + '☆' * (5 - rounded_rating)}")
+        self.rating_number.setText(f"{round(biz.rating, 1)}")
+        self.num_reviews.setText(f"({len(biz.reviews)} {'review' if len(biz.reviews) == 1 else 'reviews'})")
 
 
 class ListedBusiness(QPushButton):
@@ -98,35 +134,16 @@ class ListedBusiness(QPushButton):
             title_layout.addWidget(deals_label)
             deals_label.setStyleSheet("""
                 QLabel {
-                    background-color: rgba(255, 131, 65, 0.5);
-                    padding: 0px 8px;
+                    background-color: rgba(255, 126, 94, 0.5);
+                    padding: 0px 4px;
                     font-size: 12px;
+                    font-weight: bold;
                 }
             """)
 
-        # Rating Container
-        rating_container = QWidget()
-        rating_container.setContentsMargins(0,0,0,0)
-        rating_layout = QHBoxLayout()
-        rating_layout.setContentsMargins(0,0,0,0)
-        rating_container.setLayout(rating_layout)
-        rating_layout.setAlignment(Qt.AlignLeft)
-        info_layout.addWidget(rating_container, 0, Qt.AlignLeft)
-
-        # Rating Text
-        rounded_rating = round(biz.rating)
-        rating_text = QLabel(f"{'★' * rounded_rating + '☆' * (5 - rounded_rating)}")
-        rating_text.setStyleSheet("color: #f1c40f;")
-        rating_layout.addWidget(rating_text)
-
-        # Rating Number
-        rating_number = QLabel(f"{round(biz.rating, 1)}")
-        rating_layout.addWidget(rating_number)
-
-        # Num Reviews
-        num_reviews = QLabel(f"({len(biz.reviews)} {'review' if len(biz.reviews) == 1 else 'reviews'})")
-        num_reviews.setStyleSheet("color: #aaaaaa;")
-        rating_layout.addWidget(num_reviews)
+        # Review Info
+        review_info = BusinessReviewInfo(biz, 14)
+        info_layout.addWidget(review_info, 0, Qt.AlignLeft)
 
         # Category
         category_text = QLabel(f"{biz.category}")
@@ -198,22 +215,11 @@ class ReviewItem(QWidget):
 
         user_label = QLabel(f"{review.user}")
         layout.addWidget(user_label)
-        user_label.setStyleSheet("""
-                                QLabel {
-                                font-size: 20;
-                                font-weight: bold
-                                }
-                                 """)
-
-        rating_date_container = QWidget()
-        rating_date_layout = QHBoxLayout()
-        rating_date_container.setLayout(rating_date_layout)
+        user_label.setStyleSheet("font-size: 20; font-weight: bold;")
 
         rating_label = QLabel(f"{'★' * review.rating + '☆' * (5 - review.rating)}")
         rating_label.setStyleSheet("color: #f1c40f;")
-        rating_date_layout.addWidget(rating_label)
-        date_label = QLabel("Jan 1, 2025") # Date placeholder
-        rating_date_layout.addWidget(date_label)
+        layout.addWidget(rating_label)
 
         #layout.addWidget(rating_date_container)
         layout.addWidget(rating_label)
@@ -264,6 +270,8 @@ class BusinessSortMenu(QFrame):
     def __init__(self, data: DataHandler, sort_key: str, reverse_sort: bool, filter_keys: List[str]) -> None:
         super().__init__()
         self.setWindowFlags(Qt.Popup)
+        self.setMinimumWidth(200)
+        self.setStyleSheet("background-color: #282a36; color: #f8f8f2; font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 14px;")
 
         # Data
         self.data = data
@@ -409,3 +417,38 @@ class SearchAndSort(QWidget):
         self.filter_keys = self.menu.filter_keys
 
         self.sort_changed_signal.emit()
+
+class BannerLabel(QLabel):
+    def __init__(self, fixed_height=200, parent=None):
+        super().__init__(parent)
+        self.fixed_height = fixed_height
+        self.original_pixmap = None
+
+        self.setFixedHeight(fixed_height)
+        self.setScaledContents(False)
+
+        self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
+
+    def setPixmap(self, pixmap: QPixmap):
+        self.original_pixmap = pixmap
+        super().setPixmap(self._scaled_pixmap())
+
+    def resizeEvent(self, event):
+        if self.original_pixmap:
+            super().setPixmap(self._scaled_pixmap())
+        super().resizeEvent(event)
+
+    def _scaled_pixmap(self):
+        """Scale to width while keeping aspect ratio, crop vertically."""
+        w = self.width()
+        h = self.fixed_height
+
+        scaled = self.original_pixmap.scaledToWidth(
+            w, Qt.SmoothTransformation
+        )
+
+        if scaled.height() > h:
+            y = (scaled.height() - h) // 2
+            scaled = scaled.copy(0, y, w, h)
+
+        return scaled
