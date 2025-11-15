@@ -30,6 +30,10 @@ from data.data_handler import (
     DataHandler,
     Business,
 )
+<<<<<<< Updated upstream
+=======
+from typing import Dict
+>>>>>>> Stashed changes
 
 class MainWindow(QMainWindow):
     def __init__(self, data: DataHandler, apply_style: bool = True) -> None:
@@ -62,10 +66,22 @@ class MainWindow(QMainWindow):
         self.pages.addWidget(self.review_page)
 
         # Wire signals
+<<<<<<< Updated upstream
         self.search_page.show_business_details.connect(self.open_business_page)
         self.favorites_page.show_business_details.connect(self.open_business_page)
         self.business_page.leave_review_clicked.connect(lambda biz: self.open_review_page(biz))
         self.review_page.review_submitted_signal.connect(lambda: self.open_business_page(self.business_page.business))
+=======
+        self.pages["search"].show_business_details.connect(lambda biz: self._set_page("business", biz))
+        self.pages["favorites"].show_business_details.connect(lambda biz: self._set_page("business", biz))
+        self.pages["business"].leave_review_clicked.connect(lambda biz: self._set_page("review", biz))
+        self.pages["review"].review_submitted_signal.connect(lambda: self._set_page("business", self.pages["business"].business))
+
+        # Page Container
+        self.page_container = QWidget()
+        self.container_layout = QVBoxLayout()
+        self.page_container.setLayout(self.container_layout)
+>>>>>>> Stashed changes
 
         # Scroll Area
         self.scroll_area = QScrollArea()
@@ -102,6 +118,7 @@ class MainWindow(QMainWindow):
         if index == 3:
             self.close()
 
+<<<<<<< Updated upstream
     def open_business_page(self, biz: Business) -> None:
         self.business_page.set_business(biz)
         self.pages.setCurrentIndex(3)
@@ -109,3 +126,13 @@ class MainWindow(QMainWindow):
     def open_review_page(self, biz: Business) -> None:
         self.review_page.set_business(biz)
         self.pages.setCurrentIndex(4)
+=======
+        self._set_page(name)   
+
+    def _set_page(self, page: str, data = None):
+        self.pages[page].page_shown(data)
+        for other_page in self.pages.values():
+            other_page.setVisible(False)
+        self.pages[page].setVisible(True)
+        self.scroll_area.verticalScrollBar().setValue(0)
+>>>>>>> Stashed changes
