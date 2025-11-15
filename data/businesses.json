@@ -35,11 +35,6 @@
         "user": "John S.",
         "rating": 5,
         "text": "Great!"
-      },
-      {
-        "user": "Hello",
-        "rating": 5,
-        "text": "Testing to make sure this feature still works"
       }
     ],
     "deals": [

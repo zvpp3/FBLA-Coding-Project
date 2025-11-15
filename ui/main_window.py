@@ -61,9 +61,6 @@ class MainWindow(QMainWindow):
         self.pages["search"].show_business_details.connect(lambda biz: self._set_page("business", biz))
         self.pages["favorites"].show_business_details.connect(lambda biz: self._set_page("business", biz))
         self.pages["business"].leave_review_clicked.connect(lambda biz: self._set_page("review", biz))
-        self.pages["search"].show_business_details.connect(lambda biz: self._set_page("business", biz))
-        self.pages["favorites"].show_business_details.connect(lambda biz: self._set_page("business", biz))
-        self.pages["business"].leave_review_clicked.connect(lambda biz: self._set_page("business", biz))
         self.pages["review"].review_submitted_signal.connect(lambda: self._set_page("business", self.pages["business"].business))
 
         # Page Container
@@ -103,17 +100,9 @@ class MainWindow(QMainWindow):
         # Exit button
         if name == "exit":
             self.close()
+            return
 
         self._set_page(name)   
-
-    def _set_page(self, page: str, data = None):
-        self.pages[page].page_shown(data)
-        for other_page in self.pages.values():
-            other_page.setVisible(False)
-        self.pages[page].setVisible(True)
-        self.scroll_area.verticalScrollBar().setValue(0)
-
-        self._set_page(page)   
 
     def _set_page(self, page: str, data = None):
         for other_page in self.pages.values():
