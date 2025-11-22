@@ -178,12 +178,25 @@ class BusinessPage(Page):
         self.layout.addWidget(title_container)
         title_container_layout.setContentsMargins(0, 0, 0, 0)
 
+        # Title Subtitle Container
+        title_subtitle_container = QWidget()
+        title_subtitle_container.setContentsMargins(0, 0, 0, 0)
+        title_subtitle_layout = QVBoxLayout()
+        title_subtitle_container.setLayout(title_subtitle_layout)
+        title_subtitle_layout.setContentsMargins(0, 0, 0, 0)
+        title_container_layout.addWidget(title_subtitle_container)
+
+        title_container_layout.addStretch()
+
         # Title
         self.name_label = QLabel("Business")
         self.name_label.setObjectName("sectionLabel")
-        title_container_layout.addWidget(self.name_label)
+        title_subtitle_layout.addWidget(self.name_label)
 
-        title_container_layout.addStretch()
+        # Category
+        self.category_label = QLabel("Category")
+        self.category_label.setStyleSheet("color: #aaaaaa;")
+        title_subtitle_layout.addWidget(self.category_label)
 
         # Favorite Button
         self.favorite_button = FavoriteButton(self.data, self.business, "large")
@@ -250,6 +263,7 @@ class BusinessPage(Page):
         biz: Business = data
         self.business = biz
         self.name_label.setText(biz.name)
+        self.category_label.setText(biz.category)
         self.review_list.business = biz
         self.review_list.populate()
         self.favorite_button.set_business(biz)

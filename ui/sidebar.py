@@ -33,6 +33,6 @@ class Sidebar(QWidget):
         self.btn_home = make_button("Home", "home")
         self.btn_biz = make_button("Search", "search")
         self.btn_fav = make_button("Favorites", "favorites")
-        self.btn_exit = make_button("Exit", "exit")
+        #self.btn_exit = make_button("Exit", "exit")
 
         layout.addStretch()
