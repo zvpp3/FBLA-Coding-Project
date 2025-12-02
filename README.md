@@ -1,107 +1,56 @@
-# Byte‑Sized Business Boost
+# LocalLink — local-business browser (Python + PySide6)
 
-This project is a **starting template** for the FBLA Coding & Programming event
-for the 2025‑2026 school year.  The theme, *Byte‑Sized Business Boost*,
-challenges teams to build a tool that helps users discover and support
-small, local businesses in their community【17924830928865†L29-L48】.  This
-repository contains a simple desktop application written in Python using
-the [PySide6](https://doc.qt.io/qtforpython-6/) GUI framework.  It
-features a modern, dark themed interface inspired by the "PyDracula" UI
-shown in the screenshot provided by the project sponsor.
+LocalLink is a compact desktop example app for discovering and bookmarking local businesses. It is a small starter template built with Python and the PySide6 GUI toolkit.
 
-## Features
+Key features
+- Business list with search
+- Detail view with reviews and deals
+- Favorites/bookmarks persisted to `data/user_data.json`
 
-The template implements a handful of core features that you can build
-upon:
+Requirements
+- Python 3.9 or later
+- See `requirements.txt` for Python packages (includes `PySide6`).
 
-- Dark, modern interface with a navigation sidebar and stacked pages.
-- Home, Businesses, Favorites, and About pages to structure your app.
-- Searchable list of example businesses with categories, ratings, and
-  deals.
-- Detail pop‑up window for each business showing reviews and promotions.
+Install
+1. Create and activate a Python virtual environment (recommended).
 
-The **business data** is currently hard‑coded for demonstration
-purposes.  In your final application you should replace this with
-persistent storage (e.g., a database or API) and implement features
-outlined in the FBLA guidelines, such as bookmarking favorites,
-allowing users to leave reviews/ratings, sorting, and displaying
-special deals【17924830928865†L29-L47】.
+Windows (PowerShell):
 
-## Getting Started
+```powershell
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+```
 
-1. **Install dependencies**.  Use Python 3.9 or later.  Install
-   [PySide6](https://pypi.org/project/PySide6/) with pip:
+macOS / Linux:
 
-   ```bash
-   python -m pip install pyside6
-   ```
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-2. **Run the program locally**.  Execute the `main.py` file:
+2. Install dependencies:
 
-   ```bash
-   python main.py
-   ```
+```bash
+python -m pip install -r requirements.txt
+```
 
-   You should see a window with the dark theme, navigation sidebar,
-   and sample content.  Feel free to explore the pages and search
-   through the dummy businesses.
+Run the app
 
-3. **Use Visual Studio Code**.  [VS Code](https://code.visualstudio.com/)
-   is a popular editor for Python development.  To work on this
-   project:
+```bash
+python main.py
+```
 
-   - Open VS Code and select **File → Open Folder…**.  Navigate to
-     the `fbla_byte_boost` directory.
-   - Install the **Python** extension if prompted.  This extension
-     enables IntelliSense, debugging, and other helpful features.
-   - Use the integrated terminal (``Ctrl+` ``) to run the program
-     (`python main.py`) and commit changes to version control.
+Usage
+- Open the "Businesses" page to browse and search the sample businesses.
+- Select an item to view details, reviews, and available deals.
+- Click the star icon in the detail view to add or remove a business from `Favorites`.
+- Favorites are stored in `data/user_data.json` and persist between runs.
 
-4. **Collaborate on GitHub**.  The GitHub repository provided by
-   your team (e.g. `zvpp3/FBLA-Coding-Project`) is perfect for
-   collaboration.  A typical workflow looks like this:
+Project layout
+- `main.py` — application entry point and window setup
+- `ui/` — UI widgets and window pages (captcha, sidebar, business views)
+- `data/` — sample data (`businesses.json`) and the data handler (`data_handler.py`)
+- `assets/` — static assets (captcha images, icons)
 
-   1. Install Git on your computer if it isn't already installed.
-      On Windows you can use [Git for Windows](https://gitforwindows.org/);
-      on macOS and Linux Git is usually pre‑installed.
-   2. Clone the repository from GitHub:
-
-      ```bash
-      git clone https://github.com/zvpp3/FBLA-Coding-Project.git
-      ```
-
-   3. Copy or move the `fbla_byte_boost` folder into the cloned
-      repository and commit your changes:
-
-      ```bash
-      cd FBLA-Coding-Project
-      git add fbla_byte_boost
-      git commit -m "Add initial PySide6 template for Byte‑Sized Business Boost"
-      git push origin main
-      ```
-
-   4. Share the repository link with your teammates so they can pull
-      the latest code.  When working together, create separate
-      branches for new features and open pull requests for review.
-
-## Next Steps
-
-This template is intended as a starting point.  To meet the FBLA
-requirements and score highly at competition, consider the following
-enhancements:
-
-- **Persistent data storage** for businesses, reviews, ratings, and
-  favorites (e.g., using SQLite or an online API).
-- **User authentication** or a light verification step (perhaps a
-  CAPTCHA) to prevent bot activity【17924830928865†L29-L48】.
-- **Sorting and filtering** options beyond search, such as by
-  category or rating.
-- **Create/update/delete** capabilities for reviews and ratings.
-- **Responsive or adaptive layout** to ensure the interface scales
-  gracefully on different screen sizes.
-- **Presentation preparation** for district and state levels, such as a
-  short pitch deck demonstrating your design process and technical
-  decisions.
-
-Feel free to modify the code structure, add modules, or change the
-design as you see fit.  Good luck with your project!
+Developer notes
+- The data handler is intentionally minimal; swapping to a database or remote API requires changes in `data/data_handler.py`.
+- The GUI uses fixed sizes for the main window and captcha widget. Adjust values in `ui/captcha_window.py` if different layouts are required.
