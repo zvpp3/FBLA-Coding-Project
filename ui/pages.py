@@ -6,23 +6,10 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
-<<<<<<< HEAD
     QPushButton,
     QVBoxLayout,
     QWidget,
     QSizePolicy,
-=======
-    QListWidget,
-    QListWidgetItem,
-    QMainWindow,
-    QPushButton,
-    QStackedWidget,
-    QVBoxLayout,
-    QWidget,
-    QScrollArea,
-    QSizePolicy,
-    QLayout,
->>>>>>> efab7ce3798974cad4726836cd6917ad4baef2fe
     QTextEdit,
 )
 from PySide6.QtGui import QPixmap
@@ -373,7 +360,6 @@ class ReviewPage(Page):
     def update_submit_button_enabled(self) -> None:
         self.submit_button.setEnabled(self.rating >= 1 and self.rating <= 5 and len(self.review_text_edit.toPlainText().strip()) > 0 and len(self.line_edit.text().strip()) > 0)
 
-<<<<<<< HEAD
     def _send_final_review(self):
         self.data.add_review(
             self.business,
@@ -401,9 +387,3 @@ class ReviewPage(Page):
         
         # show the window
         self.captcha.show()
-=======
-    def submit_review(self) -> None:
-        if self.rating >= 1 and self.rating <= 5 and len(self.review_text_edit.toPlainText().strip()) > 0 and len(self.line_edit.text().strip()) > 0:
-            self.data.add_review(self.business, self.line_edit.text().strip(), self.rating, self.review_text_edit.toPlainText().strip())
-            self.review_submitted_signal.emit()
->>>>>>> efab7ce3798974cad4726836cd6917ad4baef2fe

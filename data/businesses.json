@@ -35,6 +35,16 @@
         "user": "John S.",
         "rating": 5,
         "text": "Great!"
+      },
+      {
+        "user": "yo",
+        "rating": 5,
+        "text": "this is fire"
+      },
+      {
+        "user": "waity",
+        "rating": 2,
+        "text": "idk"
       }
     ],
     "deals": [
@@ -58,6 +68,11 @@
         "user": "Jimmy D.",
         "rating": 4,
         "text": "Last to step out of the bookstore wins $10,000,000!!"
+      },
+      {
+        "user": "hi",
+        "rating": 4,
+        "text": "hi"
       }
     ],
     "deals": []
