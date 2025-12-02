@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # LocalLink — local-business browser (Python + PySide6)
 
 LocalLink is a compact desktop example app for discovering and bookmarking local businesses. It is a small starter template built with Python and the PySide6 GUI toolkit.
