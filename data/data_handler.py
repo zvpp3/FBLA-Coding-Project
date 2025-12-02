@@ -1,6 +1,9 @@
 import json
 import os
+<<<<<<< HEAD
 import logging
+=======
+>>>>>>> efab7ce3798974cad4726836cd6917ad4baef2fe
 from dataclasses import dataclass
 from typing import List
 
@@ -90,8 +93,13 @@ class DataHandler:
             # Write to JSON file
             with open(BUSINESSES_FILE, "w", encoding="utf8") as file:
                 json.dump(items, file, indent=2, ensure_ascii=False)
+<<<<<<< HEAD
         except Exception:
             logging.exception("Error saving businesses")
+=======
+        except Exception as e:
+            print(f"Error saving businesses: {e}")
+>>>>>>> efab7ce3798974cad4726836cd6917ad4baef2fe
 
     def _load_user_data(self) -> None:
         if not os.path.exists(USER_FILE):

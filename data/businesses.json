@@ -103,11 +103,14 @@
         "user": "John D.",
         "rating": 5,
         "text": "This place was freaking great! Definitely coming back."
+<<<<<<< HEAD
       },
       {
         "user": "jjjj",
         "rating": 3,
         "text": "hbyhgyg"
+=======
+>>>>>>> efab7ce3798974cad4726836cd6917ad4baef2fe
       }
     ],
     "deals": [
