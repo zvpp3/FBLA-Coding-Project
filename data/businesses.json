@@ -194,5 +194,49 @@
     "banner": "assets/mystery.jpg",
     "reviews": [],
     "deals": []
+  },
+  {
+    "id": "tech-solutions",
+    "name": "Tech Solutions",
+    "category": "Services",
+    "description": "A cutting-edge technology service provider dedicated to solving complex IT challenges for businesses of all sizes. Tech Solutions offers a comprehensive range of services, including network setup and management, cybersecurity, software development, and technical support. Their team of experienced professionals is committed to delivering innovative solutions tailored to each client's unique needs, ensuring optimal performance and security. With a focus on customer satisfaction and staying ahead of industry trends, Tech Solutions is the go-to partner for businesses looking to leverage technology for growth and efficiency.",
+    "banner": "assets/tech-solutions.jpg",
+    "reviews": [
+      {
+        "user": "Alice M.",
+        "rating": 5,
+        "text": "Exceptional service and knowledgeable staff!"
+      },
+      {
+        "user": "Bob K.",
+        "rating": 4,
+        "text": "Helped us streamline our IT infrastructure."
+      }
+    ],
+    "deals": [
+      "Free initial consultation for new clients"
+    ]
+  },
+  {
+    "id": "green-grocers",
+    "name": "Green Grocers",
+    "category": "Retail",
+    "description": "A vibrant local market dedicated to providing fresh, organic produce and sustainable grocery options. Green Grocers prides itself on sourcing fruits, vegetables, and other goods from local farmers and ethical suppliers, ensuring quality and supporting the community. The store offers a wide variety of products, including specialty health foods, eco-friendly household items, and artisanal goods. With knowledgeable staff ready to assist and a commitment to environmental responsibility, Green Grocers is more than just a grocery store—it's a hub for healthy living and conscious shopping.",
+    "banner": "assets/green-grocers.jpg",
+    "reviews": [
+      {
+        "user": "C. Fields",
+        "rating": 5,
+        "text": "Fresh produce and friendly staff!"
+      },
+      {
+        "user": "L. Brown",
+        "rating": 4,
+        "text": "Great selection of organic products."
+      }
+    ],
+    "deals": [
+      "10% off all organic produce on Wednesdays"
+    ]
   }
 ]
