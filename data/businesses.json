@@ -36,14 +36,7 @@
         "rating": 2,
         "text": "Not impressed — my dish was under-seasoned and cold when it arrived."
       }
-    ],
-    "deals": [
-      {
-        "title": "Taco Tuesday",
-        "description": "Buy 2 tacos, get 1 free every Tuesday. Free soft drink with every lunch combo!",
-        "validity": "Every Tuesday, Lunch Hours"
-      }
-    ]
+    ] 
   },
   {
     "id": "burnside-prime-steaks",
@@ -76,6 +69,9 @@
         "rating": 4,
         "text": "Great ambiance, staff were courteous, food was solid." 
       }
+    ],
+    "deals": [
+      "10% off all steaks on Wednesdays."
     ]
   },
   {
@@ -115,6 +111,9 @@
         "rating": 4,
         "text": "Great selection of breads and sweets, cozy atmosphere."
       }
+    ],
+    "deals": [
+      "Buy one, get one free on all muffins every Monday morning."
     ]
   },
   {
@@ -125,32 +124,32 @@
     "banner": "assets/brick_way_cuban_cafe.jpg",
     "reviews": [
       {
-        "user": "Carlos M.",
+        "user": "Jesus Daniel",
         "rating": 5,
         "text": "The Cuban sandwich was perfect — crispy on the outside, tender inside!"
       },
       {
-        "user": "Lori S.",
+        "user": "Peggy Sampson",
         "rating": 4,
         "text": "Great coffee, though my order was slightly delayed."
       },
       {
-        "user": "Ethan R.",
+        "user": "Carla Santiago",
         "rating": 3,
         "text": "Food was tasty, but the seating was cramped."
       },
       {
-        "user": "Nina P.",
+        "user": "Darla Leblanc",
         "rating": 5,
         "text": "Friendly staff and authentic flavors — my favorite lunch spot now!"
       },
       {
-        "user": "Marcus T.",
+        "user": "Buddy Wise",
         "rating": 2,
         "text": "Overrated — sandwich was bland and cold when served."
       },
       {
-        "user": "Olivia S.",
+        "user": "Marco Cline",
         "rating": 4,
         "text": "Nice little café, very welcoming, portion sizes are generous."
       }
@@ -164,32 +163,32 @@
     "banner": "assets/gulfside_taco_bar.jpg",
     "reviews": [
       {
-        "user": "Zoe R.",
+        "user": "Nellie Jacobs",
         "rating": 5,
         "text": "The fish tacos were incredible — fresh and full of flavor."
       },
       {
-        "user": "Tyler H.",
+        "user": "Carla Dugan",
         "rating": 4,
         "text": "Good variety, though it can get very crowded on weekends."
       },
       {
-        "user": "Samantha L.",
+        "user": "Clayton Dalton",
         "rating": 3,
         "text": "Tacos were decent, but my order was missing a side."
       },
       {
-        "user": "Lucas P.",
+        "user": "Gilberto Franklin",
         "rating": 5,
         "text": "Friendly staff and amazing flavors — my go-to taco place!"
       },
       {
-        "user": "Maya D.",
+        "user": "Ethel Nelson",
         "rating": 2,
         "text": "Tacos were too greasy and overpriced for the portion size."
       },
       {
-        "user": "Ethan K.",
+        "user": "Olga Johnston",
         "rating": 4,
         "text": "Overall a fun atmosphere with solid food."
       }
@@ -203,32 +202,32 @@
     "banner": "assets/four_palms_irish_pub.jpg",
     "reviews": [
       {
-        "user": "Olivia M.",
+        "user": "Michelle Davison",
         "rating": 5,
         "text": "Amazing fish and chips! Great pub vibe and friendly bartenders."
       },
       {
-        "user": "Mark H.",
+        "user": "Ryan Eaton",
         "rating": 4,
         "text": "Good food, but the music was too loud for my taste."
       },
       {
-        "user": "Clara J.",
+        "user": "Ronald Morris",
         "rating": 3,
         "text": "Service was slow, though the food was decent."
       },
       {
-        "user": "David R.",
+        "user": "Jackie Little",
         "rating": 5,
         "text": "Loved the live music and cozy interior — highly recommend!"
       },
       {
-        "user": "Samantha P.",
+        "user": "Jennifer Wolfe",
         "rating": 2,
         "text": "Overpriced drinks and the burger was overcooked."
       },
       {
-        "user": "Ethan K.",
+        "user": "Rick Booker",
         "rating": 4,
         "text": "Friendly staff and authentic Irish feel."
       }
@@ -242,35 +241,38 @@
     "banner": "assets/brights_sub_shop.jpg",
     "reviews": [
       {
-        "user": "Lila T.",
+        "user": "Antonia Douglas",
         "rating": 5,
         "text": "The Italian sub was packed with flavor — best in town!"
       },
       {
-        "user": "Ryan P.",
+        "user": "Harvey Weston",
         "rating": 4,
         "text": "Good sandwiches, though the wait was a bit long at lunch."
       },
       {
-        "user": "Maya S.",
+        "user": "Nell Brennan",
         "rating": 3,
         "text": "Decent food, but the bread was slightly stale."
       },
       {
-        "user": "Sophia L.",
+        "user": "Greg Carter",
         "rating": 5,
         "text": "Friendly staff and consistent quality — love this place."
       },
       {
-        "user": "Jordan K.",
+        "user": "Allison Daniels",
         "rating": 2,
         "text": "My sub was soggy and toppings were unevenly distributed."
       },
       {
-        "user": "Hannah R.",
+        "user": "Virginia Hardin",
         "rating": 4,
         "text": "Overall good food and fast service, will return."
       }
+    ],
+    "deals": [
+      "Kids eat free on Saturdays with any adult sub purchase."
     ]
   },
   {
@@ -281,35 +283,38 @@
     "banner": "assets/mama_jeans_pizza.jpg",
     "reviews": [
       {
-        "user": "Carlos M.",
+        "user": "Marcy McFarland",
         "rating": 5,
         "text": "Best pizza I’ve had in years! Crust is perfect and toppings are fresh."
       },
       {
-        "user": "Lori S.",
+        "user": "Cory FitzPatrick",
         "rating": 4,
         "text": "Pizza was delicious, though the restaurant is small and often crowded."
       },
       {
-        "user": "Ethan R.",
+        "user": "Young Pratt",
         "rating": 3,
         "text": "Good taste, but my order took longer than promised."
       },
       {
-        "user": "Nina P.",
+        "user": "Gerardo Gould",
         "rating": 5,
         "text": "Friendly staff and amazing flavor — highly recommend!"
       },
       {
-        "user": "Marcus T.",
+        "user": "Clyde Brooks",
         "rating": 2,
         "text": "The pizza was soggy and lacked seasoning."
       },
       {
-        "user": "Olivia S.",
+        "user": "Bob Gorman",
         "rating": 4,
         "text": "Good quality, will come back for delivery."
       }
+    ],
+    "deals": [
+      "Free delivery for orders over $25 on weekends."
     ]
   },
   {
@@ -320,35 +325,38 @@
     "banner": "assets/freshway_corner_market.jpg",
     "reviews": [
       {
-        "user": "Samantha J.",
+        "user": "Harriet Neal",
         "rating": 5,
         "text": "I love shopping here! The produce is always fresh, and the staff are incredibly helpful when I can’t find something. The bakery makes amazing croissants every morning."
       },
       {
-        "user": "Marcus L.",
+        "user": "Ramiro Dwyer",
         "rating": 4,
         "text": "Overall good market with a nice selection, but sometimes the checkout line is really long during peak hours."
       },
       {
-        "user": "Lila P.",
+        "user": "Gabriela Morse",
         "rating": 3,
         "text": "Decent quality, but some of the refrigerated items were not very cold when I visited last week."
       },
       {
-        "user": "David R.",
+        "user": "Ira Reed",
         "rating": 5,
         "text": "Friendly staff and a clean store. I especially like their local honey and artisan bread section."
       },
       {
-        "user": "Olivia M.",
+        "user": "Christopher McCall",
         "rating": 2,
         "text": "Not impressed this time — the fresh vegetables looked wilted and some items were past their sell-by date."
       },
       {
-        "user": "Tyler H.",
+        "user": "Marc Robbins",
         "rating": 5,
         "text": "I come here every week. Great selection, great prices, and the deli staff always remember me by name."
       }
+    ],
+    "deals": [
+      "10% off all organic produce on Wednesdays."
     ]
   },
   {
@@ -359,32 +367,32 @@
     "banner": "assets/parkside_collective_boutique.jpg",
     "reviews": [
       {
-        "user": "Clara S.",
+        "user": "Edith Long",
         "rating": 5,
         "text": "Such a gem of a boutique! I found a beautiful dress for my sister’s wedding, and the staff helped me style it perfectly. The attention to detail is amazing."
       },
       {
-        "user": "Ethan K.",
+        "user": "Silvia Cook",
         "rating": 4,
         "text": "Nice selection of clothes and accessories, but it can get cramped when the store is busy. Staff were friendly and helpful though."
       },
       {
-        "user": "Maya P.",
+        "user": "Raymond Ritter",
         "rating": 3,
         "text": "Cute boutique, but I found some of the items to be overpriced for the quality."
       },
       {
-        "user": "Liam R.",
+        "user": "Emma McGee",
         "rating": 5,
         "text": "Absolutely love this place! Every visit feels personalized. The staff go out of their way to make you feel welcome."
       },
       {
-        "user": "Sophie L.",
+        "user": "Constance Baxter",
         "rating": 2,
         "text": "I wasn’t impressed. Staff seemed distracted, and the checkout took forever. Products were okay, but not worth the hassle."
       },
       {
-        "user": "Nina W.",
+        "user": "Ruben Stokes",
         "rating": 4,
         "text": "Lots of unique items, and the store has a cozy, welcoming vibe. A little expensive, but worth it for something special."
       }
@@ -398,35 +406,38 @@
     "banner": "assets/banana_electronics.jpg",
     "reviews": [
       {
-        "user": "Alex B.",
+        "user": "Brenda Barton",
         "rating": 5,
         "text": "I came in looking for a laptop for school, and they helped me find exactly what I needed. Staff were patient, explained all the specs, and even helped set it up before I left."
       },
       {
-        "user": "Holly T.",
+        "user": "Carolyn Adkins",
         "rating": 4,
         "text": "Good store with a lot of options, but some products were a bit overpriced. The staff were knowledgeable though and helped me find a great deal."
       },
       {
-        "user": "Ryan P.",
+        "user": "Louis Goodwin",
         "rating": 3,
         "text": "They had the item I wanted, but I had to wait a long time for a staff member to help me."
       },
       {
-        "user": "Jade M.",
+        "user": "Jamie Pennington",
         "rating": 5,
         "text": "Excellent service — helped me pick a phone and explained all the features thoroughly. Will definitely return."
       },
       {
-        "user": "Marcus L.",
+        "user": "Katy McElroy",
         "rating": 2,
         "text": "I was frustrated — they didn’t have the charger I needed in stock, and the staff didn’t offer alternatives."
       },
       {
-        "user": "Olivia S.",
+        "user": "Natalie Ash",
         "rating": 4,
         "text": "Overall a good experience. The staff were friendly and helpful, but I felt the store was a bit cramped."
       }
+    ],
+    "deals": [
+      "Free accessory with any laptop purchase above $500."
     ]
   },
   {
@@ -437,32 +448,32 @@
     "banner": "assets/bayview_plaza_shops.jpg",
     "reviews": [
       {
-        "user": "Sophie L.",
+        "user": "Sean Morrow",
         "rating": 5,
         "text": "Bayview Plaza is perfect for small errands and gift shopping. I love the independent shops here, and the staff are always welcoming."
       },
       {
-        "user": "Ethan M.",
+        "user": "Tanya Piper",
         "rating": 4,
         "text": "Nice selection of stores, but parking can be a bit challenging during weekends."
       },
       {
-        "user": "Clara J.",
+        "user": "Kevin Sheldon",
         "rating": 3,
         "text": "Some shops were out of stock, and a few looked a bit run-down. Still, good variety overall."
       },
       {
-        "user": "Lucas T.",
+        "user": "Geraldine Pittman",
         "rating": 5,
         "text": "A charming plaza with unique stores. I enjoy coming here instead of the big malls."
       },
       {
-        "user": "Maya S.",
+        "user": "Drew Andrews",
         "rating": 2,
         "text": "Not impressed — a few shops closed unexpectedly, and there was no signage for visitors."
       },
       {
-        "user": "David K.",
+        "user": "Vanessa Thomas",
         "rating": 4,
         "text": "Good local shopping experience, friendly store owners, but could use more seating areas."
       }
@@ -476,32 +487,32 @@
     "banner": "assets/breezy_fan_shop.jpg",
     "reviews": [
       {
-        "user": "Lucas H.",
+        "user": "Bernice Daniels",
         "rating": 5,
         "text": "Amazing selection of team merchandise! The staff helped me find a rare jersey I’ve been hunting for months."
       },
       {
-        "user": "Ava K.",
+        "user": "Deborah Cummings",
         "rating": 4,
         "text": "Great shop, though it can get crowded on game days. Staff were friendly and knowledgeable."
       },
       {
-        "user": "Noah R.",
+        "user": "Stephanie Cannon",
         "rating": 3,
         "text": "Found what I needed, but prices were a bit steep for hats and shirts."
       },
       {
-        "user": "Chloe M.",
+        "user": "Doris McGee",
         "rating": 5,
         "text": "Excellent customer service — they even helped me track down merchandise for a friend."
       },
       {
-        "user": "Ethan T.",
+        "user": "Robbie Chen",
         "rating": 2,
         "text": "Disappointed — the item I wanted was listed online but wasn’t in stock, and no alternatives were offered."
       },
       {
-        "user": "Sophia P.",
+        "user": "Kellie Fields.",
         "rating": 4,
         "text": "Good quality products, staff were helpful, but parking is tight."
       }
@@ -515,35 +526,38 @@
     "banner": "assets/thunder_alley_sports.jpg",
     "reviews": [
       {
-        "user": "Liam R.",
+        "user": "Stacy Collier",
         "rating": 5,
         "text": "Staff were amazing in helping me choose the right running shoes. I appreciated their attention to fit and comfort."
       },
       {
-        "user": "Maya P.",
+        "user": "Harvey Wolf",
         "rating": 4,
         "text": "Great variety of equipment, though the store layout can be confusing."
       },
       {
-        "user": "Oliver S.",
+        "user": "Jenna Bullock",
         "rating": 3,
         "text": "Prices are higher than online retailers, but the service and advice make up for it."
       },
       {
-        "user": "Clara J.",
+        "user": "Tammy Haney",
         "rating": 5,
         "text": "Friendly and helpful staff — they even helped me adjust my new tennis racket."
       },
       {
-        "user": "Marcus T.",
+        "user": "Bridget Richardson",
         "rating": 2,
         "text": "Disappointed — my order was mispriced and they were slow to fix it."
       },
       {
-        "user": "Olivia S.",
+        "user": "Lola Melton",
         "rating": 4,
         "text": "Good quality products, staff are knowledgeable, but checkout took too long."
       }
+    ],
+    "deals": [
+      "15% off all running shoes every Monday."
     ]
   },
   {
@@ -554,32 +568,32 @@
     "banner": "assets/gulf_trail_outfitters.jpg",
     "reviews": [
       {
-        "user": "Sophie L.",
+        "user": "Daniel Nicholson",
         "rating": 5,
         "text": "Great shop for outdoor gear! Staff helped me pick the perfect tent and gave tips for setup."
       },
       {
-        "user": "Ethan M.",
+        "user": "Leslie Ball",
         "rating": 4,
         "text": "Good selection, though a few items were out of stock. Staff were very helpful."
       },
       {
-        "user": "Clara J.",
+        "user": "Will Garrett",
         "rating": 3,
         "text": "Prices felt high, but the quality of the products is excellent."
       },
       {
-        "user": "Lucas T.",
+        "user": "Jordan Williams",
         "rating": 5,
         "text": "Staff really know their stuff — helped me choose the right hiking boots for my trip."
       },
       {
-        "user": "Maya S.",
+        "user": "Marcus Swartz",
         "rating": 2,
         "text": "I was frustrated — the GPS device I wanted was unavailable, and they didn’t suggest alternatives."
       },
       {
-        "user": "David K.",
+        "user": "Randolph Johnson",
         "rating": 4,
         "text": "Solid selection and friendly staff, but the checkout line was long."
       }
@@ -593,32 +607,32 @@
     "banner": "assets/edisons_car_dealership.jpg",
     "reviews": [
       {
-        "user": "Olivia M.",
+        "user": "Leah Frye",
         "rating": 5,
         "text": "Bought my first car here and the experience was fantastic. Staff explained everything and helped me get the best deal."
       },
       {
-        "user": "Mark H.",
+        "user": "Erica Lambert",
         "rating": 4,
         "text": "Good selection, friendly staff, but the paperwork took longer than expected."
       },
       {
-        "user": "Clara J.",
+        "user": "Micheal Ferris",
         "rating": 3,
         "text": "Decent service, but felt slightly rushed during test drives."
       },
       {
-        "user": "David R.",
+        "user": "Mark Melton",
         "rating": 5,
         "text": "I trusted them completely — transparent and professional."
       },
       {
-        "user": "Samantha P.",
+        "user": "Jackie Daly",
         "rating": 2,
         "text": "I was disappointed — they misquoted the price and it took a week to sort it out."
       },
       {
-        "user": "Ethan K.",
+        "user": "Ivan Barnett",
         "rating": 4,
         "text": "Overall a good experience, but the waiting area was small and crowded."
       }
@@ -632,35 +646,38 @@
     "banner": "assets/old_town_vintage_exchange.jpg",
     "reviews": [
       {
-        "user": "Lila T.",
+        "user": "Christie Sanderson",
         "rating": 5,
         "text": "Amazing vintage selection! Found a perfect retro jacket and the staff helped me style it."
       },
       {
-        "user": "Ryan P.",
+        "user": "Terry Stanley",
         "rating": 4,
         "text": "Great shop, though the aisles are tight and hard to navigate with a cart."
       },
       {
-        "user": "Maya S.",
+        "user": "Stefanie Doyle",
         "rating": 3,
         "text": "Items are interesting, but some are overpriced for their condition."
       },
       {
-        "user": "Sophia L.",
+        "user": "Maggie Russell",
         "rating": 5,
         "text": "Friendly staff, lots of hidden treasures — love coming here regularly."
       },
       {
-        "user": "Jordan K.",
+        "user": "Belinda Steele",
         "rating": 2,
         "text": "I was disappointed — a few items had stains that weren’t mentioned."
       },
       {
-        "user": "Hannah R.",
+        "user": "Glenn Jordan",
         "rating": 4,
         "text": "Good finds, helpful staff, though the shop is a little disorganized."
       }
+    ],
+    "deals": [
+      "20% off vintage jackets every Tuesday."
     ]
   },
   {
@@ -671,32 +688,32 @@
     "banner": "assets/good_health_hospital.jpg",
     "reviews": [
       {
-        "user": "Olivia M.",
+        "user": "Susan Root",
         "rating": 5,
         "text": "The staff were incredibly professional and caring. My surgery went smoothly, and I felt supported throughout the process."
       },
       {
-        "user": "Mark H.",
+        "user": "Marian Mahoney",
         "rating": 4,
         "text": "Great hospital with attentive staff, but the waiting times in the ER were longer than expected."
       },
       {
-        "user": "Clara J.",
+        "user": "Sonja Peters",
         "rating": 3,
         "text": "Overall good care, but the room was a bit crowded and noisy during my stay."
       },
       {
-        "user": "David R.",
+        "user": "Cary Rollins",
         "rating": 5,
         "text": "Excellent doctors and nurses — I highly recommend this hospital for any medical needs."
       },
       {
-        "user": "Samantha P.",
+        "user": "Leigh Ibarra",
         "rating": 2,
         "text": "Disappointed with the billing process — it was confusing and took too long to resolve."
       },
       {
-        "user": "Ethan K.",
+        "user": "Pete Newell",
         "rating": 4,
         "text": "High-quality medical care, though parking is limited and a bit inconvenient."
       }
@@ -710,32 +727,32 @@
     "banner": "assets/sunline_community_finance.jpg",
     "reviews": [
       {
-        "user": "Maya S.",
+        "user": "Christina McConnell",
         "rating": 5,
         "text": "The team at Sunline really helped me understand my options and create a solid savings plan. I feel confident about my finances now."
       },
       {
-        "user": "Liam R.",
+        "user": "Reginald Stafford",
         "rating": 4,
         "text": "Good service overall, but I had to follow up multiple times to get a loan approved."
       },
       {
-        "user": "Sophia L.",
+        "user": "Jillian Riggs",
         "rating": 3,
         "text": "Friendly staff, but the process took longer than I expected for a small personal loan."
       },
       {
-        "user": "David K.",
+        "user": "Ernest Silva",
         "rating": 5,
         "text": "Excellent financial advice and clear communication. I highly recommend them for anyone looking to manage their money better."
       },
       {
-        "user": "Jordan T.",
+        "user": "Lindsay McDermott",
         "rating": 2,
         "text": "Frustrating experience — my application was delayed, and I didn’t get updates promptly."
       },
       {
-        "user": "Hannah R.",
+        "user": "Marguerite Dawson",
         "rating": 4,
         "text": "Helpful staff and good guidance, though the paperwork was a bit tedious."
       }
@@ -749,35 +766,38 @@
     "banner": "assets/5_minutes_plumbing_service.jpg",
     "reviews": [
       {
-        "user": "Lucas P.",
+        "user": "Joanna Miller",
         "rating": 5,
         "text": "Came within 15 minutes! Fixed my leaky faucet quickly and explained everything clearly. Highly recommend."
       },
       {
-        "user": "Olivia S.",
+        "user": "Georgia Ramirez",
         "rating": 4,
         "text": "Good service, though the technician was a little late. He was professional and thorough once he arrived."
       },
       {
-        "user": "Ethan K.",
+        "user": "Catherine McGee",
         "rating": 3,
         "text": "Repair was okay, but I had to call back the next day for a follow-up. Not ideal."
       },
       {
-        "user": "Samantha P.",
+        "user": "Cristina Williamson",
         "rating": 5,
         "text": "Fantastic service! Quick, reliable, and the pricing was fair. Saved me from a big mess."
       },
       {
-        "user": "Mark H.",
+        "user": "Chris Kim",
         "rating": 2,
         "text": "Had a bad experience — plumber seemed rushed and left a mess behind."
       },
       {
-        "user": "Clara J.",
+        "user": "Philip Compton",
         "rating": 4,
         "text": "Overall a solid service. I will call them again if anything else comes up."
       }
+    ],
+    "deals": [
+      "10% off for first-time customers."
     ]
   },
   {
@@ -788,32 +808,32 @@
     "banner": "assets/bright_smiles_dentistry.jpg",
     "reviews": [
       {
-        "user": "Hannah K.",
+        "user": "Tracey McGrath",
         "rating": 5,
         "text": "The dentist was amazing — gentle, thorough, and explained all my treatment options clearly."
       },
       {
-        "user": "Lucas R.",
+        "user": "Julio Ingram",
         "rating": 4,
         "text": "Good service and clean facility, though the wait for my appointment was a bit long."
       },
       {
-        "user": "Maya L.",
+        "user": "Allison Webster",
         "rating": 3,
         "text": "Treatment was fine, but the front desk staff seemed a bit disorganized."
       },
       {
-        "user": "Ethan P.",
+        "user": "Dick Goldstein",
         "rating": 5,
         "text": "Excellent dental care! They really made me feel comfortable during my procedure."
       },
       {
-        "user": "Sophie T.",
+        "user": "Arnold Connell",
         "rating": 2,
         "text": "Disappointed — my appointment was delayed twice, which was frustrating."
       },
       {
-        "user": "Olivia M.",
+        "user": "Noel George",
         "rating": 4,
         "text": "Friendly staff and professional care, just wish they had more flexible appointment times."
       }
@@ -827,36 +847,36 @@
     "banner": "assets/skyport_travel_services.jpg",
     "reviews": [
       {
-        "user": "Clara S.",
+        "user": "Bert Lam",
         "rating": 5,
         "text": "Booked a family vacation with Skyport, and everything went perfectly. They handled all the details, which made the trip stress-free."
       },
       {
-        "user": "Liam R.",
+        "user": "Tonya Rich",
         "rating": 4,
         "text": "Helpful staff and good options, but some of the bookings were a little more expensive than online alternatives."
       },
       {
-        "user": "Maya P.",
+        "user": "Veronica Rhodes",
         "rating": 3,
         "text": "Service was okay, but I had to call multiple times to confirm my hotel booking."
       },
       {
-        "user": "David K.",
+        "user": "Velma Frey",
         "rating": 5,
         "text": "Excellent guidance and friendly staff. Made our trip unforgettable."
       },
       {
-        "user": "Jordan T.",
+        "user": "Kendra More",
         "rating": 2,
         "text": "Frustrating experience — our flight itinerary had errors and it took time to fix."
       },
       {
-        "user": "Hannah R.",
+        "user": "Don Gillespie",
         "rating": 4,
         "text": "Good service, helpful advice, though a bit slow in responding to emails."
       }
-    ]
+    ]    
   },
   {
     "id": "coastal-connect-it",
@@ -866,35 +886,38 @@
     "banner": "assets/coastal_connect_it.jpg",
     "reviews": [
       {
-        "user": "Olivia S.",
+        "user": "Lance Mora",
         "rating": 5,
         "text": "Coastal Connect IT solved our network issues quickly and professionally. Excellent communication and follow-up."
       },
       {
-        "user": "Ethan K.",
+        "user": "Russ Lowery",
         "rating": 4,
         "text": "Good service, though the initial setup took longer than expected. Staff were knowledgeable."
       },
       {
-        "user": "Samantha P.",
+        "user": "Pauline Hatfield",
         "rating": 3,
         "text": "Technicians were okay, but some of my requests were delayed. Communication could improve."
       },
       {
-        "user": "Lucas P.",
+        "user": "Alfonso Howell",
         "rating": 5,
         "text": "Very satisfied — they helped optimize our systems and provided great advice for security."
       },
       {
-        "user": "Mark H.",
+        "user": "Alexander McLaughlin",
         "rating": 2,
         "text": "Frustrated — repeated issues with the server took too long to fix."
       },
       {
-        "user": "Clara J.",
+        "user": "Merle Mendoza",
         "rating": 4,
         "text": "Solid IT solutions and responsive support. Will hire again."
       }
+    ],
+    "deals": [
+      "20% off network setup for small businesses during the month of March."
     ]
   },
   {
@@ -905,35 +928,38 @@
     "banner": "assets/bayfront_adventure_tours.jpg",
     "reviews": [
       {
-        "user": "Sophia L.",
+        "user": "Janis Stokes",
         "rating": 5,
         "text": "Amazing tour! The guides were friendly and knowledgeable, and we saw dolphins up close."
       },
       {
-        "user": "Liam R.",
+        "user": "Martin Caldwell",
         "rating": 4,
         "text": "Fun experience, though it was a bit crowded on our tour. Guides were very helpful."
       },
       {
-        "user": "Maya P.",
+        "user": "Glenn Maddox",
         "rating": 3,
         "text": "The tour was okay, but we didn’t see as much wildlife as expected."
       },
       {
-        "user": "David K.",
+        "user": "Rosemarie Greenwood",
         "rating": 5,
         "text": "Highly recommend! Beautiful views and a safe, enjoyable adventure."
       },
       {
-        "user": "Jordan T.",
+        "user": "Jayne Marshall",
         "rating": 2,
         "text": "Disappointed — the boat had mechanical issues, and the tour started late."
       },
       {
-        "user": "Hannah R.",
+        "user": "Gretchen Johnston",
         "rating": 4,
         "text": "Good overall, guides were friendly, minor delays but worth it."
       }
+    ],
+    "deals": [
+      "Kids under 12 ride free with one paying adult every weekend in summer."
     ]
   },
   {
@@ -944,35 +970,38 @@
     "banner": "assets/anchorline_realtor.jpg",
     "reviews": [
       {
-        "user": "Olivia M.",
+        "user": "Julian Orozco",
         "rating": 5,
         "text": "Excellent realtor! Helped us find our dream home and guided us through every step of the process."
       },
       {
-        "user": "Mark H.",
+        "user": "Alberto Buckley",
         "rating": 4,
         "text": "Friendly and knowledgeable, but communication was a bit slow at times."
       },
       {
-        "user": "Clara J.",
+        "user": "Mark Pacheco",
         "rating": 3,
         "text": "Decent service, but felt rushed during viewings."
       },
       {
-        "user": "David R.",
+        "user": "Theresa Tate",
         "rating": 5,
         "text": "Highly recommend AnchorLine for anyone buying or selling property in the area."
       },
       {
-        "user": "Samantha P.",
+        "user": "Carrie Sosa",
         "rating": 2,
         "text": "Disappointed — my property listing didn’t get enough exposure, and I had to follow up multiple times."
       },
       {
-        "user": "Ethan K.",
+        "user": "Marvin Daniels",
         "rating": 4,
         "text": "Good experience overall, staff were helpful and professional."
       }
+    ],
+    "deals": [
+      "Free home valuation consultation for first-time sellers."
     ]
   },
   {
@@ -983,32 +1012,32 @@
     "banner": "assets/palmtech_computer_repair.jpg",
     "reviews": [
       {
-        "user": "Lucas P.",
+        "user": "Elmer King",
         "rating": 5,
         "text": "Quick and reliable! My laptop was fixed in a day, and the staff explained everything clearly."
       },
       {
-        "user": "Olivia S.",
+        "user": "Margarita Sherman",
         "rating": 4,
         "text": "Good service, though a bit pricey for minor repairs. Staff were professional and friendly."
       },
       {
-        "user": "Ethan K.",
+        "user": "Janet Driscoll",
         "rating": 3,
         "text": "Repair was okay, but it took longer than promised, and communication could be better."
       },
       {
-        "user": "Samantha P.",
+        "user": "Wendy Burns",
         "rating": 5,
         "text": "Excellent service — they recovered all my lost data and optimized my computer."
       },
       {
-        "user": "Mark H.",
+        "user": "Don Clayton",
         "rating": 2,
         "text": "Frustrated — my computer developed another issue shortly after repair, had to return."
       },
       {
-        "user": "Clara J.",
+        "user": "Angel Perry",
         "rating": 4,
         "text": "Solid repair work, friendly staff, will use again if needed."
       }
@@ -1022,32 +1051,32 @@
     "banner": "assets/greenwood_library.jpg",
     "reviews": [
       {
-        "user": "Sophia L.",
+        "user": "Vicky Barnes",
         "rating": 5,
         "text": "A fantastic library with helpful staff. Great programs for kids and adults alike."
       },
       {
-        "user": "Liam R.",
+        "user": "Adrian Richardson",
         "rating": 4,
         "text": "Good selection of books and resources, though some popular titles were out of stock."
       },
       {
-        "user": "Maya P.",
+        "user": "Joanna Warner",
         "rating": 3,
         "text": "Nice space, but some computers were slow or not working."
       },
       {
-        "user": "David K.",
+        "user": "Henry Holder",
         "rating": 5,
         "text": "Friendly environment and a great community hub. Love attending the author events."
       },
       {
-        "user": "Jordan T.",
+        "user": "Diana Brooks",
         "rating": 2,
         "text": "Disappointed — quiet areas were noisy during my visit and difficult to focus."
       },
       {
-        "user": "Hannah R.",
+        "user": "Byron Robinson",
         "rating": 4,
         "text": "Overall good library, welcoming staff, minor improvements needed in seating."
       }
@@ -1061,71 +1090,71 @@
     "banner": "assets/gulfside_auto_tire.jpg",
     "reviews": [
       {
-        "user": "Lucas P.",
+        "user": "Ricky Schroeder",
         "rating": 5,
         "text": "Fixed my brakes quickly and at a reasonable price. Staff were friendly and professional."
       },
       {
-        "user": "Olivia S.",
+        "user": "Matthew Thomson",
         "rating": 4,
         "text": "Good service overall, but the wait time was longer than I expected."
       },
       {
-        "user": "Ethan K.",
+        "user": "Clayton Pollard",
         "rating": 3,
         "text": "Decent work, but they didn’t clean up the shop floor after repairs, which was a bit annoying."
       },
       {
-        "user": "Samantha P.",
+        "user": "Ruby Cruz",
         "rating": 5,
         "text": "Reliable and trustworthy mechanics. I will definitely return for future services."
       },
       {
-        "user": "Mark H.",
+        "user": "Shannon Blake",
         "rating": 2,
         "text": "Not happy — my tire repair didn’t hold, had to come back the next day."
       },
       {
-        "user": "Clara J.",
+        "user": "Gertrude Shelton",
         "rating": 4,
         "text": "Good overall experience, professional staff, and fair pricing."
       }
     ]
   },
   {
-    "id": "horizontal-fitness-studio",
-    "name": "Horizontal Fitness Studio",
+    "id": "horizon-fitness-studio",
+    "name": "Horizon Fitness Studio",
     "category": "Services",
     "description": "A fitness center offering personalized training, group classes, and wellness programs. Horizontal Fitness Studio focuses on creating a supportive and motivating environment for clients of all fitness levels, with certified trainers and modern equipment.",
     "banner": "assets/horizontal_fitness_studio.jpg",
     "reviews": [
       {
-        "user": "Sophia L.",
+        "user": "Roberto Francis",
         "rating": 5,
         "text": "Amazing trainers and a welcoming environment. I’ve seen great results since joining!"
       },
       {
-        "user": "Liam R.",
+        "user": "Rex Keenan",
         "rating": 4,
         "text": "Good facilities and classes, though it can get crowded during peak hours."
       },
       {
-        "user": "Maya P.",
+        "user": "Wilson Raymond",
         "rating": 3,
         "text": "Trainers are okay, but sometimes classes feel rushed or overcrowded."
       },
       {
-        "user": "David K.",
+        "user": "Cristina Lynch",
         "rating": 5,
         "text": "Friendly staff, personalized attention, and a variety of programs that really helped me improve my fitness."
       },
       {
-        "user": "Jordan T.",
+        "user": "Belinda Gibson",
         "rating": 2,
         "text": "Disappointed — equipment was broken, and I had to wait for machines during class."
       },
       {
-        "user": "Hannah R.",
+        "user": "Shelby Swartz",
         "rating": 4,
         "text": "Good studio overall, supportive trainers, but peak times can be busy."
       }
@@ -1139,57 +1168,35 @@
     "banner": "assets/brightpath_learning_center.jpg",
     "reviews": [
       {
-        "user": "Olivia M.",
+        "user": "Kate Louis",
         "rating": 5,
         "text": "My child’s grades improved dramatically after joining BrightPath. The tutors are knowledgeable and patient."
       },
       {
-        "user": "Mark H.",
+        "user": "Clay Meyers",
         "rating": 4,
         "text": "Great learning environment, though scheduling can be tricky during busy months."
       },
       {
-        "user": "Clara J.",
+        "user": "Matt Barber",
         "rating": 3,
         "text": "Helpful staff, but I wished there were more flexible times for group sessions."
       },
       {
-        "user": "David R.",
+        "user": "Kristy McMillan",
         "rating": 5,
         "text": "Excellent tutoring program — my son is more confident and motivated now."
       },
       {
-        "user": "Samantha P.",
+        "user": "Maribel Stewart",
         "rating": 2,
         "text": "Not satisfied — communication was slow, and it took time to get a tutor assigned."
       },
       {
-        "user": "Ethan K.",
+        "user": "Drew Nelson",
         "rating": 4,
         "text": "Good overall experience, caring educators, effective programs."
       }
-    ]
-  },
-  {
-    "id": "green-grocers",
-    "name": "Green Grocers",
-    "category": "Retail",
-    "description": "A vibrant local market dedicated to providing fresh, organic produce and sustainable grocery options. Green Grocers prides itself on sourcing fruits, vegetables, and other goods from local farmers and ethical suppliers, ensuring quality and supporting the community. The store offers a wide variety of products, including specialty health foods, eco-friendly household items, and artisanal goods. With knowledgeable staff ready to assist and a commitment to environmental responsibility, Green Grocers is more than just a grocery store—it's a hub for healthy living and conscious shopping.",
-    "banner": "assets/green-grocers.jpg",
-    "reviews": [
-      {
-        "user": "C. Fields",
-        "rating": 5,
-        "text": "Fresh produce and friendly staff!"
-      },
-      {
-        "user": "L. Brown",
-        "rating": 4,
-        "text": "Great selection of organic products."
-      }
-    ],
-    "deals": [
-      "10% off all organic produce on Wednesdays"
     ]
   }
 ]
