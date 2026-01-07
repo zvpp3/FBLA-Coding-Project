@@ -1,11 +1,11 @@
 [
   {
-  "id": "casa-palmera-cantina",
-  "name": "Casa Palmera Cantina",
-  "category": "Food",
-  "description": "A vibrant, family-owned cantina offering authentic Latin cuisine with a modern twist. Casa Palmera Cantina specializes in tacos, enchiladas, fresh seafood, and handcrafted cocktails. The restaurant prides itself on using locally sourced ingredients, creating flavorful dishes while maintaining a welcoming and lively atmosphere. With a focus on friendly service, Casa Palmera Cantina provides both dine-in and takeout options, making it a favorite for casual meals and special occasions.",
-  "banner": "assets/casa_palmera_cantina.jpg",
-  "reviews": [
+    "id": "casa-palmera-cantina",
+    "name": "Casa Palmera Cantina",
+    "category": "Food",
+    "description": "A vibrant, family-owned cantina offering authentic Latin cuisine with a modern twist. Casa Palmera Cantina specializes in tacos, enchiladas, fresh seafood, and handcrafted cocktails. The restaurant prides itself on using locally sourced ingredients, creating flavorful dishes while maintaining a welcoming and lively atmosphere. With a focus on friendly service, Casa Palmera Cantina provides both dine-in and takeout options, making it a favorite for casual meals and special occasions.",
+    "banner": "assets/casa_palmera_cantina.jpg",
+    "reviews": [
       {
         "user": "Lana Bentley",
         "rating": 5,
@@ -35,8 +35,24 @@
         "user": "Colleen Stephenson",
         "rating": 2,
         "text": "Not impressed — my dish was under-seasoned and cold when it arrived."
+      },
+      {
+        "user": "Emmanuel Houston",
+        "rating": 5,
+        "text": "Absolutely brilliant food. My family loved it. Will definitely come again!"
+      },
+      {
+        "user": "Agnes Davila",
+        "rating": 5,
+        "text": "If you want a great dining experience, this is the place. The service was great, the food was amazing, and my friends had a great time together."
+      },
+      {
+        "user": "Salman Li",
+        "rating": 5,
+        "text": "My kids loved the food. I found the quality and quantity to be on par with the price. Another benefit is that the restaurant has a large car park."
       }
-    ] 
+    ],
+    "deals": []
   },
   {
     "id": "burnside-prime-steaks",
@@ -45,29 +61,50 @@
     "description": "An upscale steakhouse offering premium cuts of beef, seafood, and a carefully curated wine selection. Burnside Prime Steaks combines elegant décor with exceptional service, making it ideal for business dinners, date nights, and special celebrations. Each steak is aged and cooked to order, with sides and sauces crafted in-house for a balanced dining experience.",
     "banner": "assets/burnside_prime_steaks.jpg",
     "reviews": [
-      { "user": "Raquel Deleon", 
+      {
+        "user": "Raquel Deleon",
         "rating": 5,
-        "text": "Perfectly cooked steaks, attentive service, and an amazing wine list!" 
+        "text": "Perfectly cooked steaks, attentive service, and an amazing wine list!"
       },
-      { "user": "Oliver Post",
-        "rating": 4,
-        "text": "Food was excellent, but the wait for our table was longer than expected." 
-      },
-      { "user": "Adrian Bowman",
-        "rating": 3,
-        "text": "Good steaks, but the service felt rushed and a bit impersonal." 
-      },
-      { "user": "Ann Bentley",
-        "rating": 5, 
-        "text": "Absolutely delicious! The ribeye was cooked perfectly." 
-      },
-      { "user": "Samantha Hanson", 
+      {
+        "user": "Oliver Post",
         "rating": 2,
-        "text": "Overpriced for the quality — felt the sides were bland." 
+        "text": "Food was average, and the wait for our table was longer than expected."
       },
-      { "user": "Rene Charles",
+      {
+        "user": "Adrian Bowman",
+        "rating": 3,
+        "text": "Good steaks, but the service felt rushed and a bit impersonal."
+      },
+      {
+        "user": "Ann Bentley",
+        "rating": 5,
+        "text": "Absolutely delicious! The ribeye was cooked perfectly."
+      },
+      {
+        "user": "Samantha Hanson",
+        "rating": 2,
+        "text": "Overpriced for the quality — felt the sides were bland."
+      },
+      {
+        "user": "Rene Charles",
         "rating": 4,
-        "text": "Great ambiance, staff were courteous, food was solid." 
+        "text": "Great ambiance, staff were courteous, food was solid."
+      },
+      {
+        "user": "Kirsty Kane",
+        "rating": 2,
+        "text": "Came over here expecting a lot, and unfortunately, my whole experience was way below my expectations. The only positive thing about my evening was the staff. They were kind, helpful, and quick."
+      },
+      {
+        "user": "Estelle Harrell",
+        "rating": 4,
+        "text": "Good food, nothing to complain."
+      },
+      {
+        "user": "Rihanna Harrison",
+        "rating": 1,
+        "text": "Never in my life have I come to a restaurant so poorly maintained. The food was not great, the wait times were long, and the service was second-rate at best."
       }
     ],
     "deals": [
@@ -110,6 +147,26 @@
         "user": "Roderick Hardin",
         "rating": 4,
         "text": "Great selection of breads and sweets, cozy atmosphere."
+      },
+      {
+        "user": "Emily Carter",
+        "rating": 5,
+        "text": "Everything tasted incredibly fresh, especially the almond croissants. You can tell they bake in small batches, and the staff were warm and welcoming."
+      },
+      {
+        "user": "Brian Lopez",
+        "rating": 4,
+        "text": "Great pastries and solid coffee. The morning rush can be hectic, but the quality makes the wait worthwhile."
+      },
+      {
+        "user": "Tina Nguyen",
+        "rating": 3,
+        "text": "The bread was good, but my order took longer than expected and one item was sold out by the time I reached the counter."
+      },
+      {
+        "user": "Marcus Feldman",
+        "rating": 2,
+        "text": "The flavors were fine, but my pastry was noticeably dry. For the price, I expected better consistency."
       }
     ],
     "deals": [
@@ -123,11 +180,6 @@
     "description": "A casual café serving authentic Cuban sandwiches, coffee, and traditional Latin dishes. Brick Way Cuban Café is known for its vibrant atmosphere, strong café con leche, and freshly made empanadas. The café emphasizes friendly, personal service and offers dine-in and takeaway options for locals and visitors alike.",
     "banner": "assets/brick_way_cuban_cafe.jpg",
     "reviews": [
-      {
-        "user": "Jesus Daniel",
-        "rating": 5,
-        "text": "The Cuban sandwich was perfect — crispy on the outside, tender inside!"
-      },
       {
         "user": "Peggy Sampson",
         "rating": 4,
@@ -152,8 +204,19 @@
         "user": "Marco Cline",
         "rating": 4,
         "text": "Nice little café, very welcoming, portion sizes are generous."
+      },
+      {
+        "user": "Alyssa Reed",
+        "rating": 3,
+        "text": "Food tasted good, but the café felt cramped during lunch and it took a while to get our order. Not bad, just not smooth."
+      },
+      {
+        "user": "Derek Holloway",
+        "rating": 2,
+        "text": "I was excited to try this place, but my sandwich came out lukewarm and the bread was soggy. Service was polite, though."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "gulfside-taco-bar",
@@ -191,8 +254,14 @@
         "user": "Olga Johnston",
         "rating": 4,
         "text": "Overall a fun atmosphere with solid food."
+      },
+      {
+        "user": "Nadia Higgins",
+        "rating": 3,
+        "text": "Decent place for a quick bite. I would not recommend coming here on a regular basis."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "four-palms-irish-pub",
@@ -230,8 +299,19 @@
         "user": "Rick Booker",
         "rating": 4,
         "text": "Friendly staff and authentic Irish feel."
+      },
+      {
+        "user": "Tillie Duran",
+        "rating": 5,
+        "text": "Had a great night with the lads. Very fun and thrilling place. The food was good and the beer even better."
+      },
+      {
+        "user": "Madison Ramos",
+        "rating": 5,
+        "text": "I have been here a lot. It has become one of my go-to spots for the weekend. The service is really nice over here and very inclusive of the community."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "brights-sub-shop",
@@ -261,11 +341,6 @@
         "text": "Friendly staff and consistent quality — love this place."
       },
       {
-        "user": "Allison Daniels",
-        "rating": 2,
-        "text": "My sub was soggy and toppings were unevenly distributed."
-      },
-      {
         "user": "Virginia Hardin",
         "rating": 4,
         "text": "Overall good food and fast service, will return."
@@ -283,24 +358,14 @@
     "banner": "assets/mama_jeans_pizza.jpg",
     "reviews": [
       {
-        "user": "Marcy McFarland",
-        "rating": 5,
-        "text": "Best pizza I’ve had in years! Crust is perfect and toppings are fresh."
-      },
-      {
         "user": "Cory FitzPatrick",
-        "rating": 4,
-        "text": "Pizza was delicious, though the restaurant is small and often crowded."
+        "rating": 3,
+        "text": "Pizza was average, and the restaurant is small and often crowded."
       },
       {
         "user": "Young Pratt",
         "rating": 3,
         "text": "Good taste, but my order took longer than promised."
-      },
-      {
-        "user": "Gerardo Gould",
-        "rating": 5,
-        "text": "Friendly staff and amazing flavor — highly recommend!"
       },
       {
         "user": "Clyde Brooks",
@@ -309,8 +374,18 @@
       },
       {
         "user": "Bob Gorman",
-        "rating": 4,
-        "text": "Good quality, will come back for delivery."
+        "rating": 2,
+        "text": "Poor quality, will not come back for delivery."
+      },
+      {
+        "user": "Macauley Wilcox",
+        "rating": 1,
+        "text": "What used to be the best pizza place in town has slowly degraded to nothing more than a run-down sandwich shop with poor management."
+      },
+      {
+        "user": "Mollie Griffith",
+        "rating": 1,
+        "text": "Genuinely surprised how bad the quality was. The pizza was not cooked properly, the delivery took way longer than mentioned, and the deal was not even valid."
       }
     ],
     "deals": [
@@ -396,7 +471,8 @@
         "rating": 4,
         "text": "Lots of unique items, and the store has a cozy, welcoming vibe. A little expensive, but worth it for something special."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "banana-electronics",
@@ -477,7 +553,8 @@
         "rating": 4,
         "text": "Good local shopping experience, friendly store owners, but could use more seating areas."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "breezy-fan-shop",
@@ -516,7 +593,8 @@
         "rating": 4,
         "text": "Good quality products, staff were helpful, but parking is tight."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "thunder-alley-sports",
@@ -597,7 +675,8 @@
         "rating": 4,
         "text": "Solid selection and friendly staff, but the checkout line was long."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "edisons-car-dealership",
@@ -636,7 +715,8 @@
         "rating": 4,
         "text": "Overall a good experience, but the waiting area was small and crowded."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "old-town-vintage-exchange",
@@ -717,7 +797,8 @@
         "rating": 4,
         "text": "High-quality medical care, though parking is limited and a bit inconvenient."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "sunline-community-finance",
@@ -756,7 +837,8 @@
         "rating": 4,
         "text": "Helpful staff and good guidance, though the paperwork was a bit tedious."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "5-minutes-plumbing-service",
@@ -837,7 +919,8 @@
         "rating": 4,
         "text": "Friendly staff and professional care, just wish they had more flexible appointment times."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "skyport-travel-services",
@@ -876,7 +959,8 @@
         "rating": 4,
         "text": "Good service, helpful advice, though a bit slow in responding to emails."
       }
-    ]    
+    ],
+    "deals": []
   },
   {
     "id": "coastal-connect-it",
@@ -1041,7 +1125,8 @@
         "rating": 4,
         "text": "Solid repair work, friendly staff, will use again if needed."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "greenwood-library",
@@ -1080,7 +1165,8 @@
         "rating": 4,
         "text": "Overall good library, welcoming staff, minor improvements needed in seating."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "gulfside-auto-tire",
@@ -1119,7 +1205,8 @@
         "rating": 4,
         "text": "Good overall experience, professional staff, and fair pricing."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "horizon-fitness-studio",
@@ -1158,7 +1245,8 @@
         "rating": 4,
         "text": "Good studio overall, supportive trainers, but peak times can be busy."
       }
-    ]
+    ],
+    "deals": []
   },
   {
     "id": "brightpath-learning-center",
@@ -1197,6 +1285,7 @@
         "rating": 4,
         "text": "Good overall experience, caring educators, effective programs."
       }
-    ]
+    ],
+    "deals": []
   }
 ]
