@@ -493,8 +493,8 @@
       },
       {
         "user": "Louis Goodwin",
-        "rating": 3,
-        "text": "They had the item I wanted, but I had to wait a long time for a staff member to help me."
+        "rating": 4,
+        "text": "They had the item I wanted, but I had to wait a some time for a staff member to help me."
       },
       {
         "user": "Jamie Pennington",
@@ -502,14 +502,19 @@
         "text": "Excellent service — helped me pick a phone and explained all the features thoroughly. Will definitely return."
       },
       {
-        "user": "Katy McElroy",
-        "rating": 2,
-        "text": "I was frustrated — they didn’t have the charger I needed in stock, and the staff didn’t offer alternatives."
-      },
-      {
         "user": "Natalie Ash",
         "rating": 4,
         "text": "Overall a good experience. The staff were friendly and helpful, but I felt the store was a bit cramped."
+      },
+      {
+        "user": "Louie Valdez",
+        "rating": 5,
+        "text": "Great store. I was there at its inauguration, and since then, it has been my go-to place for anything tech related."
+      },
+      {
+        "user": "Rhiannon Nichols",
+        "rating": 5,
+        "text": "Banana Electronics is the definition of customer satisfaction. I had some photos on my non-responsive phone. I went to a couple of stores, and every one of them said that retrieving the photos was not possible. Although banana did not guarantee anything, they took the time and effort to make it work."
       }
     ],
     "deals": [
@@ -524,14 +529,9 @@
     "banner": "assets/bayview_plaza_shops.jpg",
     "reviews": [
       {
-        "user": "Sean Morrow",
-        "rating": 5,
-        "text": "Bayview Plaza is perfect for small errands and gift shopping. I love the independent shops here, and the staff are always welcoming."
-      },
-      {
         "user": "Tanya Piper",
-        "rating": 4,
-        "text": "Nice selection of stores, but parking can be a bit challenging during weekends."
+        "rating": 3,
+        "text": "Decent selection of stores, but parking can be a bit challenging during weekends."
       },
       {
         "user": "Kevin Sheldon",
@@ -560,38 +560,33 @@
     "id": "breezy-fan-shop",
     "name": "Breezy Fan Shop",
     "category": "Retail",
-    "description": "A specialty store selling sports fan merchandise, apparel, and memorabilia. Breezy Fan Shop focuses on providing high-quality products for local sports teams and leagues, catering to both casual fans and collectors.",
+    "description": "A specialty home comfort retailer focused on cooling solutions for residential and small commercial spaces. Breezy Fan Shop offers a wide selection of ceiling fans, floor fans, pedestal fans, and energy-efficient air conditioning units. The store emphasizes knowledgeable customer service, helping customers choose the right cooling products based on room size, energy efficiency, and budget. Installation services and basic maintenance guidance are also available, making it a convenient one-stop shop for climate comfort needs.",
     "banner": "assets/breezy_fan_shop.jpg",
     "reviews": [
       {
-        "user": "Bernice Daniels",
+        "user": "Janet Holloway",
         "rating": 5,
-        "text": "Amazing selection of team merchandise! The staff helped me find a rare jersey I’ve been hunting for months."
+        "text": "Great selection of ceiling and floor fans. The staff helped me choose the right size for my living room and explained the energy efficiency differences clearly."
       },
       {
-        "user": "Deborah Cummings",
+        "user": "Marcus Lee",
         "rating": 4,
-        "text": "Great shop, though it can get crowded on game days. Staff were friendly and knowledgeable."
+        "text": "Good prices and knowledgeable employees. Installation scheduling took a bit longer than expected, but the AC unit works perfectly."
       },
       {
-        "user": "Stephanie Cannon",
+        "user": "Tanya Brooks",
         "rating": 3,
-        "text": "Found what I needed, but prices were a bit steep for hats and shirts."
+        "text": "The products are solid, but the showroom felt cluttered and it was hard to compare models side by side."
       },
       {
-        "user": "Doris McGee",
-        "rating": 5,
-        "text": "Excellent customer service — they even helped me track down merchandise for a friend."
-      },
-      {
-        "user": "Robbie Chen",
+        "user": "Ronald Peters",
         "rating": 2,
-        "text": "Disappointed — the item I wanted was listed online but wasn’t in stock, and no alternatives were offered."
+        "text": "Bought a pedestal fan that started rattling after a few weeks. Customer service was polite, but the replacement process was slow."
       },
       {
-        "user": "Kellie Fields.",
+        "user": "Leyla Rangel",
         "rating": 4,
-        "text": "Good quality products, staff were helpful, but parking is tight."
+        "text": "Good place to buy a fan. The service was nice, and the employees were knowledgeable. They delivered the fan a day late though."
       }
     ],
     "deals": []
@@ -624,11 +619,6 @@
         "text": "Friendly and helpful staff — they even helped me adjust my new tennis racket."
       },
       {
-        "user": "Bridget Richardson",
-        "rating": 2,
-        "text": "Disappointed — my order was mispriced and they were slow to fix it."
-      },
-      {
         "user": "Lola Melton",
         "rating": 4,
         "text": "Good quality products, staff are knowledgeable, but checkout took too long."
@@ -646,14 +636,9 @@
     "banner": "assets/gulf_trail_outfitters.jpg",
     "reviews": [
       {
-        "user": "Daniel Nicholson",
-        "rating": 5,
-        "text": "Great shop for outdoor gear! Staff helped me pick the perfect tent and gave tips for setup."
-      },
-      {
         "user": "Leslie Ball",
-        "rating": 4,
-        "text": "Good selection, though a few items were out of stock. Staff were very helpful."
+        "rating": 2,
+        "text": "Poor selection, and a few items were out of stock. Staff were not helpful."
       },
       {
         "user": "Will Garrett",
@@ -662,8 +647,8 @@
       },
       {
         "user": "Jordan Williams",
-        "rating": 5,
-        "text": "Staff really know their stuff — helped me choose the right hiking boots for my trip."
+        "rating": 2,
+        "text": "Staff do not know their stuff — helped me choose some hiking boots for my trip which later gave me terrible feet pain."
       },
       {
         "user": "Marcus Swartz",
@@ -674,6 +659,11 @@
         "user": "Randolph Johnson",
         "rating": 4,
         "text": "Solid selection and friendly staff, but the checkout line was long."
+      },
+      {
+        "user": "Stefan Everett",
+        "rating": 3,
+        "text": "The quality of the gear was not up to the standard, in addition to being overpriced."
       }
     ],
     "deals": []
@@ -707,13 +697,18 @@
       },
       {
         "user": "Jackie Daly",
-        "rating": 2,
+        "rating": 1,
         "text": "I was disappointed — they misquoted the price and it took a week to sort it out."
       },
       {
         "user": "Ivan Barnett",
         "rating": 4,
         "text": "Overall a good experience, but the waiting area was small and crowded."
+      },
+      {
+        "user": "Kiran Mcconnell",
+        "rating": 2,
+        "text": "Bought a used car under the guise of good quality. It broke down twice in the span of 3 months."
       }
     ],
     "deals": []
@@ -726,24 +721,19 @@
     "banner": "assets/old_town_vintage_exchange.jpg",
     "reviews": [
       {
-        "user": "Christie Sanderson",
-        "rating": 5,
-        "text": "Amazing vintage selection! Found a perfect retro jacket and the staff helped me style it."
-      },
-      {
         "user": "Terry Stanley",
-        "rating": 4,
-        "text": "Great shop, though the aisles are tight and hard to navigate with a cart."
+        "rating": 2,
+        "text": "Bad shop, the aisles are tight and hard to navigate with a cart."
       },
       {
         "user": "Stefanie Doyle",
-        "rating": 3,
+        "rating": 2,
         "text": "Items are interesting, but some are overpriced for their condition."
       },
       {
         "user": "Maggie Russell",
-        "rating": 5,
-        "text": "Friendly staff, lots of hidden treasures — love coming here regularly."
+        "rating": 1,
+        "text": "Rude staff, lots of garbage — will not be coming here again."
       },
       {
         "user": "Belinda Steele",
@@ -751,9 +741,14 @@
         "text": "I was disappointed — a few items had stains that weren’t mentioned."
       },
       {
-        "user": "Glenn Jordan",
-        "rating": 4,
-        "text": "Good finds, helpful staff, though the shop is a little disorganized."
+        "user": "Vinnie Phelps",
+        "rating": 1,
+        "text": "Terribly disorganized shop. Ignorant staff and no quality in materials."
+      },
+      {
+        "user": "Gideon Young",
+        "rating": 1,
+        "text": "They sell fake vintages. Complete nonsense - I can get the same jacket at a normal retail store for half the price. Do not recommend."
       }
     ],
     "deals": [
