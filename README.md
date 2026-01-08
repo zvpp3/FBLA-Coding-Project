@@ -3,14 +3,14 @@
 LocalLink is a compact desktop example app for discovering and bookmarking local businesses. It is a small starter template built with Python and the PySide6 GUI toolkit.
 
 Key features
--- Business list with search and filtering
--- Detail view with reviews and special deals
--- Favorites/bookmarks persisted to `data/user_data.json`
--- Settings page with theme selection (dark/light), the ability to reduce motion
-   animations, toggle recommendations, and require confirmation before removing favourites
--- CSV export of all businesses or only your favourites
--- Statistics page showing counts and average ratings per category plus personalised recommendations
--- Expanded business dataset with a diverse selection of 50 local businesses and hundreds of realistic reviews
+-- Business list with search and filtering \n
+-- Detail view with reviews and special deals \n
+-- Favorites/bookmarks persisted to `data/user_data.json` \n
+-- Settings page with theme selection (dark/light), the ability to reduce motion \n
+   animations, toggle recommendations, and require confirmation before removing favourites \n
+-- CSV export of all businesses or only your favourites \n
+-- Statistics page showing counts and average ratings per category plus personalised recommendations \n
+-- Expanded business dataset with a diverse selection of 50 local businesses and hundreds of realistic reviews \n
 
 Requirements
 - Python 3.14 or later
