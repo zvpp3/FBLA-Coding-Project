@@ -3,7 +3,7 @@
   "preferences": {
     "theme": "dark",
     "show_recommendations": "yes",
-    "reduce_motion": "no",
+    "reduce_motion": "yes",
     "confirm_delete": "yes",
     "default_sort": "name"
   }

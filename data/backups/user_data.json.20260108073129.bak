@@ -1,5 +1,8 @@
 {
-  "favorites": [],
+  "favorites": [
+    "four-palms-irish-pub",
+    "mama-jeans-pizza"
+  ],
   "preferences": {
     "theme": "dark",
     "show_recommendations": "yes",

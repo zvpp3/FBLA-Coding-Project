@@ -177,7 +177,7 @@ class StatsPage(Page):
                 width=bar_width,
                 label="Businesses"
             )
-            # Draw average ratings on the right axis in a different colour
+            # Draw average ratings on the right axis in a different color
             rating_bars = rating_axis.bar(
                 [x + bar_width/2 for x in x_positions],
                 average_ratings,
@@ -301,13 +301,13 @@ class HomePage(Page):
         # Layout
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        # Centre items horizontally and provide generous top margin for a clean look
+        # Center items horizontally and provide generous top margin for a clean look
         self.layout.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
 
         # Title
         title = QLabel("LocalLink")
         title.setObjectName("titleLabel")
-        # Increase the title size to dominate the welcome screen.  The colours
+        # Increase the title size to dominate the welcome screen.  The colors
         # are still defined in the QSS, but we override the font size and
         # weight here to ensure the branding pops on both dark and light
         # themes.
@@ -324,9 +324,9 @@ class HomePage(Page):
 
         # About Text
         about = QLabel(
-            "LocalLink is your friendly neighbourhood companion. Use it to discover, review and support local businesses right where you live.\n\n"
-            "Search and filter thousands of listings, read honest reviews and keep a handy list of your favourites. The Statistics page shows how many businesses and average ratings each category has, and even recommends new places you might like.\n\n"
-            "In Settings you can switch themes, export your data to CSV, reduce motion for a calmer experience or require confirmations before removing favourites."
+            "LocalLink is your friendly neighborhood companion. Use it to discover, review and support local businesses right where you live.\n\n"
+            "Search and filter thousands of listings, read honest reviews and keep a handy list of your favorites. The Stats page shows how many businesses and average ratings each category has, and even recommends new places you might like.\n\n"
+            "In Settings you can switch themes, export your data to CSV, reduce motion for a calmer experience or require confirmations before removing favorites."
         )
         about.setWordWrap(True)
         about.setStyleSheet("font-size: 18px; margin-top: 16px; margin-bottom: 16px;")
@@ -342,6 +342,9 @@ class HomePage(Page):
 
         # Exit button. Setting the object name allows the QSS to apply the
         # primary button styles while our inline style increases the font size.
+        
+        self.layout.addStretch()
+        
         exit_button = QPushButton("Exit")
         exit_button.setObjectName("primaryButton")
         exit_button.setStyleSheet("font-size: 18px; margin-top: 24px;")

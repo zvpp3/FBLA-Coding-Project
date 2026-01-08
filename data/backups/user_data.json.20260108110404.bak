@@ -1,5 +1,8 @@
 {
-  "favorites": [],
+  "favorites": [
+    "5-minutes-plumbing-service",
+    "mama-jeans-pizza"
+  ],
   "preferences": {
     "theme": "dark",
     "show_recommendations": "yes",

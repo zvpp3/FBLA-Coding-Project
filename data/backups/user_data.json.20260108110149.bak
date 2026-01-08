@@ -1,5 +1,7 @@
 {
-  "favorites": [],
+  "favorites": [
+    "four-palms-irish-pub"
+  ],
   "preferences": {
     "theme": "dark",
     "show_recommendations": "yes",

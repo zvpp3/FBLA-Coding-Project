@@ -61,8 +61,7 @@
         "rating": 5,
         "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "burnside-prime-steaks",
@@ -255,8 +254,7 @@
         "rating": 5,
         "text": "The food was absolutely delicious; every dish I tried was bursting with flavor. The staff was friendly and the ambiance was charming."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "gulfside-taco-bar",
@@ -345,8 +343,7 @@
         "rating": 5,
         "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "four-palms-irish-pub",
@@ -410,8 +407,7 @@
         "rating": 5,
         "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "brights-sub-shop",
@@ -681,8 +677,7 @@
         "rating": 3,
         "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "banana-electronics",
@@ -858,8 +853,7 @@
         "rating": 3,
         "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "breezy-fan-shop",
@@ -918,8 +912,7 @@
         "rating": 3,
         "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "thunder-alley-sports",
@@ -1070,8 +1063,7 @@
         "rating": 3,
         "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "edisons-car-dealership",
@@ -1150,8 +1142,7 @@
         "rating": 4,
         "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "old-town-vintage-exchange",
@@ -1302,8 +1293,7 @@
         "rating": 4,
         "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "sunline-community-finance",
@@ -1387,8 +1377,7 @@
         "rating": 4,
         "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "5-minutes-plumbing-service",
@@ -1476,16 +1465,6 @@
         "user": "Ethan Young",
         "rating": 4,
         "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
-      },
-      {
-        "user": "test review",
-        "rating": 1,
-        "text": "please remove later"
-      },
-      {
-        "user": "another test",
-        "rating": 1,
-        "text": "revmo elater"
       }
     ],
     "deals": [
@@ -1564,8 +1543,7 @@
         "rating": 4,
         "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "skyport-travel-services",
@@ -1654,8 +1632,7 @@
         "rating": 5,
         "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "coastal-connect-it",
@@ -1985,8 +1962,7 @@
         "rating": 5,
         "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "greenwood-library",
@@ -2045,8 +2021,7 @@
         "rating": 4,
         "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "gulfside-auto-tire",
@@ -2105,8 +2080,7 @@
         "rating": 4,
         "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "horizon-fitness-studio",
@@ -2185,8 +2159,7 @@
         "rating": 4,
         "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
       }
-    ],
-    "deals": []
+    ]
   },
   {
     "id": "brightpath-learning-center",
@@ -2275,7 +2248,6 @@
         "rating": 5,
         "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
       }
-    ],
-    "deals": []
+    ]
   }
 ]

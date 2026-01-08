@@ -34,12 +34,12 @@ class FavoriteButton(QPushButton):
 
     def _on_click(self) -> None:
         # When the star is clicked this function runs.  It asks for a
-        # confirmation if we are about to remove a favourite and the
-        # setting says we should.  Otherwise it just toggles the favourite
+        # confirmation if we are about to remove a favorite and the
+        # setting says we should.  Otherwise it just toggles the favorite
         # status and refreshes the button display.
         from PySide6.QtWidgets import QMessageBox
         if self.business and self.data:
-            # check if this business is already favourited
+            # check if this business is already favorited
             if self.data.is_favorite(self.business):
                 # see if the user has turned on confirmations
                 confirm_pref = self.data.get_preference("confirm_delete", "yes").lower()
@@ -237,7 +237,7 @@ class ReviewItem(QWidget):
         user_label = QLabel(f"{review.user}")
         layout.addWidget(user_label)
         # Include units on font-size for consistency
-        user_label.setStyleSheet("font-size: 20px; font-weight: bold;")
+        user_label.setStyleSheet("font-weight: bold;")
 
         rating_label = QLabel(f"{'★' * review.rating + '☆' * (5 - review.rating)}")
         rating_label.setStyleSheet("color: #f1c40f;")

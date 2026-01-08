@@ -68,7 +68,7 @@ class SettingsPage(Page):
         self.confirm_combo = QComboBox()
         # Prompting the user before removing a business from favorites
         # prevents accidental deletions.  Choose "Yes" to enable a
-        # confirmation dialog on unfavourite actions.
+        # confirmation dialog on unfavorite actions.
         self.confirm_combo.addItems(["Yes", "No"])
         layout.addWidget(self.confirm_combo)
 
@@ -150,7 +150,7 @@ class SettingsPage(Page):
 
     def export_favorites_csv(self) -> None:
         """
-        Prompt the user to select a filename and then export only favourite
+        Prompt the user to select a filename and then export only favorite
         businesses to that CSV file. A message box informs the user of
         success or failure. If the user cancels the file dialog, nothing
         happens.

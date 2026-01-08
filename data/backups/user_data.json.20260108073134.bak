@@ -1,5 +1,7 @@
 {
-  "favorites": [],
+  "favorites": [
+    "mama-jeans-pizza"
+  ],
   "preferences": {
     "theme": "dark",
     "show_recommendations": "yes",

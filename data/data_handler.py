@@ -239,7 +239,7 @@ class DataHandler:
         # avoid mutating the original ``businesses`` when sorting.
         filtered: List[Business] = self.list_businesses().copy()
 
-        # Clean and normalise the query for comparison (lowercase & trim)
+        # Clean and normalize the query for comparison (lowercase & trim)
         query_clean = (query or "").lower().strip()
 
         # Filter by free‑text query: include businesses where the query
@@ -461,7 +461,7 @@ class DataHandler:
 
         # Score businesses that are not already favorites. Higher scores
         # come from businesses with better ratings and from categories the
-        # user prefers. Ratings are normalised to 0–1 by dividing by 5.
+        # user prefers. Ratings are normalized to 0–1 by dividing by 5.
         scored: list[tuple[float, Business]] = []
         for business in self.businesses:
             if business.id in self._favorites:
