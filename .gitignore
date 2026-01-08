@@ -1,0 +1,7 @@
+# Ignores
+
+.venv
+.DS_Store
+.vscode
+*.pyc
+__pycache__

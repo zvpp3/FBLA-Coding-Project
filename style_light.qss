@@ -1,0 +1,163 @@
+/* Light theme stylesheet
+   This theme is designed to complement the dark theme defined in `style.qss`.
+   Colors are chosen for high contrast and modern appearance while maintaining
+   readability.  Adjustments can be made to customise the accent color or
+   typography.
+ */
+
+/* Base widget */
+QWidget {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Navigation buttons */
+#navButton {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    border-radius: 4px;
+}
+#navButton:hover {
+    background-color: #e9ecef;
+}
+#navButton:pressed {
+    background-color: #ced4da;
+}
+
+#favButtonSmall {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px;
+}
+#favButtonSmall:pressed {
+    font-size: 24px;
+}
+
+#favButtonLarge {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 28px;
+}
+#favButtonLarge:pressed {
+    font-size: 32px;
+}
+
+/* Titles */
+#titleLabel {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0077cc;
+}
+#subtitleLabel {
+    font-size: 16px;
+    color: #495057;
+}
+#sectionLabel {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+/* List and list items */
+QListWidget {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+QListWidget::item {
+    padding: 8px 12px;
+}
+QListWidget::item:selected {
+    background-color: #e9ecef;
+}
+
+/* Search bar */
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    color: #212529;
+}
+QLineEdit:focus {
+    border-color: #80bdff;
+}
+
+/* Text edits */
+QTextEdit {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    color: #212529;
+}
+QTextEdit:read-only {
+    background-color: #f1f3f5;
+}
+
+/* Scroll Area */
+QScrollBar:vertical {
+    border: transparent;
+    background: #f8f9fa;
+    width: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #ced4da;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #adb5bd;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: transparent;
+    background: #f8f9fa;
+    height: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #ced4da;
+    min-width: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #adb5bd;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+/* Primary buttons (e.g. Save Settings) */
+#primaryButton {
+    background-color: #0077cc;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+#primaryButton:hover {
+    background-color: #0062a3;
+}
+#primaryButton:pressed {
+    background-color: #005088;
+}

@@ -1,0 +1,156 @@
+/* Base widget */
+QWidget {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Navigation buttons */
+#navButton {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    border-radius: 4px;
+}
+#navButton:hover {
+    background-color: #44475a;
+}
+#navButton:pressed {
+    background-color: #6272a4;
+}
+
+#favButtonSmall {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px
+}
+#favButtonSmall:pressed {
+    font-size: 24px;
+}
+
+#favButtonLarge {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 28px;
+}
+#favButtonLarge:pressed {
+    font-size: 32px;
+}
+
+/* Titles */
+#titleLabel {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff79c6;
+}
+#subtitleLabel {
+    font-size: 16px;
+    color: #bd93f9;
+}
+#sectionLabel {
+    font-size: 28px;
+    font-weight: bold;
+    color: #50fa7b;
+}
+
+/* List and list items */
+QListWidget {
+    background-color: #282a36;
+    border: 1px solid #44475a;
+    border-radius: 4px;
+}
+QListWidget::item {
+    padding: 8px 12px;
+}
+QListWidget::item:selected {
+    background-color: #44475a;
+}
+
+/* Search bar */
+QLineEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QLineEdit:focus {
+    border-color: #bd93f9;
+}
+
+/* Text edits */
+QTextEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QTextEdit:read-only {
+    background-color: #383a59;
+}
+
+/* Scroll Area */
+QScrollBar:vertical {
+    border: transparent;
+    background: #1a1c22;;
+    width: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #666666;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #444444;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: transparent;
+    background: #1a1c22;
+    height: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #666666;
+    min-width: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #444444;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+/* Primary buttons (e.g. Save Settings) */
+#primaryButton {
+    background-color: #6272a4;
+    color: #f8f8f2;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+#primaryButton:hover {
+    background-color: #7085b6;
+}
+#primaryButton:pressed {
+    background-color: #57618c;
+}

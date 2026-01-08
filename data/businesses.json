@@ -1,0 +1,2253 @@
+[
+  {
+    "id": "casa-palmera-cantina",
+    "name": "Casa Palmera Cantina",
+    "category": "Food",
+    "description": "A vibrant, family-owned cantina offering authentic Latin cuisine with a modern twist. Casa Palmera Cantina specializes in tacos, enchiladas, fresh seafood, and handcrafted cocktails. The restaurant prides itself on using locally sourced ingredients, creating flavorful dishes while maintaining a welcoming and lively atmosphere. With a focus on friendly service, Casa Palmera Cantina provides both dine-in and takeout options, making it a favorite for casual meals and special occasions.",
+    "banner": "assets/casa_palmera_cantina.jpg",
+    "reviews": [
+      {
+        "user": "Lana Bentley",
+        "rating": 5,
+        "text": "Absolutely loved the tacos! Flavorful and fresh, and the staff made us feel at home."
+      },
+      {
+        "user": "Elaine Rogers",
+        "rating": 4,
+        "text": "Great food, but our table was near the kitchen, so it was a bit noisy."
+      },
+      {
+        "user": "Tami Patterson",
+        "rating": 3,
+        "text": "The food was okay, but my order took almost 40 minutes to arrive."
+      },
+      {
+        "user": "Lon Alvarez",
+        "rating": 5,
+        "text": "Best Latin cuisine in the area — highly recommend the seafood enchiladas!"
+      },
+      {
+        "user": "Ida Kellogg",
+        "rating": 4,
+        "text": "Friendly staff, though the margaritas were a bit too sweet for my taste."
+      },
+      {
+        "user": "Colleen Stephenson",
+        "rating": 2,
+        "text": "Not impressed — my dish was under-seasoned and cold when it arrived."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 4,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 5,
+        "text": "The menu had plenty of vegetarian options which was a pleasant surprise. The atmosphere was cozy and inviting."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 5,
+        "text": "Tried the signature dish and it did not disappoint; it was cooked to perfection. The place was quite crowded so it was noisy at times."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "This place offered a great mix of traditional and modern dishes. The appetizer was a bit salty, but the main course was amazing."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 5,
+        "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
+      }
+    ]
+  },
+  {
+    "id": "burnside-prime-steaks",
+    "name": "Burnside Prime Steaks",
+    "category": "Food",
+    "description": "An upscale steakhouse offering premium cuts of beef, seafood, and a carefully curated wine selection. Burnside Prime Steaks combines elegant décor with exceptional service, making it ideal for business dinners, date nights, and special celebrations. Each steak is aged and cooked to order, with sides and sauces crafted in-house for a balanced dining experience.",
+    "banner": "assets/burnside_prime_steaks.jpg",
+    "reviews": [
+      {
+        "user": "Raquel Deleon",
+        "rating": 5,
+        "text": "Perfectly cooked steaks, attentive service, and an amazing wine list!"
+      },
+      {
+        "user": "Oliver Post",
+        "rating": 4,
+        "text": "Food was excellent, but the wait for our table was longer than expected."
+      },
+      {
+        "user": "Adrian Bowman",
+        "rating": 3,
+        "text": "Good steaks, but the service felt rushed and a bit impersonal."
+      },
+      {
+        "user": "Ann Bentley",
+        "rating": 5,
+        "text": "Absolutely delicious! The ribeye was cooked perfectly."
+      },
+      {
+        "user": "Samantha Hanson",
+        "rating": 2,
+        "text": "Overpriced for the quality — felt the sides were bland."
+      },
+      {
+        "user": "Rene Charles",
+        "rating": 4,
+        "text": "Great ambiance, staff were courteous, food was solid."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 5,
+        "text": "This place offered a great mix of traditional and modern dishes. The appetizer was a bit salty, but the main course was amazing."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 5,
+        "text": "The menu had plenty of vegetarian options which was a pleasant surprise. The atmosphere was cozy and inviting."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 5,
+        "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 5,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "This place offered a great mix of traditional and modern dishes. The appetizer was a bit salty, but the main course was amazing."
+      }
+    ],
+    "deals": [
+      "10% off all steaks on Wednesdays."
+    ]
+  },
+  {
+    "id": "second-sunrise-bakery",
+    "name": "Second Sunrise Bakery",
+    "category": "Food",
+    "description": "A cozy neighborhood bakery specializing in fresh breads, pastries, and desserts made daily. Second Sunrise Bakery emphasizes high-quality ingredients, artisanal baking techniques, and creative seasonal offerings. From morning coffee runs to custom cakes for special occasions, the bakery strives to provide a warm, inviting space for all visitors.",
+    "banner": "assets/second_sunrise_bakery.jpg",
+    "reviews": [
+      {
+        "user": "Herman Willard",
+        "rating": 5,
+        "text": "The croissants are amazing! Everything smells and tastes freshly baked."
+      },
+      {
+        "user": "Carlos Skinner",
+        "rating": 4,
+        "text": "Great pastries, though the seating area is quite small."
+      },
+      {
+        "user": "Derek Giles",
+        "rating": 3,
+        "text": "Delicious treats, but I had to wait a long time to get served."
+      },
+      {
+        "user": "Kenneth Marshall",
+        "rating": 5,
+        "text": "Friendly staff and incredible desserts — can’t recommend enough."
+      },
+      {
+        "user": "Travis McIntyre",
+        "rating": 2,
+        "text": "I ordered a cake, and it was slightly overbaked. Not what I expected."
+      },
+      {
+        "user": "Roderick Hardin",
+        "rating": 4,
+        "text": "Great selection of breads and sweets, cozy atmosphere."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 5,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 5,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 5,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      }
+    ],
+    "deals": [
+      "Buy one, get one free on all muffins every Monday morning."
+    ]
+  },
+  {
+    "id": "brick-way-cuban-cafe",
+    "name": "Brick Way Cuban Café",
+    "category": "Food",
+    "description": "A casual café serving authentic Cuban sandwiches, coffee, and traditional Latin dishes. Brick Way Cuban Café is known for its vibrant atmosphere, strong café con leche, and freshly made empanadas. The café emphasizes friendly, personal service and offers dine-in and takeaway options for locals and visitors alike.",
+    "banner": "assets/brick_way_cuban_cafe.jpg",
+    "reviews": [
+      {
+        "user": "Jesus Daniel",
+        "rating": 5,
+        "text": "The Cuban sandwich was perfect — crispy on the outside, tender inside!"
+      },
+      {
+        "user": "Peggy Sampson",
+        "rating": 4,
+        "text": "Great coffee, though my order was slightly delayed."
+      },
+      {
+        "user": "Carla Santiago",
+        "rating": 3,
+        "text": "Food was tasty, but the seating was cramped."
+      },
+      {
+        "user": "Darla Leblanc",
+        "rating": 5,
+        "text": "Friendly staff and authentic flavors — my favorite lunch spot now!"
+      },
+      {
+        "user": "Buddy Wise",
+        "rating": 2,
+        "text": "Overrated — sandwich was bland and cold when served."
+      },
+      {
+        "user": "Marco Cline",
+        "rating": 4,
+        "text": "Nice little café, very welcoming, portion sizes are generous."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 4,
+        "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 4,
+        "text": "The menu had plenty of vegetarian options which was a pleasant surprise. The atmosphere was cozy and inviting."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 5,
+        "text": "The food was absolutely delicious; every dish I tried was bursting with flavor. The staff was friendly and the ambiance was charming."
+      }
+    ]
+  },
+  {
+    "id": "gulfside-taco-bar",
+    "name": "Gulfside Taco Bar",
+    "category": "Food",
+    "description": "A laid-back taco bar specializing in fresh, creative tacos, street-style sides, and locally brewed drinks. Gulfside Taco Bar prides itself on using fresh ingredients and offering vegetarian and seafood options alongside traditional favorites. With casual seating and a beachy vibe, it’s a popular spot for lunch, dinner, and weekend gatherings.",
+    "banner": "assets/gulfside_taco_bar.jpg",
+    "reviews": [
+      {
+        "user": "Nellie Jacobs",
+        "rating": 5,
+        "text": "The fish tacos were incredible — fresh and full of flavor."
+      },
+      {
+        "user": "Carla Dugan",
+        "rating": 4,
+        "text": "Good variety, though it can get very crowded on weekends."
+      },
+      {
+        "user": "Clayton Dalton",
+        "rating": 3,
+        "text": "Tacos were decent, but my order was missing a side."
+      },
+      {
+        "user": "Gilberto Franklin",
+        "rating": 5,
+        "text": "Friendly staff and amazing flavors — my go-to taco place!"
+      },
+      {
+        "user": "Ethel Nelson",
+        "rating": 2,
+        "text": "Tacos were too greasy and overpriced for the portion size."
+      },
+      {
+        "user": "Olga Johnston",
+        "rating": 4,
+        "text": "Overall a fun atmosphere with solid food."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "This place offered a great mix of traditional and modern dishes. The appetizer was a bit salty, but the main course was amazing."
+      },
+      {
+        "user": "Michael White",
+        "rating": 4,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 4,
+        "text": "Tried the signature dish and it did not disappoint; it was cooked to perfection. The place was quite crowded so it was noisy at times."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 4,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 4,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 5,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 5,
+        "text": "The menu had plenty of vegetarian options which was a pleasant surprise. The atmosphere was cozy and inviting."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 5,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      }
+    ]
+  },
+  {
+    "id": "four-palms-irish-pub",
+    "name": "Four Palms Irish Pub",
+    "category": "Food",
+    "description": "A neighborhood pub offering classic Irish fare, craft beers, and live music on weekends. Four Palms Irish Pub combines a warm, rustic atmosphere with hearty meals, including shepherd’s pie, fish and chips, and signature burgers. The pub hosts trivia nights and community events, making it a social hub for locals.",
+    "banner": "assets/four_palms_irish_pub.jpg",
+    "reviews": [
+      {
+        "user": "Michelle Davison",
+        "rating": 5,
+        "text": "Amazing fish and chips! Great pub vibe and friendly bartenders."
+      },
+      {
+        "user": "Ryan Eaton",
+        "rating": 4,
+        "text": "Good food, but the music was too loud for my taste."
+      },
+      {
+        "user": "Ronald Morris",
+        "rating": 3,
+        "text": "Service was slow, though the food was decent."
+      },
+      {
+        "user": "Jackie Little",
+        "rating": 5,
+        "text": "Loved the live music and cozy interior — highly recommend!"
+      },
+      {
+        "user": "Jennifer Wolfe",
+        "rating": 2,
+        "text": "Overpriced drinks and the burger was overcooked."
+      },
+      {
+        "user": "Rick Booker",
+        "rating": 4,
+        "text": "Friendly staff and authentic Irish feel."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 4,
+        "text": "This place offered a great mix of traditional and modern dishes. The appetizer was a bit salty, but the main course was amazing."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 5,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 5,
+        "text": "Tried the signature dish and it did not disappoint; it was cooked to perfection. The place was quite crowded so it was noisy at times."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 5,
+        "text": "The food was absolutely delicious; every dish I tried was bursting with flavor. The staff was friendly and the ambiance was charming."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 5,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      }
+    ]
+  },
+  {
+    "id": "brights-sub-shop",
+    "name": "Bright’s Sub Shop",
+    "category": "Food",
+    "description": "A local sub sandwich shop known for freshly baked bread, customizable sandwiches, and fresh ingredients. Bright’s Sub Shop emphasizes quick service for lunch crowds and catering for local events. Their menu includes classic subs, vegetarian options, and daily specials.",
+    "banner": "assets/brights_sub_shop.jpg",
+    "reviews": [
+      {
+        "user": "Antonia Douglas",
+        "rating": 5,
+        "text": "The Italian sub was packed with flavor — best in town!"
+      },
+      {
+        "user": "Harvey Weston",
+        "rating": 4,
+        "text": "Good sandwiches, though the wait was a bit long at lunch."
+      },
+      {
+        "user": "Nell Brennan",
+        "rating": 3,
+        "text": "Decent food, but the bread was slightly stale."
+      },
+      {
+        "user": "Greg Carter",
+        "rating": 5,
+        "text": "Friendly staff and consistent quality — love this place."
+      },
+      {
+        "user": "Allison Daniels",
+        "rating": 2,
+        "text": "My sub was soggy and toppings were unevenly distributed."
+      },
+      {
+        "user": "Virginia Hardin",
+        "rating": 4,
+        "text": "Overall good food and fast service, will return."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 4,
+        "text": "The food was absolutely delicious; every dish I tried was bursting with flavor. The staff was friendly and the ambiance was charming."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 5,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I visited on a busy evening and the wait time was longer than expected, but the quality of the food made up for it. The prices were reasonable for what we got."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 4,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 5,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      }
+    ],
+    "deals": [
+      "Kids eat free on Saturdays with any adult sub purchase."
+    ]
+  },
+  {
+    "id": "mama-jeans-pizza",
+    "name": "Mama Jean’s Pizza",
+    "category": "Food",
+    "description": "A family-run pizzeria offering hand-tossed pizzas, calzones, and specialty dishes. Mama Jean’s Pizza uses fresh ingredients, house-made sauces, and a wood-fired oven to create classic and innovative pies. With a casual dining atmosphere and friendly service, it’s a favorite for takeout, delivery, and family dinners.",
+    "banner": "assets/mama_jeans_pizza.jpg",
+    "reviews": [
+      {
+        "user": "Marcy McFarland",
+        "rating": 5,
+        "text": "Best pizza I’ve had in years! Crust is perfect and toppings are fresh."
+      },
+      {
+        "user": "Cory FitzPatrick",
+        "rating": 4,
+        "text": "Pizza was delicious, though the restaurant is small and often crowded."
+      },
+      {
+        "user": "Young Pratt",
+        "rating": 3,
+        "text": "Good taste, but my order took longer than promised."
+      },
+      {
+        "user": "Gerardo Gould",
+        "rating": 5,
+        "text": "Friendly staff and amazing flavor — highly recommend!"
+      },
+      {
+        "user": "Clyde Brooks",
+        "rating": 2,
+        "text": "The pizza was soggy and lacked seasoning."
+      },
+      {
+        "user": "Bob Gorman",
+        "rating": 4,
+        "text": "Good quality, will come back for delivery."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 5,
+        "text": "The menu had plenty of vegetarian options which was a pleasant surprise. The atmosphere was cozy and inviting."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 5,
+        "text": "The chef clearly knows what they're doing with fresh ingredients and creative presentations. The staff could be more attentive."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 5,
+        "text": "An excellent dining experience overall with prompt service and generous portions. My friends and I particularly enjoyed the dessert selection."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 5,
+        "text": "I enjoyed the tasting menu which was a fun experience. The portions were smaller than I anticipated, but the flavors were complex."
+      }
+    ],
+    "deals": [
+      "Free delivery for orders over $25 on weekends."
+    ]
+  },
+  {
+    "id": "freshway-corner-market",
+    "name": "FreshWay Corner Market",
+    "category": "Retail",
+    "description": "A neighborhood grocery store offering fresh produce, local meats, dairy products, and pantry staples. FreshWay Corner Market emphasizes locally sourced ingredients, seasonal specials, and a friendly, community-focused shopping experience. The store also features a small deli, bakery items, and ready-to-eat meals for busy customers.",
+    "banner": "assets/freshway_corner_market.jpg",
+    "reviews": [
+      {
+        "user": "Harriet Neal",
+        "rating": 5,
+        "text": "I love shopping here! The produce is always fresh, and the staff are incredibly helpful when I can’t find something. The bakery makes amazing croissants every morning."
+      },
+      {
+        "user": "Ramiro Dwyer",
+        "rating": 4,
+        "text": "Overall good market with a nice selection, but sometimes the checkout line is really long during peak hours."
+      },
+      {
+        "user": "Gabriela Morse",
+        "rating": 3,
+        "text": "Decent quality, but some of the refrigerated items were not very cold when I visited last week."
+      },
+      {
+        "user": "Ira Reed",
+        "rating": 5,
+        "text": "Friendly staff and a clean store. I especially like their local honey and artisan bread section."
+      },
+      {
+        "user": "Christopher McCall",
+        "rating": 2,
+        "text": "Not impressed this time — the fresh vegetables looked wilted and some items were past their sell-by date."
+      },
+      {
+        "user": "Marc Robbins",
+        "rating": 5,
+        "text": "I come here every week. Great selection, great prices, and the deli staff always remember me by name."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Michael White",
+        "rating": 2,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      }
+    ],
+    "deals": [
+      "10% off all organic produce on Wednesdays."
+    ]
+  },
+  {
+    "id": "parkside-collective-boutique",
+    "name": "Parkside Collective Boutique",
+    "category": "Retail",
+    "description": "A trendy local boutique featuring clothing, accessories, and home décor. Parkside Collective Boutique highlights emerging designers and unique pieces that aren’t found in big-box stores. The shop focuses on personalized service, helping customers find outfits or gifts that suit their style while maintaining a welcoming, relaxed atmosphere.",
+    "banner": "assets/parkside_collective_boutique.jpg",
+    "reviews": [
+      {
+        "user": "Edith Long",
+        "rating": 5,
+        "text": "Such a gem of a boutique! I found a beautiful dress for my sister’s wedding, and the staff helped me style it perfectly. The attention to detail is amazing."
+      },
+      {
+        "user": "Silvia Cook",
+        "rating": 4,
+        "text": "Nice selection of clothes and accessories, but it can get cramped when the store is busy. Staff were friendly and helpful though."
+      },
+      {
+        "user": "Raymond Ritter",
+        "rating": 3,
+        "text": "Cute boutique, but I found some of the items to be overpriced for the quality."
+      },
+      {
+        "user": "Emma McGee",
+        "rating": 5,
+        "text": "Absolutely love this place! Every visit feels personalized. The staff go out of their way to make you feel welcome."
+      },
+      {
+        "user": "Constance Baxter",
+        "rating": 2,
+        "text": "I wasn’t impressed. Staff seemed distracted, and the checkout took forever. Products were okay, but not worth the hassle."
+      },
+      {
+        "user": "Ruben Stokes",
+        "rating": 4,
+        "text": "Lots of unique items, and the store has a cozy, welcoming vibe. A little expensive, but worth it for something special."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 2,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 2,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 3,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 3,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 3,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      }
+    ]
+  },
+  {
+    "id": "banana-electronics",
+    "name": "Banana Electronics",
+    "category": "Retail",
+    "description": "A local electronics shop specializing in computers, phones, accessories, and small appliances. Banana Electronics prides itself on expert advice, hands-on demos, and competitive pricing for the local community. The staff are trained to help customers troubleshoot tech issues and recommend products tailored to their needs.",
+    "banner": "assets/banana_electronics.jpg",
+    "reviews": [
+      {
+        "user": "Brenda Barton",
+        "rating": 5,
+        "text": "I came in looking for a laptop for school, and they helped me find exactly what I needed. Staff were patient, explained all the specs, and even helped set it up before I left."
+      },
+      {
+        "user": "Carolyn Adkins",
+        "rating": 4,
+        "text": "Good store with a lot of options, but some products were a bit overpriced. The staff were knowledgeable though and helped me find a great deal."
+      },
+      {
+        "user": "Louis Goodwin",
+        "rating": 3,
+        "text": "They had the item I wanted, but I had to wait a long time for a staff member to help me."
+      },
+      {
+        "user": "Jamie Pennington",
+        "rating": 5,
+        "text": "Excellent service — helped me pick a phone and explained all the features thoroughly. Will definitely return."
+      },
+      {
+        "user": "Katy McElroy",
+        "rating": 2,
+        "text": "I was frustrated — they didn’t have the charger I needed in stock, and the staff didn’t offer alternatives."
+      },
+      {
+        "user": "Natalie Ash",
+        "rating": 4,
+        "text": "Overall a good experience. The staff were friendly and helpful, but I felt the store was a bit cramped."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 3,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 2,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 3,
+        "text": "This shop had everything I needed, but their return policy was confusing. The manager helped clarify and was quite patient."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 2,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 3,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 3,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 2,
+        "text": "There was a decent selection of items and the checkout process was smooth. However, some shelves were cluttered and hard to navigate."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 2,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 3,
+        "text": "There was a decent selection of items and the checkout process was smooth. However, some shelves were cluttered and hard to navigate."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 3,
+        "text": "There was a decent selection of items and the checkout process was smooth. However, some shelves were cluttered and hard to navigate."
+      }
+    ],
+    "deals": [
+      "Free accessory with any laptop purchase above $500."
+    ]
+  },
+  {
+    "id": "bayview-plaza-shops",
+    "name": "Bayview Plaza Shops",
+    "category": "Retail",
+    "description": "A small shopping center featuring locally owned stores, including specialty shops, clothing, and home décor. Bayview Plaza Shops emphasizes a community-friendly environment with a variety of options for everyday shopping, gifts, and specialty items.",
+    "banner": "assets/bayview_plaza_shops.jpg",
+    "reviews": [
+      {
+        "user": "Sean Morrow",
+        "rating": 5,
+        "text": "Bayview Plaza is perfect for small errands and gift shopping. I love the independent shops here, and the staff are always welcoming."
+      },
+      {
+        "user": "Tanya Piper",
+        "rating": 4,
+        "text": "Nice selection of stores, but parking can be a bit challenging during weekends."
+      },
+      {
+        "user": "Kevin Sheldon",
+        "rating": 3,
+        "text": "Some shops were out of stock, and a few looked a bit run-down. Still, good variety overall."
+      },
+      {
+        "user": "Geraldine Pittman",
+        "rating": 5,
+        "text": "A charming plaza with unique stores. I enjoy coming here instead of the big malls."
+      },
+      {
+        "user": "Drew Andrews",
+        "rating": 2,
+        "text": "Not impressed — a few shops closed unexpectedly, and there was no signage for visitors."
+      },
+      {
+        "user": "Vanessa Thomas",
+        "rating": 4,
+        "text": "Good local shopping experience, friendly store owners, but could use more seating areas."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 4,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 3,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 2,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "There was a decent selection of items and the checkout process was smooth. However, some shelves were cluttered and hard to navigate."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 3,
+        "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
+      }
+    ]
+  },
+  {
+    "id": "breezy-fan-shop",
+    "name": "Breezy Fan Shop",
+    "category": "Retail",
+    "description": "A specialty store selling sports fan merchandise, apparel, and memorabilia. Breezy Fan Shop focuses on providing high-quality products for local sports teams and leagues, catering to both casual fans and collectors.",
+    "banner": "assets/breezy_fan_shop.jpg",
+    "reviews": [
+      {
+        "user": "Bernice Daniels",
+        "rating": 5,
+        "text": "Amazing selection of team merchandise! The staff helped me find a rare jersey I’ve been hunting for months."
+      },
+      {
+        "user": "Deborah Cummings",
+        "rating": 4,
+        "text": "Great shop, though it can get crowded on game days. Staff were friendly and knowledgeable."
+      },
+      {
+        "user": "Stephanie Cannon",
+        "rating": 3,
+        "text": "Found what I needed, but prices were a bit steep for hats and shirts."
+      },
+      {
+        "user": "Doris McGee",
+        "rating": 5,
+        "text": "Excellent customer service — they even helped me track down merchandise for a friend."
+      },
+      {
+        "user": "Robbie Chen",
+        "rating": 2,
+        "text": "Disappointed — the item I wanted was listed online but wasn’t in stock, and no alternatives were offered."
+      },
+      {
+        "user": "Kellie Fields.",
+        "rating": 4,
+        "text": "Good quality products, staff were helpful, but parking is tight."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 2,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 2,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      }
+    ]
+  },
+  {
+    "id": "thunder-alley-sports",
+    "name": "Thunder Alley Sports",
+    "category": "Retail",
+    "description": "A local sporting goods store offering equipment, apparel, and footwear for all levels of athletes. Thunder Alley Sports emphasizes quality products, knowledgeable staff, and personalized advice for beginners and seasoned athletes alike.",
+    "banner": "assets/thunder_alley_sports.jpg",
+    "reviews": [
+      {
+        "user": "Stacy Collier",
+        "rating": 5,
+        "text": "Staff were amazing in helping me choose the right running shoes. I appreciated their attention to fit and comfort."
+      },
+      {
+        "user": "Harvey Wolf",
+        "rating": 4,
+        "text": "Great variety of equipment, though the store layout can be confusing."
+      },
+      {
+        "user": "Jenna Bullock",
+        "rating": 3,
+        "text": "Prices are higher than online retailers, but the service and advice make up for it."
+      },
+      {
+        "user": "Tammy Haney",
+        "rating": 5,
+        "text": "Friendly and helpful staff — they even helped me adjust my new tennis racket."
+      },
+      {
+        "user": "Bridget Richardson",
+        "rating": 2,
+        "text": "Disappointed — my order was mispriced and they were slow to fix it."
+      },
+      {
+        "user": "Lola Melton",
+        "rating": 4,
+        "text": "Good quality products, staff are knowledgeable, but checkout took too long."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 2,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 3,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 4,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 2,
+        "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 2,
+        "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
+      }
+    ],
+    "deals": [
+      "15% off all running shoes every Monday."
+    ]
+  },
+  {
+    "id": "gulf-trail-outfitters",
+    "name": "Gulf Trail Outfitters",
+    "category": "Retail",
+    "description": "A small store specializing in outdoor gear, camping equipment, and adventure supplies. Gulf Trail Outfitters focuses on providing high-quality products and expert advice for hikers, campers, and outdoor enthusiasts in the local area.",
+    "banner": "assets/gulf_trail_outfitters.jpg",
+    "reviews": [
+      {
+        "user": "Daniel Nicholson",
+        "rating": 5,
+        "text": "Great shop for outdoor gear! Staff helped me pick the perfect tent and gave tips for setup."
+      },
+      {
+        "user": "Leslie Ball",
+        "rating": 4,
+        "text": "Good selection, though a few items were out of stock. Staff were very helpful."
+      },
+      {
+        "user": "Will Garrett",
+        "rating": 3,
+        "text": "Prices felt high, but the quality of the products is excellent."
+      },
+      {
+        "user": "Jordan Williams",
+        "rating": 5,
+        "text": "Staff really know their stuff — helped me choose the right hiking boots for my trip."
+      },
+      {
+        "user": "Marcus Swartz",
+        "rating": 2,
+        "text": "I was frustrated — the GPS device I wanted was unavailable, and they didn’t suggest alternatives."
+      },
+      {
+        "user": "Randolph Johnson",
+        "rating": 4,
+        "text": "Solid selection and friendly staff, but the checkout line was long."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 2,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 2,
+        "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 3,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 2,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 3,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 3,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "I was impressed by the variety of products available, but the customer service lacked enthusiasm. The cashier barely smiled."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      }
+    ]
+  },
+  {
+    "id": "edisons-car-dealership",
+    "name": "Edison’s Car Dealership",
+    "category": "Retail",
+    "description": "A family-run car dealership offering pre-owned and new vehicles, financing options, and trade-in services. Edison’s Car Dealership emphasizes honest sales, personalized customer service, and a no-pressure environment to help buyers make informed decisions.",
+    "banner": "assets/edisons_car_dealership.jpg",
+    "reviews": [
+      {
+        "user": "Leah Frye",
+        "rating": 5,
+        "text": "Bought my first car here and the experience was fantastic. Staff explained everything and helped me get the best deal."
+      },
+      {
+        "user": "Erica Lambert",
+        "rating": 4,
+        "text": "Good selection, friendly staff, but the paperwork took longer than expected."
+      },
+      {
+        "user": "Micheal Ferris",
+        "rating": 3,
+        "text": "Decent service, but felt slightly rushed during test drives."
+      },
+      {
+        "user": "Mark Melton",
+        "rating": 5,
+        "text": "I trusted them completely — transparent and professional."
+      },
+      {
+        "user": "Jackie Daly",
+        "rating": 2,
+        "text": "I was disappointed — they misquoted the price and it took a week to sort it out."
+      },
+      {
+        "user": "Ivan Barnett",
+        "rating": 4,
+        "text": "Overall a good experience, but the waiting area was small and crowded."
+      },
+      {
+        "user": "Michael White",
+        "rating": 2,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 3,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 3,
+        "text": "This shop had everything I needed, but their return policy was confusing. The manager helped clarify and was quite patient."
+      },
+      {
+        "user": "Michael White",
+        "rating": 2,
+        "text": "Parking was a challenge and the store interior felt cramped. Nonetheless, I appreciated the seasonal collection they carried."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 2,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 3,
+        "text": "The items were of good quality but overpriced; I did not feel the value matched the cost. The employees were polite though."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 3,
+        "text": "There was a decent selection of items and the checkout process was smooth. However, some shelves were cluttered and hard to navigate."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 4,
+        "text": "They had a few nice products, but overall, I was expecting better customer service. I might give them another try on a weekday."
+      }
+    ]
+  },
+  {
+    "id": "old-town-vintage-exchange",
+    "name": "Old Town Vintage Exchange",
+    "category": "Retail",
+    "description": "A boutique vintage shop offering curated clothing, accessories, and collectibles. Old Town Vintage Exchange emphasizes unique finds, sustainable fashion, and personalized service to help customers discover one-of-a-kind items with character.",
+    "banner": "assets/old_town_vintage_exchange.jpg",
+    "reviews": [
+      {
+        "user": "Christie Sanderson",
+        "rating": 5,
+        "text": "Amazing vintage selection! Found a perfect retro jacket and the staff helped me style it."
+      },
+      {
+        "user": "Terry Stanley",
+        "rating": 4,
+        "text": "Great shop, though the aisles are tight and hard to navigate with a cart."
+      },
+      {
+        "user": "Stefanie Doyle",
+        "rating": 3,
+        "text": "Items are interesting, but some are overpriced for their condition."
+      },
+      {
+        "user": "Maggie Russell",
+        "rating": 5,
+        "text": "Friendly staff, lots of hidden treasures — love coming here regularly."
+      },
+      {
+        "user": "Belinda Steele",
+        "rating": 2,
+        "text": "I was disappointed — a few items had stains that weren’t mentioned."
+      },
+      {
+        "user": "Glenn Jordan",
+        "rating": 4,
+        "text": "Good finds, helpful staff, though the shop is a little disorganized."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 2,
+        "text": "The store was clean and organized, but I found the prices to be higher than similar stores nearby. The staff seemed indifferent when I asked for help."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 2,
+        "text": "This shop had everything I needed, but their return policy was confusing. The manager helped clarify and was quite patient."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "This shop had everything I needed, but their return policy was confusing. The manager helped clarify and was quite patient."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 3,
+        "text": "They offered a great sale and I found some unique items. The store could benefit from more staff during peak hours."
+      }
+    ],
+    "deals": [
+      "20% off vintage jackets every Tuesday."
+    ]
+  },
+  {
+    "id": "good-health-hospital",
+    "name": "Good Health Hospital",
+    "category": "Services",
+    "description": "A comprehensive healthcare facility offering emergency care, inpatient and outpatient services, surgery, and specialized treatment programs. Good Health Hospital combines advanced medical technology with compassionate care, aiming to provide top-notch healthcare for all patients. The hospital also emphasizes patient education and community wellness programs.",
+    "banner": "assets/good_health_hospital.jpg",
+    "reviews": [
+      {
+        "user": "Susan Root",
+        "rating": 5,
+        "text": "The staff were incredibly professional and caring. My surgery went smoothly, and I felt supported throughout the process."
+      },
+      {
+        "user": "Marian Mahoney",
+        "rating": 4,
+        "text": "Great hospital with attentive staff, but the waiting times in the ER were longer than expected."
+      },
+      {
+        "user": "Sonja Peters",
+        "rating": 3,
+        "text": "Overall good care, but the room was a bit crowded and noisy during my stay."
+      },
+      {
+        "user": "Cary Rollins",
+        "rating": 5,
+        "text": "Excellent doctors and nurses — I highly recommend this hospital for any medical needs."
+      },
+      {
+        "user": "Leigh Ibarra",
+        "rating": 2,
+        "text": "Disappointed with the billing process — it was confusing and took too long to resolve."
+      },
+      {
+        "user": "Pete Newell",
+        "rating": 4,
+        "text": "High-quality medical care, though parking is limited and a bit inconvenient."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 5,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 3,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 3,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 5,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      }
+    ]
+  },
+  {
+    "id": "sunline-community-finance",
+    "name": "Sunline Community Finance",
+    "category": "Services",
+    "description": "A local finance company providing loans, savings plans, investment advice, and financial planning services. Sunline Community Finance focuses on helping individuals and small businesses make informed decisions while offering personalized support and flexible options to meet diverse financial needs.",
+    "banner": "assets/sunline_community_finance.jpg",
+    "reviews": [
+      {
+        "user": "Christina McConnell",
+        "rating": 5,
+        "text": "The team at Sunline really helped me understand my options and create a solid savings plan. I feel confident about my finances now."
+      },
+      {
+        "user": "Reginald Stafford",
+        "rating": 4,
+        "text": "Good service overall, but I had to follow up multiple times to get a loan approved."
+      },
+      {
+        "user": "Jillian Riggs",
+        "rating": 3,
+        "text": "Friendly staff, but the process took longer than I expected for a small personal loan."
+      },
+      {
+        "user": "Ernest Silva",
+        "rating": 5,
+        "text": "Excellent financial advice and clear communication. I highly recommend them for anyone looking to manage their money better."
+      },
+      {
+        "user": "Lindsay McDermott",
+        "rating": 2,
+        "text": "Frustrating experience — my application was delayed, and I didn’t get updates promptly."
+      },
+      {
+        "user": "Marguerite Dawson",
+        "rating": 4,
+        "text": "Helpful staff and good guidance, though the paperwork was a bit tedious."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 5,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      }
+    ]
+  },
+  {
+    "id": "5-minutes-plumbing-service",
+    "name": "5 Minutes Plumbing Service",
+    "category": "Services",
+    "description": "A fast-response plumbing company providing emergency repairs, installations, and maintenance for residential and commercial properties. 5 Minutes Plumbing Service prides itself on prompt service, professional technicians, and transparent pricing to ensure customer satisfaction.",
+    "banner": "assets/5_minutes_plumbing_service.jpg",
+    "reviews": [
+      {
+        "user": "Joanna Miller",
+        "rating": 5,
+        "text": "Came within 15 minutes! Fixed my leaky faucet quickly and explained everything clearly. Highly recommend."
+      },
+      {
+        "user": "Georgia Ramirez",
+        "rating": 4,
+        "text": "Good service, though the technician was a little late. He was professional and thorough once he arrived."
+      },
+      {
+        "user": "Catherine McGee",
+        "rating": 3,
+        "text": "Repair was okay, but I had to call back the next day for a follow-up. Not ideal."
+      },
+      {
+        "user": "Cristina Williamson",
+        "rating": 5,
+        "text": "Fantastic service! Quick, reliable, and the pricing was fair. Saved me from a big mess."
+      },
+      {
+        "user": "Chris Kim",
+        "rating": 2,
+        "text": "Had a bad experience — plumber seemed rushed and left a mess behind."
+      },
+      {
+        "user": "Philip Compton",
+        "rating": 4,
+        "text": "Overall a solid service. I will call them again if anything else comes up."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 5,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 5,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Liam Davis",
+        "rating": 5,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      }
+    ],
+    "deals": [
+      "10% off for first-time customers."
+    ]
+  },
+  {
+    "id": "bright-smiles-dentistry",
+    "name": "Bright Smiles Dentistry",
+    "category": "Services",
+    "description": "A modern dental practice offering preventive care, cosmetic dentistry, orthodontics, and emergency services. Bright Smiles Dentistry focuses on patient comfort, advanced dental technology, and personalized care to ensure healthy smiles for patients of all ages.",
+    "banner": "assets/bright_smiles_dentistry.jpg",
+    "reviews": [
+      {
+        "user": "Tracey McGrath",
+        "rating": 5,
+        "text": "The dentist was amazing — gentle, thorough, and explained all my treatment options clearly."
+      },
+      {
+        "user": "Julio Ingram",
+        "rating": 4,
+        "text": "Good service and clean facility, though the wait for my appointment was a bit long."
+      },
+      {
+        "user": "Allison Webster",
+        "rating": 3,
+        "text": "Treatment was fine, but the front desk staff seemed a bit disorganized."
+      },
+      {
+        "user": "Dick Goldstein",
+        "rating": 5,
+        "text": "Excellent dental care! They really made me feel comfortable during my procedure."
+      },
+      {
+        "user": "Arnold Connell",
+        "rating": 2,
+        "text": "Disappointed — my appointment was delayed twice, which was frustrating."
+      },
+      {
+        "user": "Noel George",
+        "rating": 4,
+        "text": "Friendly staff and professional care, just wish they had more flexible appointment times."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 5,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 3,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      }
+    ]
+  },
+  {
+    "id": "skyport-travel-services",
+    "name": "Skyport Travel Services",
+    "category": "Services",
+    "description": "A full-service travel agency offering flight bookings, hotel reservations, vacation packages, and corporate travel management. Skyport Travel Services focuses on personalized itineraries, competitive pricing, and expert guidance to ensure smooth and memorable travel experiences.",
+    "banner": "assets/skyport_travel_services.jpg",
+    "reviews": [
+      {
+        "user": "Bert Lam",
+        "rating": 5,
+        "text": "Booked a family vacation with Skyport, and everything went perfectly. They handled all the details, which made the trip stress-free."
+      },
+      {
+        "user": "Tonya Rich",
+        "rating": 4,
+        "text": "Helpful staff and good options, but some of the bookings were a little more expensive than online alternatives."
+      },
+      {
+        "user": "Veronica Rhodes",
+        "rating": 3,
+        "text": "Service was okay, but I had to call multiple times to confirm my hotel booking."
+      },
+      {
+        "user": "Velma Frey",
+        "rating": 5,
+        "text": "Excellent guidance and friendly staff. Made our trip unforgettable."
+      },
+      {
+        "user": "Kendra More",
+        "rating": 2,
+        "text": "Frustrating experience — our flight itinerary had errors and it took time to fix."
+      },
+      {
+        "user": "Don Gillespie",
+        "rating": 4,
+        "text": "Good service, helpful advice, though a bit slow in responding to emails."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Liam Davis",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Liam Davis",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      }
+    ]
+  },
+  {
+    "id": "coastal-connect-it",
+    "name": "Coastal Connect IT",
+    "category": "Services",
+    "description": "A cutting-edge technology service provider dedicated to solving complex IT challenges for businesses of all sizes. Coastal Connect IT offers a comprehensive range of services, including network setup and management, cybersecurity, software development, and technical support. Their team of experienced professionals delivers tailored solutions to ensure optimal performance and security.",
+    "banner": "assets/coastal_connect_it.jpg",
+    "reviews": [
+      {
+        "user": "Lance Mora",
+        "rating": 5,
+        "text": "Coastal Connect IT solved our network issues quickly and professionally. Excellent communication and follow-up."
+      },
+      {
+        "user": "Russ Lowery",
+        "rating": 4,
+        "text": "Good service, though the initial setup took longer than expected. Staff were knowledgeable."
+      },
+      {
+        "user": "Pauline Hatfield",
+        "rating": 3,
+        "text": "Technicians were okay, but some of my requests were delayed. Communication could improve."
+      },
+      {
+        "user": "Alfonso Howell",
+        "rating": 5,
+        "text": "Very satisfied — they helped optimize our systems and provided great advice for security."
+      },
+      {
+        "user": "Alexander McLaughlin",
+        "rating": 2,
+        "text": "Frustrated — repeated issues with the server took too long to fix."
+      },
+      {
+        "user": "Merle Mendoza",
+        "rating": 4,
+        "text": "Solid IT solutions and responsive support. Will hire again."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 3,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 3,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Samuel Brown",
+        "rating": 5,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 5,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 3,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 5,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 3,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      }
+    ],
+    "deals": [
+      "20% off network setup for small businesses during the month of March."
+    ]
+  },
+  {
+    "id": "bayfront-adventure-tours",
+    "name": "Bayfront Adventure Tours",
+    "category": "Services",
+    "description": "A tour company offering guided water adventures, eco-tours, and sightseeing trips around Tampa Bay. Bayfront Adventure Tours focuses on safety, fun, and informative experiences for families, tourists, and groups looking to explore local waterways and wildlife.",
+    "banner": "assets/bayfront_adventure_tours.jpg",
+    "reviews": [
+      {
+        "user": "Janis Stokes",
+        "rating": 5,
+        "text": "Amazing tour! The guides were friendly and knowledgeable, and we saw dolphins up close."
+      },
+      {
+        "user": "Martin Caldwell",
+        "rating": 4,
+        "text": "Fun experience, though it was a bit crowded on our tour. Guides were very helpful."
+      },
+      {
+        "user": "Glenn Maddox",
+        "rating": 3,
+        "text": "The tour was okay, but we didn’t see as much wildlife as expected."
+      },
+      {
+        "user": "Rosemarie Greenwood",
+        "rating": 5,
+        "text": "Highly recommend! Beautiful views and a safe, enjoyable adventure."
+      },
+      {
+        "user": "Jayne Marshall",
+        "rating": 2,
+        "text": "Disappointed — the boat had mechanical issues, and the tour started late."
+      },
+      {
+        "user": "Gretchen Johnston",
+        "rating": 4,
+        "text": "Good overall, guides were friendly, minor delays but worth it."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 5,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Liam Davis",
+        "rating": 3,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Emily Clark",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 5,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      }
+    ],
+    "deals": [
+      "Kids under 12 ride free with one paying adult every weekend in summer."
+    ]
+  },
+  {
+    "id": "anchorline-realtor",
+    "name": "AnchorLine Realtor",
+    "category": "Services",
+    "description": "A real estate agency providing residential and commercial property sales, rentals, and investment advice. AnchorLine Realtor emphasizes personalized service, market expertise, and transparency to help clients find the right property or buyer efficiently.",
+    "banner": "assets/anchorline_realtor.jpg",
+    "reviews": [
+      {
+        "user": "Julian Orozco",
+        "rating": 5,
+        "text": "Excellent realtor! Helped us find our dream home and guided us through every step of the process."
+      },
+      {
+        "user": "Alberto Buckley",
+        "rating": 4,
+        "text": "Friendly and knowledgeable, but communication was a bit slow at times."
+      },
+      {
+        "user": "Mark Pacheco",
+        "rating": 3,
+        "text": "Decent service, but felt rushed during viewings."
+      },
+      {
+        "user": "Theresa Tate",
+        "rating": 5,
+        "text": "Highly recommend AnchorLine for anyone buying or selling property in the area."
+      },
+      {
+        "user": "Carrie Sosa",
+        "rating": 2,
+        "text": "Disappointed — my property listing didn’t get enough exposure, and I had to follow up multiple times."
+      },
+      {
+        "user": "Marvin Daniels",
+        "rating": 4,
+        "text": "Good experience overall, staff were helpful and professional."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 5,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Michael White",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Charlotte Garcia",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      }
+    ],
+    "deals": [
+      "Free home valuation consultation for first-time sellers."
+    ]
+  },
+  {
+    "id": "palmtech-computer-repair",
+    "name": "PalmTech Computer Repair",
+    "category": "Services",
+    "description": "A computer repair shop providing diagnostics, hardware repair, virus removal, and custom builds for desktops and laptops. PalmTech Computer Repair emphasizes fast turnaround, fair pricing, and reliable service to ensure customers get their systems working smoothly.",
+    "banner": "assets/palmtech_computer_repair.jpg",
+    "reviews": [
+      {
+        "user": "Elmer King",
+        "rating": 5,
+        "text": "Quick and reliable! My laptop was fixed in a day, and the staff explained everything clearly."
+      },
+      {
+        "user": "Margarita Sherman",
+        "rating": 4,
+        "text": "Good service, though a bit pricey for minor repairs. Staff were professional and friendly."
+      },
+      {
+        "user": "Janet Driscoll",
+        "rating": 3,
+        "text": "Repair was okay, but it took longer than promised, and communication could be better."
+      },
+      {
+        "user": "Wendy Burns",
+        "rating": 5,
+        "text": "Excellent service — they recovered all my lost data and optimized my computer."
+      },
+      {
+        "user": "Don Clayton",
+        "rating": 2,
+        "text": "Frustrated — my computer developed another issue shortly after repair, had to return."
+      },
+      {
+        "user": "Angel Perry",
+        "rating": 4,
+        "text": "Solid repair work, friendly staff, will use again if needed."
+      },
+      {
+        "user": "Olivia Martinez",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 3,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Maria Santos",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 5,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      }
+    ]
+  },
+  {
+    "id": "greenwood-library",
+    "name": "Greenwood Library",
+    "category": "Services",
+    "description": "A community library offering book lending, digital media access, educational programs, and community events. Greenwood Library emphasizes learning, literacy, and a welcoming space for readers of all ages to explore knowledge and resources.",
+    "banner": "assets/greenwood_library.jpg",
+    "reviews": [
+      {
+        "user": "Vicky Barnes",
+        "rating": 5,
+        "text": "A fantastic library with helpful staff. Great programs for kids and adults alike."
+      },
+      {
+        "user": "Adrian Richardson",
+        "rating": 4,
+        "text": "Good selection of books and resources, though some popular titles were out of stock."
+      },
+      {
+        "user": "Joanna Warner",
+        "rating": 3,
+        "text": "Nice space, but some computers were slow or not working."
+      },
+      {
+        "user": "Henry Holder",
+        "rating": 5,
+        "text": "Friendly environment and a great community hub. Love attending the author events."
+      },
+      {
+        "user": "Diana Brooks",
+        "rating": 2,
+        "text": "Disappointed — quiet areas were noisy during my visit and difficult to focus."
+      },
+      {
+        "user": "Byron Robinson",
+        "rating": 4,
+        "text": "Overall good library, welcoming staff, minor improvements needed in seating."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      }
+    ]
+  },
+  {
+    "id": "gulfside-auto-tire",
+    "name": "Gulfside Auto & Tire",
+    "category": "Services",
+    "description": "A local auto repair and tire shop offering maintenance, repairs, tire sales, and installation. Gulfside Auto & Tire focuses on quality service, fair pricing, and knowledgeable mechanics to keep vehicles running safely and efficiently.",
+    "banner": "assets/gulfside_auto_tire.jpg",
+    "reviews": [
+      {
+        "user": "Ricky Schroeder",
+        "rating": 5,
+        "text": "Fixed my brakes quickly and at a reasonable price. Staff were friendly and professional."
+      },
+      {
+        "user": "Matthew Thomson",
+        "rating": 4,
+        "text": "Good service overall, but the wait time was longer than I expected."
+      },
+      {
+        "user": "Clayton Pollard",
+        "rating": 3,
+        "text": "Decent work, but they didn’t clean up the shop floor after repairs, which was a bit annoying."
+      },
+      {
+        "user": "Ruby Cruz",
+        "rating": 5,
+        "text": "Reliable and trustworthy mechanics. I will definitely return for future services."
+      },
+      {
+        "user": "Shannon Blake",
+        "rating": 2,
+        "text": "Not happy — my tire repair didn’t hold, had to come back the next day."
+      },
+      {
+        "user": "Gertrude Shelton",
+        "rating": 4,
+        "text": "Good overall experience, professional staff, and fair pricing."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 5,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Evelyn Walker",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 4,
+        "text": "The staff was courteous and tried to accommodate my requests; I will definitely come back. The environment was clean and welcoming."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      }
+    ]
+  },
+  {
+    "id": "horizon-fitness-studio",
+    "name": "Horizon Fitness Studio",
+    "category": "Services",
+    "description": "A fitness center offering personalized training, group classes, and wellness programs. Horizontal Fitness Studio focuses on creating a supportive and motivating environment for clients of all fitness levels, with certified trainers and modern equipment.",
+    "banner": "assets/horizontal_fitness_studio.jpg",
+    "reviews": [
+      {
+        "user": "Roberto Francis",
+        "rating": 5,
+        "text": "Amazing trainers and a welcoming environment. I’ve seen great results since joining!"
+      },
+      {
+        "user": "Rex Keenan",
+        "rating": 4,
+        "text": "Good facilities and classes, though it can get crowded during peak hours."
+      },
+      {
+        "user": "Wilson Raymond",
+        "rating": 3,
+        "text": "Trainers are okay, but sometimes classes feel rushed or overcrowded."
+      },
+      {
+        "user": "Cristina Lynch",
+        "rating": 5,
+        "text": "Friendly staff, personalized attention, and a variety of programs that really helped me improve my fitness."
+      },
+      {
+        "user": "Belinda Gibson",
+        "rating": 2,
+        "text": "Disappointed — equipment was broken, and I had to wait for machines during class."
+      },
+      {
+        "user": "Shelby Swartz",
+        "rating": 4,
+        "text": "Good studio overall, supportive trainers, but peak times can be busy."
+      },
+      {
+        "user": "Sophia Taylor",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Ethan Young",
+        "rating": 4,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Ava Harris",
+        "rating": 3,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 4,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "James Anderson",
+        "rating": 4,
+        "text": "I appreciated the attention to detail and the way they explained each step. The location was convenient and easy to find."
+      }
+    ]
+  },
+  {
+    "id": "brightpath-learning-center",
+    "name": "BrightPath Learning Center",
+    "category": "Services",
+    "description": "An educational center providing tutoring, test prep, and enrichment programs for students of all ages. BrightPath Learning Center focuses on individualized instruction, skill development, and confidence-building, with experienced educators guiding students toward academic success.",
+    "banner": "assets/brightpath_learning_center.jpg",
+    "reviews": [
+      {
+        "user": "Kate Louis",
+        "rating": 5,
+        "text": "My child’s grades improved dramatically after joining BrightPath. The tutors are knowledgeable and patient."
+      },
+      {
+        "user": "Clay Meyers",
+        "rating": 4,
+        "text": "Great learning environment, though scheduling can be tricky during busy months."
+      },
+      {
+        "user": "Matt Barber",
+        "rating": 3,
+        "text": "Helpful staff, but I wished there were more flexible times for group sessions."
+      },
+      {
+        "user": "Kristy McMillan",
+        "rating": 5,
+        "text": "Excellent tutoring program — my son is more confident and motivated now."
+      },
+      {
+        "user": "Maribel Stewart",
+        "rating": 2,
+        "text": "Not satisfied — communication was slow, and it took time to get a tutor assigned."
+      },
+      {
+        "user": "Drew Nelson",
+        "rating": 4,
+        "text": "Good overall experience, caring educators, effective programs."
+      },
+      {
+        "user": "Harper Hernandez",
+        "rating": 4,
+        "text": "I made an appointment and the staff was punctual; however, the quality of the service varied depending on who assisted me."
+      },
+      {
+        "user": "Noah Wilson",
+        "rating": 5,
+        "text": "The professionals here know their craft and I felt well taken care of. The cost was higher than I anticipated but the result was worth it."
+      },
+      {
+        "user": "Alex Johnson",
+        "rating": 4,
+        "text": "The first half of the service went smoothly, but there was a delay before they could finish. They apologized and offered a small discount."
+      },
+      {
+        "user": "Lucas Robinson",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 5,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 5,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Daniel Lee",
+        "rating": 4,
+        "text": "Their team was friendly and well-trained, but the waiting area could be improved. They offered me coffee while I waited which was nice."
+      },
+      {
+        "user": "Benjamin Martin",
+        "rating": 4,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      },
+      {
+        "user": "Mia Thompson",
+        "rating": 3,
+        "text": "The service was prompt and professional; I was in and out sooner than expected. They took time to explain the options available."
+      },
+      {
+        "user": "Isabella Thomas",
+        "rating": 5,
+        "text": "Scheduling was easy and they followed up promptly. However, there was some confusion about the pricing when I arrived."
+      }
+    ]
+  }
+]

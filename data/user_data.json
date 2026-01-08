@@ -1,0 +1,9 @@
+{
+  "favorites": [],
+  "preferences": {
+    "theme": "dark",
+    "show_recommendations": "yes",
+    "reduce_motion": "no",
+    "confirm_delete": "yes"
+  }
+}

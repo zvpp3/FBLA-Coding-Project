@@ -1,0 +1,6 @@
+PySide6>=6.0
+python-dateutil>=2.8
+# Matplotlib is used for charts and statistics in the StatsPage. Include it to
+# ensure the project runs on systems without the library preinstalled.
+matplotlib>=3.6
+# Recommended Python: 3.14+
