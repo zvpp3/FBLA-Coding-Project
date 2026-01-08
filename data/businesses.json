@@ -784,13 +784,18 @@
       },
       {
         "user": "Leigh Ibarra",
-        "rating": 2,
-        "text": "Disappointed with the billing process — it was confusing and took too long to resolve."
+        "rating": 3,
+        "text": "Disappointed with the billing process — it was confusing and took too long to resolve. However, the medical care was satisfactory."
       },
       {
         "user": "Pete Newell",
         "rating": 4,
         "text": "High-quality medical care, though parking is limited and a bit inconvenient."
+      },
+      {
+        "user": "Bill Castaneda",
+        "rating": 5,
+        "text": "Great service. My child got a severe cold, and the hospital treated it professionally, with no problem. Close to home and no extravagant wait times."
       }
     ],
     "deals": []
@@ -814,7 +819,7 @@
       },
       {
         "user": "Jillian Riggs",
-        "rating": 3,
+        "rating": 2,
         "text": "Friendly staff, but the process took longer than I expected for a small personal loan."
       },
       {
@@ -829,7 +834,7 @@
       },
       {
         "user": "Marguerite Dawson",
-        "rating": 4,
+        "rating": 3,
         "text": "Helpful staff and good guidance, though the paperwork was a bit tedious."
       }
     ],
@@ -849,13 +854,13 @@
       },
       {
         "user": "Georgia Ramirez",
-        "rating": 4,
-        "text": "Good service, though the technician was a little late. He was professional and thorough once he arrived."
+        "rating": 5,
+        "text": "Amazing service. The technician was professional and thorough once he arrived."
       },
       {
         "user": "Catherine McGee",
-        "rating": 3,
-        "text": "Repair was okay, but I had to call back the next day for a follow-up. Not ideal."
+        "rating": 5,
+        "text": "Fixed my problem in 5 minutes. Was skeptical at first but they really lived up to their name!"
       },
       {
         "user": "Cristina Williamson",
@@ -864,13 +869,13 @@
       },
       {
         "user": "Chris Kim",
-        "rating": 2,
-        "text": "Had a bad experience — plumber seemed rushed and left a mess behind."
+        "rating": 5,
+        "text": "Had a terrific experience — plumber seemed professional and fixed a huge mess."
       },
       {
         "user": "Philip Compton",
-        "rating": 4,
-        "text": "Overall a solid service. I will call them again if anything else comes up."
+        "rating": 5,
+        "text": "Overall a great service. I will call them again if anything else comes up."
       }
     ],
     "deals": [
@@ -896,8 +901,8 @@
       },
       {
         "user": "Allison Webster",
-        "rating": 3,
-        "text": "Treatment was fine, but the front desk staff seemed a bit disorganized."
+        "rating": 4,
+        "text": "Treatment was great, but the front desk staff seemed a bit disorganized."
       },
       {
         "user": "Dick Goldstein",
@@ -913,6 +918,11 @@
         "user": "Noel George",
         "rating": 4,
         "text": "Friendly staff and professional care, just wish they had more flexible appointment times."
+      },
+      {
+        "user": "Kurt Doyle",
+        "rating": 4,
+        "text": "Good service. From booking to the actual cleaning, everything went smoothly. However, they delayed my appointment by 10 minutes."
       }
     ],
     "deals": []
@@ -931,7 +941,7 @@
       },
       {
         "user": "Tonya Rich",
-        "rating": 4,
+        "rating": 3,
         "text": "Helpful staff and good options, but some of the bookings were a little more expensive than online alternatives."
       },
       {
@@ -953,6 +963,11 @@
         "user": "Don Gillespie",
         "rating": 4,
         "text": "Good service, helpful advice, though a bit slow in responding to emails."
+      },
+      {
+        "user": "Darius Ibarra",
+        "rating": 2,
+        "text": "Poor service. They misspelled my name for the hotel reservation and created such a mess."
       }
     ],
     "deals": []
@@ -1035,6 +1050,11 @@
         "user": "Gretchen Johnston",
         "rating": 4,
         "text": "Good overall, guides were friendly, minor delays but worth it."
+      },
+      {
+        "user": "Shakira Brewer",
+        "rating": 1,
+        "text": "Poor trip. The trip was overpriced and overbooked. The online desk service does not work."
       }
     ],
     "deals": [
@@ -1050,12 +1070,12 @@
     "reviews": [
       {
         "user": "Julian Orozco",
-        "rating": 5,
-        "text": "Excellent realtor! Helped us find our dream home and guided us through every step of the process."
+        "rating": 4,
+        "text": "Good realtor! Helped us find our dream home and guided us through every step of the process."
       },
       {
         "user": "Alberto Buckley",
-        "rating": 4,
+        "rating": 3,
         "text": "Friendly and knowledgeable, but communication was a bit slow at times."
       },
       {
@@ -1102,8 +1122,8 @@
       },
       {
         "user": "Janet Driscoll",
-        "rating": 3,
-        "text": "Repair was okay, but it took longer than promised, and communication could be better."
+        "rating": 5,
+        "text": "Repair was great, but it took shorter than promised, and communication was transparent."
       },
       {
         "user": "Wendy Burns",
@@ -1111,14 +1131,14 @@
         "text": "Excellent service — they recovered all my lost data and optimized my computer."
       },
       {
-        "user": "Don Clayton",
-        "rating": 2,
-        "text": "Frustrated — my computer developed another issue shortly after repair, had to return."
-      },
-      {
         "user": "Angel Perry",
         "rating": 4,
         "text": "Solid repair work, friendly staff, will use again if needed."
+      },
+      {
+        "user": "Ashleigh Gates",
+        "rating": 4,
+        "text": "Good experience with fixing my laptop. They seemed to be in a hurry and almost gave me the wrong bill."
       }
     ],
     "deals": []
@@ -1146,19 +1166,19 @@
         "text": "Nice space, but some computers were slow or not working."
       },
       {
-        "user": "Henry Holder",
-        "rating": 5,
-        "text": "Friendly environment and a great community hub. Love attending the author events."
-      },
-      {
         "user": "Diana Brooks",
         "rating": 2,
         "text": "Disappointed — quiet areas were noisy during my visit and difficult to focus."
       },
       {
         "user": "Byron Robinson",
-        "rating": 4,
+        "rating": 3,
         "text": "Overall good library, welcoming staff, minor improvements needed in seating."
+      },
+      {
+        "user": "Md Wiley",
+        "rating": 1,
+        "text": "Poor selection of books. The author events are a joke - they will bring just about anyone. The computer system is old, and the librarian is rude."
       }
     ],
     "deals": []
@@ -1199,6 +1219,11 @@
         "user": "Gertrude Shelton",
         "rating": 4,
         "text": "Good overall experience, professional staff, and fair pricing."
+      },
+      {
+        "user": "Ellen Franklin",
+        "rating": 4,
+        "text": "Great work. They performed a tire rotation and a general checkup on my car quickly and for a lower price. The waiting area is poorly ventilated."
       }
     ],
     "deals": []
@@ -1212,33 +1237,28 @@
     "reviews": [
       {
         "user": "Roberto Francis",
-        "rating": 5,
-        "text": "Amazing trainers and a welcoming environment. I’ve seen great results since joining!"
+        "rating": 1,
+        "text": "Terrible trainers and a non-welcoming environment. I’ve seen no results since joining!"
       },
       {
         "user": "Rex Keenan",
-        "rating": 4,
-        "text": "Good facilities and classes, though it can get crowded during peak hours."
+        "rating": 1,
+        "text": "Poor facilities and classes. It can get very crowded during peak hours."
       },
       {
         "user": "Wilson Raymond",
-        "rating": 3,
-        "text": "Trainers are okay, but sometimes classes feel rushed or overcrowded."
-      },
-      {
-        "user": "Cristina Lynch",
-        "rating": 5,
-        "text": "Friendly staff, personalized attention, and a variety of programs that really helped me improve my fitness."
+        "rating": 1,
+        "text": "Trainers are bad, and sometimes classes feel rushed or overcrowded."
       },
       {
         "user": "Belinda Gibson",
-        "rating": 2,
+        "rating": 1,
         "text": "Disappointed — equipment was broken, and I had to wait for machines during class."
       },
       {
         "user": "Shelby Swartz",
-        "rating": 4,
-        "text": "Good studio overall, supportive trainers, but peak times can be busy."
+        "rating": 1,
+        "text": "Bad studio overall, unsupportive trainers, and peak times can be busy."
       }
     ],
     "deals": []
@@ -1252,13 +1272,13 @@
     "reviews": [
       {
         "user": "Kate Louis",
-        "rating": 5,
-        "text": "My child’s grades improved dramatically after joining BrightPath. The tutors are knowledgeable and patient."
+        "rating": 3,
+        "text": "My child’s grades have not improved at all after joining BrightPath. The tutors are knowledgeable and patient though."
       },
       {
         "user": "Clay Meyers",
-        "rating": 4,
-        "text": "Great learning environment, though scheduling can be tricky during busy months."
+        "rating": 2,
+        "text": "Bad learning environment, and scheduling can be tricky during busy months."
       },
       {
         "user": "Matt Barber",
@@ -1267,8 +1287,8 @@
       },
       {
         "user": "Kristy McMillan",
-        "rating": 5,
-        "text": "Excellent tutoring program — my son is more confident and motivated now."
+        "rating": 2,
+        "text": "Terrible tutoring program — would not recommend sending your children here."
       },
       {
         "user": "Maribel Stewart",
@@ -1277,8 +1297,8 @@
       },
       {
         "user": "Drew Nelson",
-        "rating": 4,
-        "text": "Good overall experience, caring educators, effective programs."
+        "rating": 2,
+        "text": "Poor overall experience, caring educators, uneffective programs."
       }
     ],
     "deals": []
