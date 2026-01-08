@@ -60,6 +60,7 @@ class FavoriteButton(QPushButton):
         self._refresh()
 
     def _refresh(self) -> None:
+        # Update UI based on business state
         if self.business and self.data:
             if self.data.is_favorite(self.business):
                 self.setText("★")
@@ -73,10 +74,12 @@ class FavoriteButton(QPushButton):
         self._refresh()
 
     def enterEvent(self, event):
+        # Highlight on mouse hover
         self.setText("★")
         super().enterEvent(event)
 
     def leaveEvent(self, event):
+        # Refresh on mouse leave
         self._refresh()
         super().leaveEvent(event)
 
@@ -85,6 +88,7 @@ class BusinessReviewInfo(QWidget):
     def __init__(self, biz: Business, size: int):
         super().__init__()
 
+        # Layout
         self.setContentsMargins(0,0,0,0)
         self.layout = QHBoxLayout()
         self.layout.setContentsMargins(0,0,0,0)
@@ -109,6 +113,7 @@ class BusinessReviewInfo(QWidget):
         self.set_business(biz)
 
     def set_business(self, biz: Business):
+        # Sets the business and updates UI
         if not biz:
             return
         rounded_rating = round(biz.rating)
@@ -172,16 +177,20 @@ class ListedBusiness(QPushButton):
         info_layout.addWidget(category_text)
         
         layout.addStretch()
+
+        # Favorite Button
         self.favorite_button = FavoriteButton(data, biz, "small")
         layout.addWidget(self.favorite_button)
         self.favorite_button.setVisible(False)
         self.clicked.connect(lambda: self.main_button_signal.emit(self.business))
 
     def enterEvent(self, event):
+        # Show favorite button on hover
         self.favorite_button.setVisible(True)
         super().enterEvent(event)
 
     def leaveEvent(self, event):
+        # Hide favorite button when mouse leaves
         self.favorite_button.setVisible(False)
         super().leaveEvent(event)
 
@@ -196,6 +205,7 @@ class BusinessList(QWidget):
     def __init__(self, data: DataHandler) -> None:
         super().__init__()
 
+        # Layout
         self.layout: QVBoxLayout = QVBoxLayout(self)
         self.layout.setContentsMargins(0, 0, 0, 0)
 
@@ -203,6 +213,7 @@ class BusinessList(QWidget):
         self.data = data
 
     def _clear_list(self) -> None:
+        # Removes all elements from the list
         while self.layout.count():
             item = self.layout.takeAt(0)
             widget = item.widget()
@@ -210,11 +221,13 @@ class BusinessList(QWidget):
                 widget.setParent(None)
     
     def _add_business_to_list(self, biz: Business) -> None:
+        # Adds an element to the list
         item = ListedBusiness(self.data, biz)
         self.layout.addWidget(item)
         self.business_added_signal.emit(item)
 
     def populate(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], onlyFavs: bool) -> None:
+        # Repopulates the list with businesses
         self._clear_list()
 
         filtered = self.data.filter_businesses(query, sort_key, reverse_sort, filter_keys, onlyFavs)
@@ -230,19 +243,23 @@ class ReviewItem(QWidget):
 
     def __init__(self, review: Review) -> None:
         super().__init__()
+
         self.review = review
+
+        # Layout
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 10, 0, 10)
 
         user_label = QLabel(f"{review.user}")
         layout.addWidget(user_label)
-        # Include units on font-size for consistency
         user_label.setStyleSheet("font-weight: bold;")
 
+        # Rating Label
         rating_label = QLabel(f"{'★' * review.rating + '☆' * (5 - review.rating)}")
         rating_label.setStyleSheet("color: #f1c40f;")
         layout.addWidget(rating_label)
 
+        # Review Text
         review_text = QLabel(review.text)
         review_text.setWordWrap(True)
         layout.addWidget(review_text)
@@ -254,6 +271,7 @@ class ReviewList(QWidget):
     def __init__(self, biz: Business) -> None:
         super().__init__()
 
+        # Layout
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
         self.layout.setContentsMargins(0,0,0,0)
@@ -262,6 +280,7 @@ class ReviewList(QWidget):
         self.business = biz
 
     def _clear_list(self) -> None:
+        # Clears the list of all reviews
         while self.layout.count():
             item = self.layout.takeAt(0)
             widget = item.widget()
@@ -269,10 +288,12 @@ class ReviewList(QWidget):
                 widget.setParent(None)
     
     def _add_review_to_list(self, review: Review) -> None:
+        # Adds a review to the list
         item = ReviewItem(review)
         self.layout.addWidget(item)
 
     def populate(self) -> None:
+        # Repopulates the list with reviews
         self._clear_list()
 
         reviews = self.business.reviews
@@ -288,6 +309,8 @@ class BusinessSortMenu(QFrame):
 
     def __init__(self, data: DataHandler, sort_key: str, reverse_sort: bool, filter_keys: List[str]) -> None:
         super().__init__()
+
+        # Style and info
         self.setWindowFlags(Qt.Popup)
         self.setMinimumWidth(200)
         self.setStyleSheet("background-color: #282a36; color: #f8f8f2; font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 14px;")
@@ -307,6 +330,7 @@ class BusinessSortMenu(QFrame):
         sort_text = QLabel("Sort by:")
         layout.addWidget(sort_text)
 
+        # Sort buttons
         self.sort_buttons = {
             "ratings": QPushButton("Ratings"),
             "name": QPushButton("Name"),
@@ -354,23 +378,12 @@ class BusinessSortMenu(QFrame):
         return f"{label_map.get(key, key.capitalize())} {arrow}"
 
     def update_sort_button_texts(self):
+        # Updates the text on sort buttons
         for key, btn in self.sort_buttons.items():
             btn.setText(self.sort_button_label(key))
-
-    def sort_key_and_order_to_string(self, key: str, reverse: bool):
-        text = ""
-        if key == "ratings":
-            text += "Ratings | "
-            text += "High → Low" if reverse else "Low → High"
-        elif key == "name":
-            text += "Name | "
-            text += "Z → A" if reverse else "A → Z"
-        elif key == "reviews":
-            text += "Reviews | "
-            text += "High → Low" if reverse else "Low → High"
-        return text
     
     def sort_button_pushed(self, key: str):
+        # Emits a signal and updates sort button text when pushed
         if self.sort_key == key:
             self.reverse_sort = not self.reverse_sort
         else:
@@ -382,6 +395,7 @@ class BusinessSortMenu(QFrame):
         self.property_changed_signal.emit()
 
     def checkbox_toggled(self, category: str, state: int):
+        # Update filter when checkbox is toggled
         if state:
             self.filter_keys.add(category)
         else:
@@ -449,6 +463,7 @@ class SearchAndSort(QWidget):
         self.menu.show()
 
     def _sort_changed(self) -> None:
+        # Update sort when changed
         if not self.menu:
             return
 
@@ -461,6 +476,8 @@ class SearchAndSort(QWidget):
 class BannerLabel(QLabel):
     def __init__(self, fixed_height=200, parent=None):
         super().__init__(parent)
+
+        # Scale correctly
         self.fixed_height = fixed_height
         self.original_pixmap = None
 
