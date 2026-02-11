@@ -3,38 +3,8 @@
 <br>
 <br>
 <br>
-
-# Requirements
-- Python 3.14 or later
-- See `requirements.txt` for Python dependencies (includes `PySide6`)
-
-# Quick install
-1. make a virtual environment and activate it (recommended)
-
-Windows (PowerShell):
-
-```powershell
-python -m venv .venv; .\.venv\Scripts\Activate.ps1
-```
-
-macOS / Linux:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-2. Install requirements:
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-Run the app
-
-```bash
-python main.py
-```
+<br>
+<br>
 
 # Business image credits:
 
