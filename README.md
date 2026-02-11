@@ -4,19 +4,6 @@
 <br>
 <br>
 
-# LocalLink — local business browser
-
-LocalLink is a small desktop app for discovering and bookmarking local businesses. It's a demo-style project built with Python and PySide6 that shows how a simple, offline-friendly business directory could work.
-
-What you can do
-- browse and search a list of sample businesses
-- filter and sort results (by name, rating, reviews, or deals)
-- open a business detail page with reviews and deals
-- favorite/bookmark businesses and keep them between app runs (saved to `data/user_data.json`)
-- leave reviews (your reviews can be removed by you)
-- export all businesses or just your favorites as CSV
-- view basic stats (counts and average ratings by category) and get simple recommendations
-
 # Requirements
 - Python 3.14 or later
 - See `requirements.txt` for Python dependencies (includes `PySide6`)
@@ -48,21 +35,6 @@ Run the app
 ```bash
 python main.py
 ```
-
-# How to use
-- open the Search page to browse or search the sample businesses
-- click a business to see details, reviews, and deals
-- click the star on a business page to add or remove it from Favorites
-- favorites are saved in `data/user_data.json` so they persist between runs
-- use Settings to switch theme (dark/light), toggle recommendations, turn off animations (reduce motion), require confirmation before removing favorites, or set the menu to always on top.
-- export businesses or favorites to CSV from Settings
-
-# Project layout
-- `main.py` — application entry point and window setup
-- `ui/` — UI widgets and window pages (captcha, sidebar, business views)
-- `data/` — sample data (`businesses.json`) and the data handler (`data_handler.py`)
-- `assets/` — static assets (captcha images, icons)
-
 
 # Business image credits:
 
