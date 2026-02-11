@@ -48,7 +48,7 @@ python main.py
 - click a business to see details, reviews, and deals
 - click the star on a business page to add or remove it from Favorites
 - favorites are saved in `data/user_data.json` so they persist between runs
-- use Settings to switch theme (dark/light), toggle recommendations, turn off animations (reduce motion), or require confirmation before removing favorites
+- use Settings to switch theme (dark/light), toggle recommendations, turn off animations (reduce motion), require confirmation before removing favorites, or set the menu to always on top.
 - export businesses or favorites to CSV from Settings
 
 # Project layout
