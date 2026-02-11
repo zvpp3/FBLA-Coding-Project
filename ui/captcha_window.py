@@ -1,3 +1,13 @@
+"""
+This is the captcha window module for LocalLink.
+
+This module implements a CAPTCHA verification window where users can slide a puzzle piece
+to fit into a missing part of an image. It includes functionality for regenerating the CAPTCHA,
+checking for success, and emitting a signal when the CAPTCHA is passed.
+
+All images for the CAPTCHA are stored in the "assets/captcha" directory.
+"""
+
 # imports
 from PySide6.QtWidgets import (
     QWidget, QLabel, QVBoxLayout, QHBoxLayout, QSlider, QPushButton
@@ -12,13 +22,14 @@ from PySide6.QtCore import (
 import os, random
 
 class CaptchaWindow(QWidget):
+    # signal when captcha passed
     captcha_passed = Signal()
 
-    # initialize the window
+    # init window
     def __init__(self):
         super().__init__()
 
-        #Base window
+        # base window
         self.setWindowTitle("Verify CAPTCHA")
         self.setFixedSize(800, 600)
         self.setStyleSheet("background-color: #1e1e1e; color: white;")
@@ -42,27 +53,30 @@ class CaptchaWindow(QWidget):
 
         # puzzle variables
         self.piece_size = 75
+
         # padding which keeps the piece inside the image when sliding
         self.left_padding = 6
         self.right_padding = 6
-        # compute the left (starting point) of the image
+
+        # compute the left (which is our starting point) of the image
         self.bg_left = (self.width() - self.bg_label.width()) // 2
+
         # min/max positions for the piece
         self.min_x = self.bg_left + self.left_padding
         self.max_x = self.bg_left + self.bg_label.width() - self.piece_size - self.right_padding
 
-        self._randomize_cut_position()  
+        self._randomize_cut_position()
 
-        # builds visuals
+        # build visuals
         self._build_puzzle()
 
-        # regen button
+        # regenerate button
         btn_layout = QHBoxLayout()
         self.regen_btn = QPushButton("Regenerate")
         self.regen_btn.clicked.connect(self._regen)
         self.regen_btn.setStyleSheet("background-color:#333; padding:6px; color:white;")
 
-        # stretch before and after
+        # stretch before and after (centers the button)
         btn_layout.addStretch()
         btn_layout.addWidget(self.regen_btn)
         btn_layout.addStretch()
@@ -92,9 +106,11 @@ class CaptchaWindow(QWidget):
         # instructions text
         self.instruction_label = QLabel("Drag the slider to fill in the missing piece!")
         self.instruction_label.setAlignment(Qt.AlignCenter)
+
         f = QFont()
         f.setPointSize(14)
         f.setBold(True)
+
         self.instruction_label.setFont(f)
         self.instruction_label.setFixedHeight(48)
         self.instruction_label.setStyleSheet(
@@ -103,14 +119,14 @@ class CaptchaWindow(QWidget):
             "padding: 8px; border-radius: 8px;"
         )
 
-        # add widgets (or guis) and put instruction label on top, then put a layout for the button to evenly keep slider and btn together
+        # add widgets: instruction on top, then button/layout and slider
         self.root.addWidget(self.instruction_label, alignment=Qt.AlignCenter)
         self.root.addWidget(self.bg_label, alignment=Qt.AlignCenter)
         self.root.addLayout(btn_layout)
         self.root.addSpacing(10)
         self.root.addWidget(self.slider)
 
-        # a nice animation if the slider is put in the wrong place
+        # a small animation if slider in wrong place (so it goes back to start)
         self.anim = QPropertyAnimation(self.piece_label, b"pos")
         self.anim.setDuration(350)
         self.anim.setEasingCurve(QEasingCurve.OutCubic)
@@ -118,13 +134,14 @@ class CaptchaWindow(QWidget):
     # function for loading the background
     def _load_or_generate_background(self):
         path = "assets/captcha"
+
         # check path validity
         if os.path.exists(path):
-            #check for captcha images
+            # check for captcha images
             files = [f for f in os.listdir(path)
                      if f.lower().endswith((".png", ".jpg", ".jpeg"))]
             if files:
-                #get a random selection and 
+                # get a random selection and load the image
                 img = random.choice(files)
                 imgpath = os.path.join(path, img)
                 return QPixmap(imgpath).scaled(
@@ -135,7 +152,8 @@ class CaptchaWindow(QWidget):
     def _randomize_cut_position(self):
         self.cut_x = random.randint(100, 600 - 150)
         self.cut_y = random.randint(100, 450 - 150)
-        self.offset_y = self.cut_y + 66 # When qpainter cuts the hole, the y needs to be offset (they dont have the same y level??) 
+        self.offset_y = self.cut_y + 66 # When qpainter cuts the hole, the y needs to be offset (they dont have the same y level??)
+
         # bounds for the puzzle x position
         self.correct_x = self.bg_left + self.cut_x
 
@@ -152,21 +170,24 @@ class CaptchaWindow(QWidget):
 
         self.bg_label.setPixmap(bg_copy)
 
-        # now getting the puzzle piece
+        # now we make the puzzle piece
         piece = QPixmap(self.piece_size, self.piece_size)
         piece.fill(Qt.transparent)
 
+        # draw the piece
         p = QPainter(piece)
         p.setRenderHint(QPainter.Antialiasing)
 
         mask = QPainterPath() # cutout is a mask
         mask.addEllipse(0, 0, self.piece_size, self.piece_size)
         p.setClipPath(mask)
-        #reflect the position when its made
+
+        # reflect the position when its made
         p.drawPixmap(-self.cut_x, -self.cut_y, self.bg)
         p.end()
 
         self.piece_label.setPixmap(piece)
+
         # set the position at the origin x
         self.piece_label.move(self.min_x, self.offset_y)
 
@@ -177,7 +198,7 @@ class CaptchaWindow(QWidget):
         self._randomize_cut_position()
         self._build_puzzle()
 
-        # reset the slider *after* we build everything
+        # reset the slider after we build everything
         self.slider.blockSignals(True)
         self.slider.setValue(0)
         self.slider.blockSignals(False)
@@ -211,7 +232,7 @@ class CaptchaWindow(QWidget):
         # reset the slider after the animation is done playing
         self.anim.finished.connect(lambda: self._reset_slider_once())
 
-    #function for resetting the slider (blocks any signals while we reset it)
+    # function for resetting the slider (blocks any signals while we reset it)
     def _reset_slider_once(self):
         self.slider.blockSignals(True)
         self.slider.setValue(0)

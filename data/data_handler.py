@@ -1,20 +1,33 @@
+"""
+This is the data handler module for LocalLink.
+
+This module manages loading, saving, and manipulating business data and user preferences.
+It provides methods to filter and sort businesses, manage favorites, handle reviews,
+and store user settings. All data is saved in JSON files within the "data" directory.
+
+"""
+
+# imports
 import json
 import os
 import logging
-import shutil
+import csv
+import logging
 from dataclasses import dataclass
-from datetime import datetime
 from typing import List
-
+ 
+# define file paths
 DATA_DIR = os.path.join(os.path.dirname(__file__))
 BUSINESSES_FILE = os.path.join(DATA_DIR, "businesses.json")
 USER_FILE = os.path.join(DATA_DIR, "user_data.json")
 
+# data classes
 @dataclass
 class Review:
     user: str
     rating: int
     text: str
+    user_created: bool = False  # indicates if the review was created by the user
 
 
 @dataclass
@@ -39,15 +52,13 @@ class DataHandler:
     def __init__(self) -> None:
         self.businesses: List[Business] = []
         self._favorites: set[str] = set()
-        # User preferences are stored as a dictionary. This allows for easy
-        # extension as more settings (e.g., theme, accent color) are added to
-        # the application. Defaults are defined in `_load_user_data()` if
-        # preferences are absent from the on‑disk JSON.
+        # user preferences stored as a dict. defaults are set in _load_user_data()
         self.preferences: dict[str, str] = {}
         self._load_businesses()
         self._load_user_data()
 
     def _load_businesses(self) -> None:
+        # load business data from BUSINESSES_FILE
         try:
             with open(BUSINESSES_FILE, "r", encoding="utf8") as file:
                 items = json.load(file)
@@ -56,9 +67,12 @@ class DataHandler:
         for biz in items:
             review_list = []
             for review in biz.get("reviews", []):
-                review_list.append(Review(review.get("user", ""),
-                                          review.get("rating", 0),
-                                          review.get("text", "")))
+                review_list.append(Review(
+                    review.get("user", ""),
+                    review.get("rating", 0),
+                    review.get("text", ""),
+                    bool(review.get("user_created", False))
+                ))
             self.businesses.append(Business(biz.get("id", ""),
                                             biz.get("name", ""),
                                             biz.get("category", ""),
@@ -66,28 +80,28 @@ class DataHandler:
                                             biz.get("banner", ""),
                                             review_list,
                                             biz.get("deals", [])))
+        # we intentionally do not modify existing review objects on load
     
     def save_businesses(self) -> None:
-        """
-        Save all business data (including reviews) to BUSINESSES_FILE.
-        A timestamped backup of the existing file is created before overwriting to
-        protect against accidental data loss.
-        """
+        # save all business data (including reviews) to BUSINESSES_FILE
         try:
-            # Back up the existing businesses file before writing a new one
-            self._backup_file(BUSINESSES_FILE)
             items = []
             for biz in self.businesses:
-                # Serialize reviews
+                # serialize reviews
                 reviews_data = []
                 for review in biz.reviews:
-                    reviews_data.append({
+                    # only persist user_created when True; older reviews
+                    # shouldn't contain this key.
+                    rd = {
                         "user": review.user,
                         "rating": review.rating,
-                        "text": review.text
-                    })
+                        "text": review.text,
+                    }
+                    if bool(getattr(review, "user_created", False)):
+                        rd["user_created"] = True
+                    reviews_data.append(rd)
 
-                # Serialize business
+                # serialize business
                 items.append({
                     "id": biz.id,
                     "name": biz.name,
@@ -98,43 +112,16 @@ class DataHandler:
                     "deals": biz.deals
                 })
 
-            # Write to JSON file
+            # write to json file
             with open(BUSINESSES_FILE, "w", encoding="utf8") as file:
                 json.dump(items, file, indent=2, ensure_ascii=False)
         except Exception:
+            # Log any error to assist with debugging.  Because the
+            # previous except catches all Exceptions, additional except
+            # clauses here are unreachable and thus omitted.
             logging.exception("Error saving businesses")
-        except Exception as e:
-            print(f"Error saving businesses: {e}")
-
-    def _backup_file(self, filepath: str) -> None:
-        """
-        Create a timestamped backup of a given file. Backups are stored in a
-        'backups' directory within the data folder. If the source file does not
-        exist, the method simply returns. Backup failures are logged but do not
-        interrupt execution.
-
-        Args:
-            filepath: The absolute path to the file to back up.
-        """
-        try:
-            if not os.path.exists(filepath):
-                return
-            backup_dir = os.path.join(DATA_DIR, "backups")
-            os.makedirs(backup_dir, exist_ok=True)
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            filename = os.path.basename(filepath)
-            backup_path = os.path.join(backup_dir, f"{filename}.{timestamp}.bak")
-            shutil.copy2(filepath, backup_path)
-        except Exception:
-            logging.exception(f"Failed to backup {filepath}")
-
     def _load_user_data(self) -> None:
-        """
-        Load user data from disk. User data currently consists of two
-        components: a list of favorite business IDs and a preferences
-        dictionary. If the file does not exist it is created with
-        sensible defaults. Missing keys fall back to defaults.
-        """
+        # load user data (favorites + preferences). create a default file if missing
         if not os.path.exists(USER_FILE):
             # Initialize with empty favorites and default preferences
             with open(USER_FILE, "w", encoding="utf8") as file:
@@ -142,29 +129,33 @@ class DataHandler:
         try:
             with open(USER_FILE, "r", encoding="utf8") as file:
                 data = json.load(file)
+
             favs = data.get("favorites", [])
+
             if isinstance(favs, list):
                 self._favorites = set(favs)
-            # Load preferences or set defaults
+
+            # load preferences or set defaults
             prefs = data.get("preferences", {})
+
             if not isinstance(prefs, dict):
                 prefs = {}
-            # Set default theme to dark if not provided
+
+            # set default theme to dark if not provided
             if "theme" not in prefs:
-                # default to dark theme when not specified
                 prefs["theme"] = "dark"
-            # Set default sort to name if not provided
-            if "default_sort" not in prefs:
-                prefs["default_sort"] = "name"
-            # Add new preferences with sensible defaults.  Reduce motion
-            # disables page transition animations, and confirm_delete
-            # triggers a confirmation dialog when removing a favorite.  If
-            # keys are missing, populate them so the settings page can
-            # display correct values.
+
+            # add other defaults: reduce_motion disables animations and
+            # confirm_delete toggles confirmation when removing a favorite
             if "reduce_motion" not in prefs:
                 prefs["reduce_motion"] = "no"
+
             if "confirm_delete" not in prefs:
                 prefs["confirm_delete"] = "yes"
+
+            if "always_on_top" not in prefs:
+                prefs["always_on_top"] = "no"
+
             self.preferences = prefs
         except Exception:
             # On error, fall back to empty favorites and default prefs
@@ -172,14 +163,8 @@ class DataHandler:
             self.preferences = {"theme": "dark"}
 
     def save_user_data(self) -> None:
-        """
-        Persist the current set of favorite business IDs to disk. A backup of the
-        previous file is created before overwriting. If saving fails for any
-        reason, the exception is logged.
-        """
+        # save favorites and preferences to disk. logs on error
         try:
-            # Backup the current user data before writing a new file.
-            self._backup_file(USER_FILE)
             with open(USER_FILE, "w", encoding="utf8") as file:
                 json.dump({
                     "favorites": sorted(self._favorites),
@@ -188,88 +173,57 @@ class DataHandler:
         except Exception:
             logging.exception("Error saving user data")
 
-    def restore_last_user_backup(self) -> None:
-        """
-        Restore the most recent backup of user_data.json. This is useful if the
-        current user data becomes corrupted or accidentally overwritten. After
-        restoration, the user data is reloaded into memory. If no backups are
-        available, the method simply returns.
-        """
-        backup_dir = os.path.join(DATA_DIR, "backups")
-        if not os.path.isdir(backup_dir):
-            return
-        backups = [f for f in os.listdir(backup_dir) if f.startswith(os.path.basename(USER_FILE))]
-        if not backups:
-            return
-        # Determine the most recent backup based on the timestamp embedded in the filename.
-        latest = max(backups, key=lambda f: f.split(".")[-2] if "." in f else "")
-        backup_path = os.path.join(backup_dir, latest)
-        try:
-            shutil.copy2(backup_path, USER_FILE)
-            # Reload favorites from the restored file
-            self._load_user_data()
-        except Exception:
-            logging.exception("Failed to restore user data from backup")
-
+    
     # Public API
     def list_businesses(self) -> List[Business]:
         return self.businesses
 
     def filter_businesses(self, query: str, sort_key: str, reverse_sort: bool, filter_keys: List[str], only_favs: bool) -> List[Business]:
-        """
-        Filter and sort businesses based on a query string, selected sort
-        criteria, category filters and whether only favorites should be
-        included. This method constructs a new list rather than mutating
-        the original ``businesses`` list.
+        # filter and sort businesses. returns a new list, original and untouched
+        # args:
+        #   query: text to match against name or category (case-insensitive)
+        #   sort_key: one of 'ratings', 'name', 'reviews', 'deals'
+        #   reverse_sort: reverse the sort order
+        #   filter_keys: list of categories to include
+        #   only_favs: if True, only return favorite businesses
+        # returns: list of businesses matching the filters
 
-        Args:
-            query (str): Free‑text query to match against business names and
-                categories. Case insensitive.
-            sort_key (str): The attribute by which to sort results (e.g.
-                "ratings", "name", "reviews", "deals").
-            reverse_sort (bool): Whether to reverse the sort order.
-            filter_keys (List[str]): A list of category names to include.
-            only_favs (bool): Whether to restrict results to the user's
-                favorite businesses.
-
-        Returns:
-            List[Business]: A list of businesses matching the filters.
-        """
-        # Start with a shallow copy of the entire business list. We copy to
-        # avoid mutating the original ``businesses`` when sorting.
+        # start with a shallow copy so we don't mutate the original list
         filtered: List[Business] = self.list_businesses().copy()
 
-        # Clean and normalise the query for comparison (lowercase & trim)
+        # clean and normalize the query
         query_clean = (query or "").lower().strip()
 
-        # Filter by free‑text query: include businesses where the query
-        # appears in either the name or the category
+        # filter by text: match name or category
         if query_clean:
             filtered = [business for business in filtered
                         if query_clean in business.name.lower() or
                            query_clean in business.category.lower()]
 
-        # Filter by selected categories, if any
+        # filter by selected categories, if any
         if filter_keys:
             filtered = [business for business in filtered if business.category in filter_keys]
 
-        # Filter to favorites only, if requested
+        # filter to favorites only, if requested
         if only_favs:
             filtered = [business for business in filtered if self.is_favorite(business)]
 
-        # Sort the results according to the requested key. We choose the
-        # appropriate attribute for sorting and apply the reverse flag.
+        # sort results according to the requested key
         if sort_key == "ratings":
             filtered.sort(key=lambda business: business.rating, reverse=reverse_sort)
+
         elif sort_key == "name":
             filtered.sort(key=lambda business: business.name.lower(), reverse=reverse_sort)
+
         elif sort_key == "reviews":
             filtered.sort(key=lambda business: len(business.reviews), reverse=reverse_sort)
+
         elif sort_key == "deals":
             filtered.sort(key=lambda business: len(business.deals), reverse=reverse_sort)
 
         return filtered
 
+    # these are all functions that are called by other modules, these are references. 
     def favorite_ids(self) -> set[str]:
         return set(self._favorites)
 
@@ -294,155 +248,109 @@ class DataHandler:
             self.add_favorite(biz)
 
     def add_review(self, biz: Business, user: str, rating: int, text: str) -> None:
-        review = Review(user, rating, text)
+        # add a review created by the user. mark user_created=True so we can
+        # identify removable reviews. we do not assign stable ids anymore.
+        review = Review(user, rating, text, True)
         biz.reviews.append(review)
         self.save_businesses()
 
+    def remove_review(self, biz: Business, review: Review) -> None:
+        # remove a review (by object or by matching fields) and save changes
+        try:
+            # Prefer identity removal if the exact object is present
+            if review in biz.reviews:
+                biz.reviews.remove(review)
+            else:
+                # Fall back to matching by user/text/rating
+                for r in list(biz.reviews):
+                    if r.user == review.user and r.rating == review.rating and r.text == review.text:
+                        biz.reviews.remove(r)
+                        break
+            self.save_businesses()
+        except Exception:
+            logging.exception("Error removing review")
+
     # Preferences API
     def get_preference(self, key: str, default: str | None = None) -> str | None:
-        """
-        Retrieve a user preference by key. If the key is not present,
-        return the provided default or None.
-
-        Args:
-            key: Preference key to look up.
-            default: Value to return if key is missing.
-
-        Returns:
-            The stored preference or the supplied default.
-        """
+        # get a preference by key, or return the default if it's missing
         return self.preferences.get(key, default)
 
     def set_preference(self, key: str, value: str) -> None:
-        """
-        Set a user preference. The preference is stored in the in-memory
-        dictionary and persisted to disk immediately.
-
-        Args:
-            key: The preference key.
-            value: The new value for the preference.
-        """
+        # set a preference in memory and save it to disk
         self.preferences[key] = value
         self.save_user_data()
 
     def categories(self) -> List[str]:
-        """
-        Return a sorted list of unique business categories. Using a set for
-        deduplication improves efficiency over repeatedly checking a list.
-
-        Returns:
-            List[str]: Alphabetically sorted unique categories.
-        """
+        # return a sorted list of unique business categories
         categories = {biz.category for biz in self.businesses}
         return sorted(categories)
     
     def get_number_of_businesses_by_category(self, category: str) -> int:
-        """
-        Count the number of businesses in a given category.
-
-        Args:
-            category (str): The category to count.
-
-        Returns:
-            int: Number of businesses in the specified category.
-        """
-        # Sum up businesses matching the given category. Using a generator
-        # expression avoids building an intermediate list and is efficient.
+        # count how many businesses are in `category`
+        # use a generator expression for efficiency
         return sum(1 for business in self.businesses if business.category == category)
 
     def get_average_rating_by_category(self, category: str) -> float:
-        """
-        Compute the average rating of all businesses belonging to a given
-        category. If there are no businesses in the specified category
-        the method returns ``0.0`` to avoid division by zero.
-
-        Args:
-            category (str): The business category for which to calculate
-                the average rating.
-
-        Returns:
-            float: The average rating for businesses in ``category``. A value
-                between 0 and 5, where 0 signifies no available ratings.
-        """
-        # Filter out businesses that match the provided category
-        matching_businesses = [business for business in self.businesses
-                               if business.category == category]
-        # If no businesses match, immediately return 0.0
+        # average rating for businesses in `category`. returns 0.0 if none
+        matching_businesses = [business for business in self.businesses if business.category == category]
         if not matching_businesses:
             return 0.0
-        # Sum the ratings for each business and divide by the count to get
-        # the average. The ``rating`` property on Business already returns
-        # an averaged rating across that business's reviews.
+        
         total_rating = sum(business.rating for business in matching_businesses)
         return total_rating / len(matching_businesses)
 
+
+    # major function, this writes all of the data to a CSV file, and we format the csv file using this code/function
     def export_businesses_to_csv(self, filepath: str, favorites_only: bool = False) -> None:
-        """
-        Export business information to a CSV file. This helper writes a
-        header row followed by one row per business. If ``favorites_only``
-        is ``True`` then only the user's favorite businesses are exported;
-        otherwise all businesses are included.
-
-        The CSV columns are: ``ID``, ``Name``, ``Category``, ``Description``,
-        ``Rating``, ``Deals``, and ``Reviews``. Deals and reviews are joined
-        into single strings separated by semicolons so that each business
-        occupies a single row.
-
-        Args:
-            filepath (str): The absolute or relative path to save the CSV.
-            favorites_only (bool, optional): Whether to export only
-                favorites. Defaults to ``False``.
-        """
-        import csv
         try:
-            # Decide which list of businesses to export based on the flag
             export_list = self.favorite_businesses() if favorites_only else self.businesses
-            # Open the destination CSV for writing
+
             with open(filepath, "w", newline="", encoding="utf8") as csvfile:
                 writer = csv.writer(csvfile)
-                # Write header row
+
+                # One row per review (or a blank review row if none)
                 writer.writerow([
-                    "ID", "Name", "Category", "Description",
-                    "Rating", "Deals", "Reviews"
+                    "Business ID", "Business Name", "Category", "Description",
+                    "Business Rating", "Deals",
+                    "Review User", "Review Rating", "Review Text"
                 ])
-                # Iterate through each business and assemble row data
+
                 for business in export_list:
-                    # Join deals and reviews into strings. We include both
-                    # the review text and the rating to make the export
-                    # self‑contained and readable.
                     deals_text = "; ".join(business.deals)
-                    reviews_text = "; ".join([
-                        f"{review.user}: {review.text} (Rating {review.rating})"
-                        for review in business.reviews
-                    ])
-                    writer.writerow([
-                        business.id,
-                        business.name,
-                        business.category,
-                        business.description,
-                        f"{business.rating:.2f}",
-                        deals_text,
-                        reviews_text
-                    ])
+
+                    # If no reviews, still write the business once
+                    if not business.reviews:
+                        writer.writerow([
+                            business.id,
+                            business.name,
+                            business.category,
+                            business.description,
+                            f"{business.rating:.2f}",
+                            deals_text,
+                            "", "", ""
+                        ])
+                        continue
+
+                    # Write one row per review
+                    for review in business.reviews:
+                        writer.writerow([
+                            business.id,
+                            business.name,
+                            business.category,
+                            business.description,
+                            f"{business.rating:.2f}",
+                            deals_text,
+                            review.user,
+                            review.rating,
+                            review.text
+                        ])
+
         except Exception:
-            # Log any unexpected error; this helps during debugging but
-            # silently ignores failures when running in production.
             logging.exception("Error exporting businesses to CSV")
 
+    # this is the core part of our smart feature, this recommends businesses based on user favorites and ratings
     def recommend_businesses(self, top_n: int = 3) -> List[Business]:
-        """
-        Produce a ranked list of business recommendations based on the
-        categories of the user's favorite businesses and overall ratings.
-        Favorites themselves are excluded. If the user hasn't marked
-        any favorites, the top‑rated businesses are returned.
-
-        Args:
-            top_n (int): The maximum number of recommendations to return.
-
-        Returns:
-            List[Business]: Recommended businesses in descending order of
-            suitability.
-        """
+        # return up to top_n recommended businesses based on favorites and ratings
         # If there are no favorites, simply return the top rated businesses
         if not self._favorites:
             return sorted(
@@ -461,8 +369,9 @@ class DataHandler:
 
         # Score businesses that are not already favorites. Higher scores
         # come from businesses with better ratings and from categories the
-        # user prefers. Ratings are normalised to 0–1 by dividing by 5.
+        # user prefers. Ratings are normalized to 0–1 by dividing by 5.
         scored: list[tuple[float, Business]] = []
+        
         for business in self.businesses:
             if business.id in self._favorites:
                 continue
@@ -472,6 +381,6 @@ class DataHandler:
             scored.append((score, business))
 
         # Sort primarily by the computed score and secondarily by rating. The
-        # ``reverse`` flag puts highest scores first.
+        # reverse flag puts highest scores first.
         scored.sort(key=lambda item: (item[0], item[1].rating), reverse=True)
         return [business for _, business in scored[:top_n]]

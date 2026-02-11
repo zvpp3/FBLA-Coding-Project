@@ -1,6 +1,12 @@
+"""
+This is a requirements file for the LocalLink application. 
+These are depenencies needed to run the application.
+"""
+
 PySide6>=6.0
 python-dateutil>=2.8
-# Matplotlib is used for charts and statistics in the StatsPage. Include it to
-# ensure the project runs on systems without the library preinstalled.
+
+# Matplotlib is used for charts and statistics in the StatsPage.
 matplotlib>=3.6
+
 # Recommended Python: 3.14+

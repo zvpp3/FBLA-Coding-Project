@@ -4,6 +4,7 @@
     "theme": "dark",
     "show_recommendations": "yes",
     "reduce_motion": "no",
-    "confirm_delete": "yes"
+    "confirm_delete": "yes",
+    "always_on_top": "no"
   }
 }

@@ -1,5 +1,4 @@
-# Ignores
-
+# Ignores for virtual environment and system files
 .venv
 .DS_Store
 .vscode
