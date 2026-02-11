@@ -1,0 +1,206 @@
+/*
+This is the default (dark) theme for the app. 
+This qss file controls fonts, colors, and spacing.
+*/
+
+/*
+background controls the color,
+border controls the border color and thickness,
+padding controls the space between the border and the content,
+margin controls the space outside the border.
+font-weight controls the boldness of text (normal, bold, or a number from 100 to 900),
+font-size controls the size of text (in pixels, points, or other units),
+color controls the text color,
+background-color controls the background color,
+border-radius controls the roundness of corners (in pixels),
+text-align controls the horizontal alignment of text (left, center, right, or justify),
+font-family controls the font (e.g., 'Helvetica Neue', 'Arial', Helvetica).
+*/
+
+/* base widget */
+QWidget {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-family: 'Helvetica Neue', 'Arial', Helvetica;
+    font-size: 14px;
+}
+
+/* navigation buttons */
+#navButton {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+#navButton:hover {
+    background-color: #343746;
+}
+
+#navButton:checked {
+    background-color: #44475a;
+    font-weight: bold;
+    border-left: 4px solid #49B3FF;
+    padding-left: 8px;
+}
+
+#navButton:checked:hover {
+    background-color: #44475a;
+}
+
+#favButtonSmall {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 32px;
+}
+#favButtonSmall:pressed {
+    font-size: 36px;
+}
+
+#favButtonLarge {
+    background-color: transparent;
+    color: #f8f8f2;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 44px;
+}
+#favButtonLarge:pressed {
+    font-size: 48px;
+}
+
+/* Titles */
+#titleLabel {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff79c6;
+}
+#subtitleLabel {
+    font-size: 16px;
+    color: #bd93f9;
+}
+#sectionLabel {
+    font-size: 28px;
+    font-weight: bold;
+    color: #50fa7b;
+}
+
+/* list and list items */
+QListWidget {
+    background-color: #282a36;
+    border: 1px solid #44475a;
+    border-radius: 4px;
+}
+QListWidget::item {
+    padding: 8px 12px;
+}
+QListWidget::item:selected {
+    background-color: #44475a;
+}
+
+/* search bar */
+QLineEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QLineEdit:focus {
+    border-color: #bd93f9;
+}
+
+/* text edits */
+QTextEdit {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 4px;
+    padding: 6px;
+    color: #f8f8f2;
+}
+QTextEdit:read-only {
+    background-color: #383a59;
+}
+
+/* scroll area */
+QScrollBar:vertical {
+    border: transparent;
+    background: #22222a;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical {
+    background-color: #22222a;
+}
+
+QScrollBar::handle:vertical {
+    background: #6272a4;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #495073;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: transparent;
+    background: #22222a;
+    height: 10px;
+    margin: 0;
+}
+QScrollBar::handle:horizontal {
+    background: #49B3FF;
+    min-width: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #3aa0e6;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+/* primary buttons */
+#primaryButton {
+    background-color: #6272a4;
+    color: #f8f8f2;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+#primaryButton:hover {
+    background-color: #7085b6;
+}
+#primaryButton:pressed {
+    background-color: #57618c;
+}
+
+#exitButton {
+    background-color: transparent;
+    font-size: 32px;
+    color: #f8f8f2;
+    border: none;
+    padding: 0px, 5px, 0px, 0px;
+    border-radius: 4px;
+}
+#exitButton:hover {
+    background-color: #6272a4;
+}
+#exitButton:pressed {
+    background-color: #57618c;
+}

@@ -1,0 +1,201 @@
+/*
+This is the light theme for the app. 
+This qss file (like the dark theme)controls fonts, colors, and spacing.
+*/
+
+/*
+background controls the color,
+border controls the border color and thickness,
+padding controls the space between the border and the content,
+margin controls the space outside the border.
+font-weight controls the boldness of text (normal, bold, or a number from 100 to 900),
+font-size controls the size of text (in pixels, points, or other units),
+color controls the text color,
+background-color controls the background color,
+border-radius controls the roundness of corners (in pixels),
+text-align controls the horizontal alignment of text (left, center, right, or justify),
+font-family controls the font (e.g., 'Helvetica Neue', 'Arial', Helvetica).
+*/
+
+/* base widget */
+QWidget {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: 'Helvetica Neue', 'Arial', Helvetica;
+    font-size: 14px;
+}
+
+/* navigation buttons */
+#navButton {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    border-radius: 4px;
+}
+
+#navButton:hover {
+    background-color: #c6cacf;
+}
+
+#navButton:checked {
+    background-color: #e2e8f0;
+    font-weight: bold;
+    border-left: 4px solid #0d6efd;
+    padding-left: 8px;
+}
+
+#favButtonSmall {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 32px;
+}
+#favButtonSmall:pressed {
+    font-size: 36px;
+}
+
+#favButtonLarge {
+    background-color: transparent;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 44px;
+}
+#favButtonLarge:pressed {
+    font-size: 48px;
+}
+
+/* titles */
+#titleLabel {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0077cc;
+}
+#subtitleLabel {
+    font-size: 16px;
+    color: #495057;
+}
+#sectionLabel {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+/* list and list items */
+QListWidget {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+QListWidget::item {
+    padding: 8px 12px;
+}
+QListWidget::item:selected {
+    background-color: #e9ecef;
+}
+
+/* search bar */
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    color: #212529;
+}
+QLineEdit:focus {
+    border-color: #80bdff;
+}
+
+/* text edits */
+QTextEdit {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    color: #212529;
+}
+QTextEdit:read-only {
+    background-color: #f1f3f5;
+}
+
+/* Scroll Area */
+QScrollBar:vertical {
+    border: transparent;
+    background: #737576;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical {
+    background-color: #737576;
+}
+
+QScrollBar::handle:vertical {
+    background: #0077cc;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #005f9e;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: transparent;
+    background: #f1f3f5;
+    height: 10px;
+    margin: 0;
+}
+QScrollBar::handle:horizontal {
+    background: #0077cc;
+    min-width: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #005f9e;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+/* primary buttons */
+#primaryButton {
+    background-color: #0077cc;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+#primaryButton:hover {
+    background-color: #0062a3;
+}
+#primaryButton:pressed {
+    background-color: #005088;
+}
+
+#exitButton {
+    background-color: transparent;
+    font-size: 32px;
+    color: #000000;
+    border: none;
+    padding: 0px, 5px, 0px, 0px;
+    border-radius: 4px;
+}
+#exitButton:hover {
+    background-color: #0062a3;
+}
+#exitButton:pressed {
+    background-color: #005088;
+}

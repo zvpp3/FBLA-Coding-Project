@@ -1,0 +1,9 @@
+# Ignores for virtual environment and system files
+.venv
+.DS_Store
+.vscode
+*.pyc
+__pycache__
+.venv/
+venv/
+.env
