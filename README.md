@@ -1,3 +1,9 @@
+# Please check releases for the main details
+
+<br>
+<br>
+<br>
+
 # LocalLink — local business browser
 
 LocalLink is a small desktop app for discovering and bookmarking local businesses. It's a demo-style project built with Python and PySide6 that shows how a simple, offline-friendly business directory could work.
