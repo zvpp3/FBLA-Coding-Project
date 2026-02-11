@@ -1,4 +1,4 @@
-# Please check releases for the main details
+# Please check our release page for this project's main details
 
 <br>
 <br>
